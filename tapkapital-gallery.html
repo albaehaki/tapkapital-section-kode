@@ -34,10 +34,10 @@
         .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
         .wf-header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; }
         .wf-header .logo-text span { color:var(--gold); }
-        .gallery-grid { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:auto auto; gap:10px; }
-        .gallery-item { border-radius:14px; overflow:hidden; position:relative; background:var(--bg-soft); border:1px solid var(--border); aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; cursor:default; transition:all 0.3s; }
-        .gallery-item:hover { border-color:var(--gold); transform:scale(1.01); }
-        .gallery-item.featured { grid-row:1/3; aspect-ratio:auto; min-height:320px; }
+        .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 10px; }
+        .gallery-item { border-radius: 14px; overflow: hidden; position: relative; background: var(--bg-soft); border: 1px solid var(--border); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; cursor: default; transition: all 0.3s; }
+        .gallery-item:hover { border-color: var(--gold); transform: scale(1.01); }
+        .gallery-item.featured { grid-row: 1 / 3; aspect-ratio: auto; min-height: 320px; }
         .gallery-item .g-placeholder { color:rgba(10,38,71,0.06); font-size:2.5rem; }
         .gallery-item .g-label { position:absolute; bottom:0; left:0; right:0; padding:20px 16px 14px; background:linear-gradient(transparent,rgba(10,38,71,0.7)); color:#fff; font-size:0.7rem; font-weight:600; }
         .gallery-item .g-label span { font-size:0.55rem; color:rgba(255,255,255,0.5); font-weight:400; display:block; margin-top:2px; }
@@ -47,6 +47,15 @@
         .g5 { background:linear-gradient(135deg,#051530,#0a2647); } .g6 { background:linear-gradient(135deg,#1a4a7a,#3a6a9e); }
         .g7 { background:linear-gradient(135deg,#2c1a2e,#4a2a4e); } .g8 { background:linear-gradient(135deg,#1a3a2e,#2a5a3e); }
         .g9 { background:linear-gradient(135deg,#3a2a1a,#5a3a2a); }
+        .gallery-gradient-1 { background:linear-gradient(135deg,#0a2647,#1a4a7a); }
+        .gallery-gradient-2 { background:linear-gradient(135deg,#1a3a5c,#2c4c7e); }
+        .gallery-gradient-3 { background:linear-gradient(135deg,#0d3360,#0a2647); }
+        .gallery-gradient-4 { background:linear-gradient(135deg,#2c4c7e,#4a6a9e); }
+        .gallery-gradient-5 { background:linear-gradient(135deg,#051530,#0a2647); }
+        .gallery-gradient-6 { background:linear-gradient(135deg,#1a4a7a,#3a6a9e); }
+        .gallery-gradient-7 { background:linear-gradient(135deg,#2c1a2e,#4a2a4e); }
+        .gallery-gradient-8 { background:linear-gradient(135deg,#1a3a2e,#2a5a3e); }
+        .gallery-gradient-9 { background:linear-gradient(135deg,#3a2a1a,#5a3a2a); }
         .cats { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
         .cat-btn { padding:6px 16px; border-radius:50px; font-size:0.6rem; font-weight:600; border:1px solid var(--border); background:var(--bg); color:var(--text-mid); cursor:default; }
         .cat-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
@@ -110,6 +119,11 @@
                     <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">school</span></div>
                     <div class="g-label">Ujian Sertifikasi LSPPM<span>TUK Resmi Tap Kapital</span></div>
                 </div>
+                <div class="gallery-item featured gallery-gradient-6" style="grid-row:2/4;">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:3rem;">business</span></div>
+                    <span class="g-badge">✦ Highlight</span>
+                    <div class="g-label">Kunjungan & Audiensi<span>Mitra & Asosiasi</span></div>
+                </div>
                 <div class="gallery-item gallery-gradient-4">
                     <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">laptop</span></div>
                     <div class="g-label">Kelas Online via Zoom<span>Peserta dari 15+ kota</span></div>
@@ -117,10 +131,6 @@
                 <div class="gallery-item gallery-gradient-5">
                     <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">celebration</span></div>
                     <div class="g-label">Foto Bersama Instruktur<span>Sesi CRP & WMI</span></div>
-                </div>
-                <div class="gallery-item gallery-gradient-6">
-                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">business</span></div>
-                    <div class="g-label">Kunjungan & Audiensi<span>Mitra & Asosiasi</span></div>
                 </div>
                 <div class="gallery-item gallery-gradient-7">
                     <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">emoji_events</span></div>
