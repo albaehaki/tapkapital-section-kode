@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Final — Tap Kapital</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f0f4f8; padding: 40px; color: #1f2937; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        :root {
+            --navy: #0a2647; --navy-dark: #051530; --navy-light: #2c4c7e;
+            --gold: #fda527; --gold-dark: #e08f00;
+            --bg: #ffffff; --bg-soft: #f0f4f8; --border: #e9ecf0;
+            --text: #1f2937; --text-mid: #4b5563; --text-light: #9ca3af;
+            --focus: #fda527;
+        }
+
+        .wf-title { text-align: center; margin-bottom: 40px; }
+        .wf-title h1 { font-size: 1.5rem; color: var(--navy); font-weight: 800; }
+        .wf-title .sub { color: var(--text-mid); font-size: 0.8rem; margin-top: 4px; }
+        .wf-title .tagline { display: inline-flex; align-items: center; gap: 6px; background: rgba(253,165,39,0.1); border: 1px solid rgba(253,165,39,0.2); padding: 4px 14px; border-radius: 50px; font-size: 0.65rem; color: var(--gold); margin-bottom: 12px; }
+
+        .section { background: var(--bg); border-radius: 20px; margin-bottom: 28px; border: 2px dashed var(--border); position: relative; box-shadow: 0 2px 12px rgba(10,38,71,0.06); transition: all 0.3s; }
+        .section:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(10,38,71,0.1); }
+        .section.solid { border-style: solid; border-color: var(--navy); }
+        
+        .section-label { position: absolute; top: 0; left: 0; z-index: 5; display: flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); font-size: 0.55rem; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px 4px 8px; border-radius: 0 0 14px 0; }
+        .section-label .num { background: var(--navy-dark); color: var(--gold); width: 16px; height: 16px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.5rem; font-weight: 800; }
+        .section-context { position: absolute; top: 0; right: 0; z-index: 5; background: var(--bg-soft); color: var(--text-mid); font-size: 0.5rem; padding: 4px 12px; border-radius: 0 0 0 14px; font-weight: 500; }
+        .section-pad { padding: 44px 32px; }
+
+        .accent-bar { width: 28px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 10px; }
+        .section-head { margin-bottom: 28px; }
+        .section-head .label { font-size: 0.55rem; color: var(--text-mid); letter-spacing: 2px; text-transform: uppercase; }
+        .section-head h2 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-top: 4px; letter-spacing: -0.5px; }
+        .section-head .sub { font-size: 0.7rem; color: var(--text-mid); margin-top: 4px; max-width: 500px; }
+        .wf-arrow { text-align: center; padding: 4px 0 8px; color: var(--text-light); font-size: 0.6rem; letter-spacing: 3px; }
+
+        /* ─── ❶ HEADER ─── */
+        .wf-header { background: var(--navy); border-radius: 14px; padding: 10px 22px; display: flex; align-items: center; justify-content: space-between; }
+        .wf-header .logo { display: flex; align-items: center; gap: 10px; }
+        .wf-header .logo-mark { width: 30px; height: 30px; background: var(--gold); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; color: var(--navy-dark); clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); }
+        .wf-header .logo-text { font-size: 0.85rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+        .wf-header .logo-text span { color: var(--gold); }
+        .wf-header .nav { display: flex; gap: 2px; align-items: center; }
+        .wf-header .nav-item { padding: 5px 12px; border-radius: 7px; font-size: 0.65rem; color: rgba(255,255,255,0.55); font-weight: 500; cursor: default; }
+        .wf-header .nav-item.active { color: #fff; background: rgba(253,165,39,0.15); border: 1px solid rgba(253,165,39,0.2); }
+        .wf-header .nav-item.cta { background: var(--gold); color: var(--navy-dark); font-weight: 700; padding: 5px 16px; border-radius: 7px; display: flex; align-items: center; gap: 4px; }
+        .wf-header .meta { display: flex; align-items: center; gap: 6px; }
+        .wf-header .meta-item { font-size: 0.55rem; color: rgba(255,255,255,0.35); padding: 3px 8px; border-radius: 5px; background: rgba(255,255,255,0.05); display: flex; align-items: center; gap: 4px; }
+        .wf-header .meta-item span.material-symbols-outlined { font-size: 0.65rem; color: rgba(255,255,255,0.2); }
+
+        /* ─── ❷ HERO ─── */
+        .wf-hero { background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 16px; padding: 48px 40px; display: flex; gap: 40px; align-items: center; color: #fff; min-height: 420px; }
+        .wf-hero-left { flex: 1; }
+        .wf-hero-right { flex: 1; position: relative; display: flex; justify-content: center; }
+
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(253,165,39,0.12); border: 1px solid rgba(253,165,39,0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.65rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+        .wf-hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 14px; }
+        .wf-hero h1 .glow { background: linear-gradient(135deg, var(--gold), #ffb74d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .wf-hero .desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+        
+        .hero-cta { display: flex; gap: 10px; align-items: center; }
+        .hero-cta .primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); padding: 12px 28px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; cursor: default; box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
+        .hero-cta .primary span.material-symbols-outlined { font-size: 1rem; }
+        .hero-cta .secondary { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.12); padding: 12px 24px; border-radius: 50px; font-size: 0.75rem; color: rgba(255,255,255,0.7); font-weight: 500; cursor: default; }
+        .hero-cta .secondary span.material-symbols-outlined { font-size: 1rem; color: rgba(255,255,255,0.4); }
+
+        .hero-visual { position: relative; width: 340px; height: 380px; display: flex; align-items: center; justify-content: center; }
+        .hero-visual .ring { position: absolute; border-radius: 50%; }
+        .hero-visual .ring-1 { width: 320px; height: 320px; border: 1px solid rgba(253,165,39,0.08); }
+        .hero-visual .ring-2 { width: 260px; height: 260px; border: 1px dashed rgba(253,165,39,0.1); }
+        .hero-visual .ring-3 { width: 200px; height: 200px; background: rgba(253,165,39,0.03); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+        .hero-visual .ring-3 span.material-symbols-outlined { font-size: 2rem; color: rgba(253,165,39,0.2); }
+        .hero-visual .ring-3 .hint { font-size: 0.5rem; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+
+        .hero-floating { position: absolute; z-index: 2; }
+        .hero-floating.tl { top: 5px; right: 30px; }
+        .hero-floating.bl { bottom: 25px; left: -5px; }
+        .hero-floating.br { bottom: 45px; right: -5px; }
+        .hf-card { background: rgba(10,38,71,0.92); backdrop-filter: blur(8px); border: 1px solid rgba(253,165,39,0.08); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; min-width: 155px; }
+        .hf-card span.material-symbols-outlined { font-size: 1rem; }
+        .hf-card .hf-main { font-size: 0.7rem; font-weight: 600; color: #fff; }
+        .hf-card .hf-sub { font-size: 0.55rem; color: rgba(255,255,255,0.35); }
+
+        /* ─── ❸ TRUSTED BY (marquee) ─── */
+        /* ─── ❹ STATISTIK ─── */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .stat-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px 16px; text-align: center; position: relative; overflow: hidden; }
+        .stat-card:hover { border-color: var(--gold); }
+        .stat-card .num { font-size: 2rem; font-weight: 800; color: var(--navy); letter-spacing: -1px; }
+        .stat-card .num .g { color: var(--gold); }
+        .stat-card .lbl { font-size: 0.6rem; color: var(--text-mid); margin-top: 4px; letter-spacing: 0.3px; }
+        .stat-card .stat-icon { font-size: 1.4rem; color: var(--gold); opacity: 0.15; margin-bottom: 4px; }
+        .stat-bar { margin-top: 12px; height: 4px; background: var(--bg-soft); border-radius: 4px; overflow: hidden; }
+        .stat-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--gold), #ffc55a); transition: width 0.6s ease; }
+
+        /* ═══════════════════════════════════════ */
+        /* ❺ PROGRAM — IMAGE CARDS + CAROUSEL     */
+        /* ═══════════════════════════════════════ */
+
+        .carousel-container { position: relative; overflow: hidden; }
+        .carousel-track {
+            display: flex; gap: 16px; overflow-x: auto;
+            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth; padding: 4px 0 12px;
+            scrollbar-width: thin; scrollbar-color: var(--gold) var(--bg-soft);
+        }
+        .carousel-track::-webkit-scrollbar { height: 4px; }
+        .carousel-track::-webkit-scrollbar-track { background: var(--bg-soft); border-radius: 4px; }
+        .carousel-track::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+        .prog-slide {
+            flex: 0 0 320px; scroll-snap-align: start;
+            border-radius: 16px; overflow: hidden;
+            background: var(--bg); border: 1px solid var(--border);
+            transition: all 0.3s; cursor: default;
+        }
+        .prog-slide:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10,38,71,0.1); }
+
+        .prog-slide .img-area {
+            width: 100%; height: 180px;
+            background: linear-gradient(135deg, var(--navy-dark), var(--navy-light));
+            position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .prog-slide .img-area .placeholder { color: rgba(255,255,255,0.1); font-size: 0.6rem; letter-spacing: 1px; text-align: center; z-index: 1; }
+        .prog-slide .img-area .overlay-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--navy-dark); font-size: 0.5rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; letter-spacing: 0.5px; }
+        .prog-slide .img-area .overlay-icon { position: absolute; bottom: 12px; left: 12px; width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; }
+        .prog-slide .img-area .overlay-icon span.material-symbols-outlined { font-size: 1.1rem; color: #fff; }
+
+        .prog-slide .content { padding: 18px 16px; }
+        .prog-slide .content .p-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+        .prog-slide .content .p-tags { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+        .prog-slide .content .p-tags span { font-size: 0.5rem; padding: 2px 10px; border-radius: 50px; background: rgba(253,165,39,0.08); color: var(--gold); font-weight: 600; letter-spacing: 0.5px; }
+        .prog-slide .content .p-desc { font-size: 0.65rem; color: var(--text-mid); margin-top: 8px; line-height: 1.5; }
+        .prog-slide .content .p-footer { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--bg-soft); }
+        .prog-slide .content .p-footer .price { font-size: 0.7rem; font-weight: 700; color: var(--navy); }
+        .prog-slide .content .p-footer .price span { font-size: 0.55rem; color: var(--text-mid); font-weight: 400; }
+        .prog-slide .content .p-footer .cta { font-size: 0.6rem; color: var(--gold); font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+        .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 20px; }
+        .carousel-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; color: var(--text-mid); }
+        .carousel-btn:hover { border-color: var(--gold); background: rgba(253,165,39,0.05); color: var(--gold); }
+        .carousel-btn span.material-symbols-outlined { font-size: 1.1rem; }
+        .carousel-dots { display: flex; gap: 6px; }
+        .carousel-dots .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: all 0.3s; cursor: pointer; }
+        .carousel-dots .dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+        .carousel-fade-left, .carousel-fade-right { position: absolute; top: 0; bottom: 0; width: 40px; pointer-events: none; z-index: 2; }
+        .carousel-fade-left { left: 0; background: linear-gradient(90deg, var(--bg) 0%, transparent 100%); }
+        .carousel-fade-right { right: 0; background: linear-gradient(90deg, transparent 0%, var(--bg) 100%); }
+
+        .img-risk { background: linear-gradient(135deg, #0a2647 0%, #fda527 100%) !important; }
+        .img-analis { background: linear-gradient(135deg, #1a3a5c 0%, #3b82f6 100%) !important; }
+        .img-invest { background: linear-gradient(135deg, #2c1a4c 0%, #a855f7 100%) !important; }
+        .img-teknikal { background: linear-gradient(135deg, #1a2c3c 0%, #f97316 100%) !important; }
+        .img-ojk { background: linear-gradient(135deg, #0a2647 0%, #06b6d4 100%) !important; }
+        .img-tot { background: linear-gradient(135deg, #2c1a1a 0%, #ef4444 100%) !important; }
+        .img-pattern { position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(circle at 20% 30%, #fff 1px, transparent 1px), radial-gradient(circle at 80% 70%, #fff 1px, transparent 1px), radial-gradient(circle at 50% 50%, #fff 2px, transparent 2px); background-size: 40px 40px, 60px 60px, 80px 80px; }
+
+        /* ─── MARQUEE TRUSTED BY ─── */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .mask-gradient-x {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            animation: scroll var(--duration, 40s) linear infinite var(--direction, normal);
+        }
+        .animate-scroll:hover { animation-play-state: paused; }
+
+        /* ─── COPY BUTTON ─── */
+        .copy-btn {
+            position: absolute; bottom: 8px; right: 8px; z-index: 10;
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; border-radius: 6px;
+            font-size: 0.5rem; font-weight: 600; letter-spacing: 0.3px;
+            background: rgba(10,38,71,0.06); color: var(--text-mid);
+            border: 1px solid var(--border); cursor: pointer;
+            transition: all 0.2s; opacity: 0;
+        }
+        .section:hover .copy-btn { opacity: 1; }
+        .copy-btn:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+        .copy-btn.copied { background: #10b981; color: #fff; border-color: #10b981; }
+        .copy-btn span.material-symbols-outlined { font-size: 0.7rem; }
+
+        /* ─── TOAST ─── */
+        .toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+            background: var(--navy-dark); color: #fff;
+            padding: 10px 20px; border-radius: 10px;
+            font-size: 0.7rem; font-weight: 500;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            opacity: 0; transition: all 0.3s; z-index: 999;
+            display: flex; align-items: center; gap: 8px;
+            pointer-events: none;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .toast span.material-symbols-outlined { font-size: 1rem; color: #10b981; }
+
+        /* ─── ❻ WHY US ─── */
+        .why-grid { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr; gap: 14px; }
+        .why-card { text-align: center; padding: 28px 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 14px; }
+        .why-card:hover { border-color: var(--gold); }
+        .why-card.featured { 
+            background: linear-gradient(135deg, rgba(253,165,39,0.03), transparent); 
+            border-color: rgba(253,165,39,0.2);
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .why-card.featured .w-icon { width: 56px; height: 56px; }
+        .why-card.featured h3 { font-size: 1rem; }
+        .why-card.featured p { font-size: 0.7rem; }
+        .why-card .w-icon { width: 48px; height: 48px; margin: 0 auto 14px; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+        .why-card .w-icon span.material-symbols-outlined { font-size: 1.3rem; }
+        .why-card h3 { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+        .why-card p { font-size: 0.65rem; color: var(--text-mid); margin-top: 6px; line-height: 1.6; }
+
+        /* ─── ❼ TESTIMONIAL CAROUSEL ─── */
+        .testi-wrapper { background: var(--navy); border-radius: 16px; padding: 32px; position: relative; overflow: hidden; }
+        .testi-wrapper::before { content: '"'; position: absolute; top: -20px; left: 20px; font-size: 8rem; color: rgba(253,165,39,0.05); font-family: Georgia, serif; line-height: 1; }
+        .testi-wrapper:hover .testi-dots .auto-indicator { animation-play-state: paused; }
+        .testi-inner { display: flex; gap: 24px; align-items: center; }
+        .testi-left { flex: 1; }
+        .testi-left .quote { font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.7; font-style: italic; }
+        .testi-left .author { margin-top: 14px; display: flex; align-items: center; gap: 10px; }
+        .testi-left .avatar { width: 40px; height: 40px; border-radius: 10px; background: var(--gold); display: flex; align-items: center; justify-content: center; }
+        .testi-left .avatar span.material-symbols-outlined { font-size: 1rem; color: var(--navy-dark); }
+        .testi-left .auth-name { font-size: 0.75rem; font-weight: 600; color: #fff; }
+        .testi-left .auth-role { font-size: 0.6rem; color: rgba(255,255,255,0.4); }
+        .testi-right { flex: 0 0 160px; }
+        .testi-right .stat { text-align: center; }
+        .testi-right .stat .num { font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+        .testi-right .stat .lbl { font-size: 0.6rem; color: rgba(255,255,255,0.4); }
+        .testi-right .stat .bar { width: 100%; height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; margin-top: 8px; }
+        .testi-right .stat .bar .fill { height: 100%; border-radius: 2px; background: var(--gold); width: 96%; }
+        .testi-slide { display: none; }
+        .testi-slide.active { display: flex; gap: 24px; align-items: center; }
+        .testi-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+        .testi-dots .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15); cursor: pointer; transition: all 0.3s; }
+        .testi-dots .dot.active { background: var(--gold); width: 28px; border-radius: 4px; }
+
+        /* ─── ❾ GALLERY ─── */
+        .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
+        .gallery-item { border-radius: 14px; overflow: hidden; position: relative; background: var(--bg-soft); border: 1px solid var(--border); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; cursor: default; transition: all 0.3s; }
+        .gallery-item:hover { border-color: var(--gold); transform: scale(1.01); box-shadow: var(--shadow-hover); }
+        .gallery-item.featured { grid-row: 1 / 3; aspect-ratio: auto; min-height: 320px; }
+        .gallery-item .g-placeholder { color: rgba(10,38,71,0.06); font-size: 2.5rem; }
+        .gallery-item .g-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px 14px; background: linear-gradient(transparent, rgba(10,38,71,0.7)); color: #fff; font-size: 0.7rem; font-weight: 600; }
+        .gallery-item .g-label span { font-size: 0.55rem; color: rgba(255,255,255,0.5); font-weight: 400; display: block; margin-top: 2px; }
+        .gallery-item .g-badge { position: absolute; top: 10px; left: 10px; padding: 3px 10px; border-radius: 50px; background: var(--gold); color: var(--navy-dark); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.5px; }
+        .gallery-gradient-1 { background: linear-gradient(135deg, #0a2647, #1a4a7a); }
+        .gallery-gradient-2 { background: linear-gradient(135deg, #1a3a5c, #2c4c7e); }
+        .gallery-gradient-3 { background: linear-gradient(135deg, #0d3360, #0a2647); }
+        .gallery-gradient-4 { background: linear-gradient(135deg, #2c4c7e, #4a6a9e); }
+        .gallery-gradient-5 { background: linear-gradient(135deg, #051530, #0a2647); }
+
+        /* ─── ❿ FAQ ACCORDION ─── */
+        .faq-grid { display: flex; flex-direction: column; gap: 8px; }
+        .faq-item { border-radius: 10px; background: var(--bg); border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: all 0.2s; }
+        .faq-item:hover { border-color: var(--gold); }
+        .faq-item.open { border-color: var(--gold); }
+        .faq-q { padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 0.7rem; color: var(--text); font-weight: 500; }
+        .faq-q .q-left { display: flex; align-items: center; gap: 8px; }
+        .faq-q .q-left span.material-symbols-outlined { font-size: 0.8rem; color: var(--gold); }
+        .faq-q .arrow { font-size: 0.7rem; color: var(--text-light); transition: transform 0.3s; }
+        .faq-item.open .faq-q .arrow { transform: rotate(45deg); color: var(--gold); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 16px; font-size: 0.65rem; color: var(--text-mid); line-height: 1.6; }
+        .faq-item.open .faq-a { max-height: 200px; padding: 0 16px 14px; }
+        .jadwal-list { display: flex; flex-direction: column; gap: 10px; }
+        .jadwal-row { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border); cursor: default; transition: all 0.2s; }
+        .jadwal-row:hover { border-color: var(--gold); }
+        .jadwal-row .j-tgl { font-size: 0.6rem; color: var(--gold); font-weight: 600; min-width: 80px; letter-spacing: 0.3px; }
+        .jadwal-row .j-name { font-size: 0.75rem; color: var(--navy); font-weight: 600; flex: 1; }
+        .jadwal-row .j-mode { font-size: 0.55rem; color: var(--text-mid); padding: 3px 10px; border-radius: 6px; background: var(--bg-soft); border: 1px solid var(--border); }
+        .jadwal-row .j-cta { padding: 5px 14px; border-radius: 50px; background: var(--navy); color: #fff; font-size: 0.55rem; font-weight: 600; cursor: default; display: flex; align-items: center; gap: 4px; }
+        .jadwal-link { text-align: right; margin-top: 14px; }
+        .jadwal-link span { font-size: 0.6rem; color: var(--gold); font-weight: 600; cursor: default; display: inline-flex; align-items: center; gap: 4px; }
+
+        /* ─── ❿ BLOG ─── */
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .blog-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: all 0.3s; cursor: default; }
+        .blog-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10,38,71,0.08); }
+        .blog-img { position: relative; height: 160px; overflow: hidden; }
+        .blog-img-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--navy-dark), var(--navy-light)); display: flex; align-items: center; justify-content: center; }
+        .blog-cat { position: absolute; top: 10px; left: 10px; padding: 3px 12px; border-radius: 50px; background: var(--gold); color: var(--navy-dark); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.5px; }
+        .blog-body { padding: 16px; }
+        .blog-meta { font-size: 0.55rem; color: var(--text-light); margin-bottom: 6px; }
+        .blog-body h3 { font-size: 0.8rem; font-weight: 700; color: var(--navy); line-height: 1.4; }
+        .blog-body p { font-size: 0.65rem; color: var(--text-mid); margin-top: 6px; line-height: 1.5; }
+        .blog-link { font-size: 0.6rem; color: var(--gold); font-weight: 600; margin-top: 10px; display: inline-flex; align-items: center; gap: 4px; cursor: default; }
+        .blog-grid .btn-center { grid-column: 1 / -1; text-align: center; margin-top: 24px; }
+        .blog-link span.material-symbols-outlined { font-size: 0.7rem; }
+        /* ─── ⓫ CTA ─── */
+        .wf-cta-bottom { background: linear-gradient(135deg, #051530, #0a2647); border-radius: 16px; padding: 48px 40px; text-align: center; color: #fff; }
+        .wf-cta-bottom h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        .wf-cta-bottom .desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 8px 0 24px; }
+        .wf-cta-bottom .buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .wf-cta-bottom .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; cursor: default; }
+        .wf-cta-bottom .btn.p { background: var(--gold); color: var(--navy-dark); box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
+        .wf-cta-bottom .btn.s { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.15); }
+
+        /* ─── ⓬ FOOTER ─── */
+        .wf-footer { background: var(--navy-dark); border-radius: 16px; padding: 36px; }
+        .wf-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 28px; }
+        .wf-footer-col h4 { font-size: 0.6rem; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+        .wf-footer-col .item { font-size: 0.65rem; color: rgba(255,255,255,0.35); margin-bottom: 6px; cursor: default; display: flex; align-items: center; gap: 6px; }
+        .wf-footer-col .item span.material-symbols-outlined { font-size: 0.7rem; color: rgba(255,255,255,0.12); }
+        .wf-footer-col .item:hover { color: rgba(255,255,255,0.5); }
+        .wf-footer-col .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+        .wf-footer-col .logo-mark { width: 28px; height: 28px; background: var(--gold); border-radius: 6px; clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; color: var(--navy-dark); }
+        .wf-footer-col .logo-text { font-size: 0.8rem; font-weight: 700; color: #fff; }
+        .wf-footer-col .logo-text span { color: var(--gold); }
+        .wf-footer-col .desc { font-size: 0.6rem; color: rgba(255,255,255,0.2); line-height: 1.6; }
+        .wf-footer .bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 24px; padding-top: 16px; display: flex; justify-content: space-between; font-size: 0.55rem; color: rgba(255,255,255,0.12); }
+
+        /* ─── FOCUS VISIBLE ─── */
+        :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+        .section:focus-visible { outline-color: var(--gold); }
+
+        /* ─── REDUCED MOTION ─── */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-scroll { animation: none !important; }
+            .prog-slide { transition: none !important; }
+            .stat-bar-fill { transition: none !important; }
+            .wf-arrow { display: none; }
+            .testi-dots .dot { transition: none !important; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 16px; }
+            .section-pad { padding: 24px 16px; }
+            .wf-hero { flex-direction: column; padding: 28px 20px; }
+            .wf-hero-right { display: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: 1fr; }
+            .why-card.featured { grid-column: auto; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-item.featured { grid-column: 1 / -1; grid-row: auto; min-height: 240px; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .testi-inner { flex-direction: column; }
+            .testi-right { flex: auto; }
+            .wf-footer-grid { grid-template-columns: 1fr 1fr; }
+            .wf-header .nav, .wf-header .meta { display: none; }
+            .carousel-fade-left, .carousel-fade-right { display: none; }
+            .prog-slide { flex: 0 0 280px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- API Loader — untuk akses di tiap section -->
+    <script src="js/api-integration.js"></script>
+    
+    <div class="wf-title">
+        <div class="tagline">✦ Final Wireframe — Gabungan</div>
+        <h1>Tap Kapital Indonesia — Beranda</h1>
+        <div class="sub">12 section · blog · progress bar · social media · navy + emas</div>
+    </div>
+
+    <!-- ❶ HEADER (Courssins style) -->
+    <div class="section solid">
+        <div class="section-label"><span class="num">1</span> HEADER</div>
+        <div class="section-context">Courssins style</div>
+        <div class="section-pad" style="padding: 14px 18px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 0;">
+                <!-- Left: Logo -->
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <div style="width:32px; height:32px; background:var(--gold); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0, 100% 0, 85% 100%, 0% 100%);">TK</div>
+                    <span style="font-size:1.1rem; font-weight:800; color:var(--navy); letter-spacing:-0.5px;">TAP<span style="color:var(--gold);">KAPITAL</span></span>
+                </div>
+
+                <!-- Center: Nav -->
+                <div style="display:flex; align-items:center; gap:2px;">
+                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:600; color:#fff; background:var(--navy); display:inline-flex; align-items:center; gap:4px; cursor:default;">Beranda <span class="material-symbols-outlined" style="font-size:0.6rem;">arrow_drop_down</span></span>
+                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); display:inline-flex; align-items:center; gap:4px; cursor:default;">Program <span class="material-symbols-outlined" style="font-size:0.6rem;">arrow_drop_down</span></span>
+                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); display:inline-flex; align-items:center; gap:4px; cursor:default;">Tentang <span class="material-symbols-outlined" style="font-size:0.6rem;">arrow_drop_down</span></span>
+                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); cursor:default;">Jadwal</span>
+                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); cursor:default;">Informasi</span>
+                </div>
+
+                <!-- Right: Corporate + Login -->
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <span style="font-size:0.65rem; color:var(--text-mid); font-weight:500; cursor:default; display:inline-flex; align-items:center; gap:4px;">
+                        <span class="material-symbols-outlined" style="font-size:0.7rem; color:var(--gold);">business</span> Corporate
+                    </span>
+                    <span style="display:inline-flex; align-items:center; gap:6px; padding:8px 20px; border-radius:50px; background:var(--navy); color:#fff; font-size:0.7rem; font-weight:600; cursor:default;">
+                        <span class="material-symbols-outlined" style="font-size:0.8rem;">login</span> Masuk
+                    </span>
+                </div>
+            </div>
+            <!-- Badge -->
+            <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:50px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); font-size:0.55rem; font-weight:600; color:var(--gold);">
+                    <span class="material-symbols-outlined" style="font-size:0.65rem;">verified</span> TUK Resmi LSPPM & LSPFIT 2025
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❷ HERO -->
+    <div class="section" style="padding:0;">
+        <div class="section-label"><span class="num">2</span> HERO</div>
+        <div class="section-context">split + floating cards</div>
+        <div class="wf-hero">
+            <div class="wf-hero-left">
+                <div class="hero-badge"><span class="dot"></span> Resmi & Terdaftar OJK</div>
+                <h1>
+                    Sertifikasi Pasar Modal<br>
+                    <span class="glow">TUK Resmi</span> & Terpercaya
+                </h1>
+                <div class="desc">
+                    Satu-satunya TUK yang ditunjuk langsung oleh LSPPM & LSPFIT untuk sertifikasi profesi pasar modal. Online & Offline.
+                </div>
+                <div class="hero-cta">
+                    <span class="primary"><span class="material-symbols-outlined">calendar_month</span> Lihat Jadwal & Daftar</span>
+                    <span class="secondary"><span class="material-symbols-outlined">chat</span> Konsultasi WA</span>
+                </div>
+            </div>
+            <div class="wf-hero-right">
+                <div class="hero-visual">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3">
+                        <span class="material-symbols-outlined">school</span>
+                        <span class="hint">FOTO PELATIHAN</span>
+                    </div>
+                    <div class="hero-floating tl">
+                        <div class="hf-card"><span class="material-symbols-outlined" style="color:var(--gold);">verified</span><div><div class="hf-main">Diakui OJK</div><div class="hf-sub">Lisensi resmi terdaftar</div></div></div>
+                    </div>
+                    <div class="hero-floating bl">
+                        <div class="hf-card"><span class="material-symbols-outlined" style="color:#3b82f6;">diversity_3</span><div><div class="hf-main">500+ Alumni</div><div class="hf-sub">Tersebar di 50+ institusi</div></div></div>
+                    </div>
+                    <div class="hero-floating br">
+                        <div class="hf-card"><span class="material-symbols-outlined" style="color:#22c55e;">globe</span><div><div class="hf-main">Online & Offline</div><div class="hf-sub">Weekday & Weekend</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❸ TRUSTED BY (marquee + mitra badges) -->
+    <div class="section">
+        <div class="section-label"><span class="num">3</span> TRUSTED BY</div>
+        <div class="section-context">marquee + mitra badges</div>
+        <div class="section-pad" style="padding:32px 32px;">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-6 gap-6">
+                <div class="max-w-2xl">
+                    <div class="accent-bar"></div>
+                    <div class="label" style="font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase;">Dipercaya Oleh</div>
+                    <h2 style="font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px;">Trusted by Companies</h2>
+                    <p style="font-size:0.7rem; color:var(--text-mid); margin-top:4px;">20+ perusahaan dan institusi menggunakan layanan Tap Kapital.</p>
+                </div>
+                <a href="#" style="display:inline-flex; align-items:center; justify-content:center; padding:10px 20px; background:var(--bg); border:1px solid var(--border); border-radius:10px; font-size:0.65rem; font-weight:600; color:var(--text); white-space:nowrap; gap:6px; cursor:default;">
+                    Lihat Testimoni <span class="material-symbols-outlined" style="font-size:0.8rem;">arrow_forward</span>
+                </a>
+            </div>
+
+            <!-- Mitra badges -->
+            <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:6px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; font-size:0.6rem; color:var(--text-mid); font-weight:600;">
+                    <span class="material-symbols-outlined" style="font-size:0.75rem; color:var(--gold);">assured_workload</span> LSPPM
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:6px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; font-size:0.6rem; color:var(--text-mid); font-weight:600;">
+                    <span class="material-symbols-outlined" style="font-size:0.75rem; color:var(--gold);">school</span> LSPFIT
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:6px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; font-size:0.6rem; color:var(--text-mid); font-weight:600;">
+                    <span class="material-symbols-outlined" style="font-size:0.75rem; color:var(--gold);">handshake</span> PROPAMI
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:6px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; font-size:0.6rem; color:var(--text-mid); font-weight:600;">
+                    <span class="material-symbols-outlined" style="font-size:0.75rem; color:var(--gold);">badge</span> AAEI
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:6px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; font-size:0.6rem; color:var(--text-mid); font-weight:600;">
+                    <span class="material-symbols-outlined" style="font-size:0.75rem; color:var(--gold);">gavel</span> OJK
+                </span>
+            </div>
+
+            <div class="space-y-6 mask-gradient-x" id="marquee-container">
+                <!-- Row 1 & Row 2 akan digenerate oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❹ STATS -->
+    <div class="section">
+        <div class="section-label"><span class="num">4</span> STATISTIK</div>
+        <div class="section-context">bold numbers</div>
+        <div class="section-pad">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">badge</span></div>
+                    <div class="num"><span class="g">500</span>+</div>
+                    <div class="lbl">Peserta Tersertifikasi</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="width:85%;"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">school</span></div>
+                    <div class="num"><span class="g">20</span>+</div>
+                    <div class="lbl">Program Pelatihan</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="width:70%;"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">trending_up</span></div>
+                    <div class="num"><span class="g">96</span>%</div>
+                    <div class="lbl">Tingkat Kelulusan</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="width:96%;"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">handshake</span></div>
+                    <div class="num"><span class="g">50</span>+</div>
+                    <div class="lbl">Mitra Institusi</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="width:60%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❺ PROGRAM — CAROUSEL -->
+    <div class="section">
+        <div class="section-label"><span class="num">5</span> PROGRAM</div>
+        <div class="section-context">image cards + carousel</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Program Sertifikasi</div>
+                <h2>Pilih Program Sesuai Kebutuhan Anda</h2>
+                <div class="sub">Geser untuk melihat semua program — dari risk management hingga lisensi OJK</div>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-fade-left"></div>
+                <div class="carousel-fade-right"></div>
+
+                <div class="carousel-track" id="carouselTrack" data-wp-produk="6"></div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="document.getElementById('carouselTrack').scrollBy({left: -336, behavior: 'smooth'})">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="carousel-btn" onclick="document.getElementById('carouselTrack').scrollBy({left: 336, behavior: 'smooth'})">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 24px;">
+                <span style="font-size: 0.65rem; color: var(--gold); font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" onclick="window.location.href='tapkapital-semua-program.html'">
+                    Lihat Semua Program 
+                    <span class="material-symbols-outlined" style="font-size: 0.8rem;">arrow_forward</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❻ WHY US -->
+    <div class="section">
+        <div class="section-label"><span class="num">6</span> WHY US</div>
+        <div class="section-context">3 pilar</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Kenapa Tap Kapital</div>
+                <h2>Kenapa Memilih Kami?</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card featured">
+                    <div class="w-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">description</span></div>
+                    <h3>Kurikulum Berbasis Kompetensi</h3>
+                    <p>Materi disusun mengacu unit kompetensi LSPPM & LSPFIT — langsung siap uji sertifikasi nasional. Proses pembelajaran terstruktur dengan bimbingan instruktur profesional.</p>
+                </div>
+                <div class="why-card">
+                    <div class="w-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">verified</span></div>
+                    <h3>Mitra Resmi & Terdaftar</h3>
+                    <p>Ditunjuk langsung sebagai TUK resmi oleh LSPPM. Terafiliasi dengan PROPAMI dan AAEI.</p>
+                </div>
+                <div class="why-card">
+                    <div class="w-icon" style="background:rgba(16,185,129,0.08);"><span class="material-symbols-outlined" style="color:#10b981;">schedule</span></div>
+                    <h3>Fleksibel & Terjangkau</h3>
+                    <p>Pilih kelas Online (LMS/Zoom) atau Offline (Jakarta). Tersedia opsi cicilan 2-3 kali.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❼ TESTIMONIAL CAROUSEL -->
+    <div class="section">
+        <div class="section-label"><span class="num">7</span> TESTIMONIAL</div>
+        <div class="section-context">carousel 3 testimonial</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Testimonial</div>
+                <h2>Apa Kata Mereka?</h2>
+            </div>
+            <div class="testi-wrapper">
+                <div class="testi-slide active" data-index="0">
+                    <div class="testi-left">
+                        <div class="quote">"Berkat pelatihan di Tap Kapital, saya berhasil lulus sertifikasi CSA dan sekarang bekerja sebagai analis efek di perusahaan sekuritas. Pengajarnya paham banget sama industri."</div>
+                        <div class="author">
+                            <div class="avatar"><span class="material-symbols-outlined">person</span></div>
+                            <div><div class="auth-name">Andi Pratama</div><div class="auth-role">Analis Efek — CSA · 2025</div></div>
+                        </div>
+                    </div>
+                    <div class="testi-right">
+                        <div class="stat">
+                            <div class="num">96%</div>
+                            <div class="lbl">Kepuasan Peserta</div>
+                            <div class="bar"><div class="fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-slide" data-index="1">
+                    <div class="testi-left">
+                        <div class="quote">"Tap Kapital bener-bener membantu saya mempersiapkan ujian WMI. Materinya lengkap, soal latihannya mirip banget sama ujian asli. Lulus pertama kali!"</div>
+                        <div class="author">
+                            <div class="avatar"><span class="material-symbols-outlined">person</span></div>
+                            <div><div class="auth-name">Siti Rahmawati</div><div class="auth-role">Wakil Manajer Investasi — WMI · 2025</div></div>
+                        </div>
+                    </div>
+                    <div class="testi-right">
+                        <div class="stat">
+                            <div class="num">98%</div>
+                            <div class="lbl">Tingkat Kelulusan</div>
+                            <div class="bar"><div class="fill" style="width:98%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-slide" data-index="2">
+                    <div class="testi-left">
+                        <div class="quote">"Pelatihan Risk Management di Tap Kapital sangat aplikatif. Studi kasusnya real, langsung bisa dipakai di pekerjaan sehari-hari. Recommended banget!"</div>
+                        <div class="author">
+                            <div class="avatar"><span class="material-symbols-outlined">person</span></div>
+                            <div><div class="auth-name">Budi Santoso</div><div class="auth-role">Risk Analyst — CRP · 2025</div></div>
+                        </div>
+                    </div>
+                    <div class="testi-right">
+                        <div class="stat">
+                            <div class="num">4.9</div>
+                            <div class="lbl">Rating Rata-rata</div>
+                            <div class="bar"><div class="fill" style="width:98%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❾ GALLERY DOKUMENTASI -->
+    <div class="section">
+        <div class="section-label"><span class="num">9</span> GALLERY</div>
+        <div class="section-context">dokumentasi pelatihan</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Dokumentasi</div>
+                <h2>Suasana Pelatihan Tap Kapital</h2>
+                <div class="sub">Momen pelatihan dan sertifikasi bersama peserta dari berbagai institusi — offline & online</div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item featured gallery-gradient-1">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:3rem;">photo_camera</span></div>
+                    <span class="g-badge">✦ Terbaru</span>
+                    <div class="g-label">Pelatihan CRP Batch 1 2026 — Offline Jakarta<span>20 peserta · 12-14 Jan 2026</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-2">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">groups</span></div>
+                    <div class="g-label">Sesi Diskusi Kelompok<span>Manajemen Risiko</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-3">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">school</span></div>
+                    <div class="g-label">Ujian Sertifikasi<span>LSPPM — TUK Resmi</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-4">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">laptop</span></div>
+                    <div class="g-label">Kelas Online via Zoom<span>Peserta dari 15+ kota</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-5">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">celebration</span></div>
+                    <div class="g-label">Foto Bersama Instruktur<span>Sesi CRP & WMI</span></div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:8px 18px; background:var(--navy); color:#fff; border-radius:10px; font-size:0.65rem; font-weight:600; cursor:default;">
+                    <span class="material-symbols-outlined" style="font-size:0.8rem;">photo_library</span> Lihat Semua Dokumentasi
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❿ JADWAL -->
+    <div class="section">
+        <div class="section-label"><span class="num">10</span> JADWAL</div><div class="section-context">timeline</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Jadwal Pelatihan</div>
+                <h2>Program Terdekat</h2>
+            </div>
+            <div class="jadwal-list">
+                <div class="jadwal-row"><span class="j-tgl">20 — 22 Jan</span><span class="j-name">Certified Risk Professional (CRP)</span><span class="j-mode">Offline · Jakarta</span><span class="j-cta">Pesan <span class="material-symbols-outlined" style="font-size:0.65rem;">arrow_forward</span></span></div>
+                <div class="jadwal-row"><span class="j-tgl">10 — 24 Jan</span><span class="j-name">Wakil Manajer Investasi (WMI)</span><span class="j-mode">Online · Weekend</span><span class="j-cta">Pesan <span class="material-symbols-outlined" style="font-size:0.65rem;">arrow_forward</span></span></div>
+                <div class="jadwal-row"><span class="j-tgl">7 — 21 Feb</span><span class="j-name">Certified Risk Professional (CRP)</span><span class="j-mode">Online · Weekend</span><span class="j-cta">Pesan <span class="material-symbols-outlined" style="font-size:0.65rem;">arrow_forward</span></span></div>
+            </div>
+            <div class="jadwal-link"><span>Lihat Semua Jadwal <span class="material-symbols-outlined">arrow_forward</span></span></div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ❿ FAQ ACCORDION -->
+    <div class="section">
+        <div class="section-label"><span class="num">11</span> FAQ</div>
+        <div class="section-context">accordion</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Tanya Jawab</div>
+                <h2>Pertanyaan Umum</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item open">
+                    <div class="faq-q"><span class="q-left"><span class="material-symbols-outlined">help</span> Apakah sertifikat diakui OJK?</span><span class="arrow">+</span></div>
+                    <div class="faq-a">Ya, sertifikat yang diterbitkan oleh LSPPM dan LSPFIT diakui oleh OJK dan BNSP. Tap Kapital adalah TUK (Tempat Uji Kompetensi) resmi yang ditunjuk langsung oleh LSPPM.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span class="q-left"><span class="material-symbols-outlined">help</span> Berapa lama durasi pelatihan?</span><span class="arrow">+</span></div>
+                    <div class="faq-a">Durasi bervariasi tergantung program. Rata-rata 3-5 hari (24-40 jam) untuk pelatihan offline, dan 2-4 minggu untuk program online dengan akses LMS 24 jam.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span class="q-left"><span class="material-symbols-outlined">help</span> Apakah ada opsi online?</span><span class="arrow">+</span></div>
+                    <div class="faq-a">Tentu! Kami menyediakan kelas online via Zoom/LMS yang bisa diakses dari mana saja. Tersedia juga kelas offline di Jakarta. Pilih sesuai kebutuhan Anda.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span class="q-left"><span class="material-symbols-outlined">help</span> Apakah bisa cicilan?</span><span class="arrow">+</span></div>
+                    <div class="faq-a">Bisa. Kami menyediakan opsi cicilan 2-3 kali tanpa bunga untuk program tertentu. Silakan hubungi tim kami untuk informasi lebih lanjut.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ⓫ BLOG / ARTIKEL -->
+    <div class="section" style="margin-bottom:28px;">
+        <div class="section-label"><span class="num">12</span> BLOG</div>
+        <div class="section-context">3 artikel terbaru</div>
+        <div class="section-pad">
+            <div class="section-head">
+                <div class="accent-bar"></div>
+                <div class="label">Artikel & Edukasi</div>
+                <h2>Wawasan Pasar Modal Terkini</h2>
+                <div class="sub">Tips, panduan, dan berita seputar sertifikasi dan karir di pasar modal</div>
+            </div>
+            <div class="blog-grid" data-wp-blog></div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ⓬ CTA -->
+    <div class="section" style="padding:0;border:none;background:transparent;box-shadow:none;">
+        <div class="section-label"><span class="num">13</span> CTA</div>
+        <div class="section-context">navy gradient</div>
+        <div class="wf-cta-bottom">
+            <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 14px; background:rgba(253,165,39,0.15); border:1px solid rgba(253,165,39,0.3); border-radius:50px; font-size:0.55rem; color:var(--gold); font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">
+                <span class="material-symbols-outlined" style="font-size:0.7rem;">schedule</span> Kuota Terbatas
+            </div>
+            <h2>Siap Tingkatkan Karir di Pasar Modal?</h2>
+            <div class="desc">Dapatkan bimbingan langsung dari praktisi berpengalaman. Online & Offline. Pendaftaran gelombang terakhir ditutup <strong style="color:var(--gold);">30 Juni 2026</strong>.</div>
+            <div class="buttons">
+                <span class="btn p"><span class="material-symbols-outlined">chat</span> Daftar Sekarang — Gratis Konsultasi</span>
+                <span class="btn s"><span class="material-symbols-outlined">calendar_month</span> Lihat Jadwal Pelatihan</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wf-arrow">▼</div>
+
+    <!-- ⓭ FOOTER -->
+    <div class="section" style="padding:0;border:none;background:transparent;box-shadow:none;">
+        <div class="section-label"><span class="num">14</span> FOOTER</div>
+        <div class="section-context">navy dark</div>
+        <div class="wf-footer">
+            <div class="wf-footer-grid">
+                <div class="wf-footer-col">
+                    <div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div>
+                    <div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div>
+                </div>
+                <div class="wf-footer-col">
+                    <h4>Program</h4>
+                    <div class="item"><span class="material-symbols-outlined">shield</span> Manajemen Risiko</div>
+                    <div class="item"><span class="material-symbols-outlined">finance</span> Analis Efek</div>
+                    <div class="item"><span class="material-symbols-outlined">account_balance</span> Investment Banking</div>
+                    <div class="item"><span class="material-symbols-outlined">assignment</span> Lisensi OJK</div>
+                    <div class="item"><span class="material-symbols-outlined">groups</span> Training of Trainer</div>
+                </div>
+                <div class="wf-footer-col">
+                    <h4>Informasi</h4>
+                    <div class="item"><span class="material-symbols-outlined">info</span> Tentang Kami</div>
+                    <div class="item"><span class="material-symbols-outlined">calendar_month</span> Jadwal</div>
+                    <div class="item"><span class="material-symbols-outlined">article</span> Artikel</div>
+                    <div class="item"><span class="material-symbols-outlined">help</span> FAQ</div>
+                    <div class="item"><span class="material-symbols-outlined">description</span> Syarat & Ketentuan</div>
+                </div>
+                <div class="wf-footer-col">
+                    <h4>Kontak</h4>
+                    <div class="item"><span class="material-symbols-outlined">mail</span> info@tapkapital.co.id</div>
+                    <div class="item"><span class="material-symbols-outlined">call</span> 0878-7255-5540</div>
+                    <div class="item"><span class="material-symbols-outlined">call</span> 0821-1301-6501</div>
+                    <div class="item"><span class="material-symbols-outlined">location_on</span> Wisma GKBI Lt.6, Jakarta</div>
+                    <div style="margin-top:14px; display:flex; gap:8px;">
+                        <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.4); cursor:default; transition:all 0.2s;" onmouseover="this.style.background='rgba(253,165,39,0.15)';this.style.borderColor='rgba(253,165,39,0.3)';this.style.color='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.4)'">
+                            <span class="material-symbols-outlined" style="font-size:1rem;">alternate_email</span>
+                        </span>
+                        <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.4); cursor:default; transition:all 0.2s;" onmouseover="this.style.background='rgba(253,165,39,0.15)';this.style.borderColor='rgba(253,165,39,0.3)';this.style.color='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.4)'">
+                            <span class="material-symbols-outlined" style="font-size:1rem;">smart_display</span>
+                        </span>
+                        <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.4); cursor:default; transition:all 0.2s;" onmouseover="this.style.background='rgba(253,165,39,0.15)';this.style.borderColor='rgba(253,165,39,0.3)';this.style.color='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.4)'">
+                            <span class="material-symbols-outlined" style="font-size:1rem;">photo_camera</span>
+                        </span>
+                        <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.4); cursor:default; transition:all 0.2s;" onmouseover="this.style.background='rgba(253,165,39,0.15)';this.style.borderColor='rgba(253,165,39,0.3)';this.style.color='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.4)'">
+                            <span class="material-symbols-outlined" style="font-size:1rem;">music_note</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom"><span>© 2026 PT Tap Kapital Indonesia</span><span>✦ ✦ ✦</span></div>
+        </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="section" style="border-style:solid; border-color:var(--gold); margin-bottom:40px;">
+        <div class="section-context" style="position:relative; border-radius:0 0 20px 0;">info</div>
+        <div class="section-pad">
+            <div style="font-size:0.7rem; color:var(--text-mid); line-height:1.8;">
+                <strong style="color:var(--navy);">Wireframe Final — 14 Section:</strong><br>
+                <span style="color:var(--gold);">❶</span> Header navy · logo TK · nav + CTA Daftar · kontak<br>
+                <span style="color:var(--gold);">❷</span> Hero gradient · floating cards · badge OJK · 2 CTA<br>
+                <span style="color:var(--gold);">❸</span> Trusted by Companies · marquee + mitra badges (LSPPM, LSPFIT, PROPAMI, AAEI, OJK)<br>
+                <span style="color:var(--gold);">❹</span> Statistik · icon + progress bar · bold numbers<br>
+                <span style="color:var(--gold);">❺</span> Program carousel · image cards · harga · scroll + dots<br>
+                <span style="color:var(--gold);">❻</span> Why Us · 3 pilar · kompetensi · mitra · fleksibel<br>
+                <span style="color:var(--gold);">❼</span> Testimonial carousel · 3 testimonial · auto-rotate 5s<br>
+                <span style="color:var(--gold);">❽</span> Gallery · grid 2fr+1fr+1fr · 5 item · gradient bg<br>
+                <span style="color:var(--gold);">❾</span> Jadwal · timeline · 3 program terdekat<br>
+                <span style="color:var(--gold);">❿</span> FAQ accordion · klik buka/tutup jawaban<br>
+                <span style="color:var(--gold);">⓫</span> Blog/Artikel · 3 card · kategori · tanggal<br>
+                <span style="color:var(--gold);">⓬</span> CTA Bottom · urgency · gradient · Daftar Sekarang<br>
+                <span style="color:var(--gold);">⓭</span> Footer · 4 kolom · social media · kontak
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"><span class="material-symbols-outlined">check_circle</span> <span id="toastMsg">Copied!</span></div>
+
+<script>
+const track = document.getElementById('carouselTrack');
+const dots = document.querySelectorAll('.dot');
+if (track) {
+    track.addEventListener('scroll', () => {
+        const activeIndex = Math.round(track.scrollLeft / 336);
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+    });
+}
+
+// ─── MARQUEE TRUSTED BY COMPANIES ───
+const marqueeConfig = {
+    globalGap: '2rem',
+    rows: [
+        {
+            id: 'row1',
+            direction: 'reverse',
+            speed: '40s',
+            logos: [
+                { name: "LSPPM", src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+                { name: "LSPFIT", src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" },
+                { name: "PROPAMI", src: "https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg" },
+                { name: "AAEI", src: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Square_Inc_logo.svg" },
+                { name: "OJK", src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg" },
+                { name: "Bursa Efek", src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" },
+                { name: "KSEI", src: "https://upload.wikimedia.org/wikipedia/commons/7/78/Dropbox_Icon.svg" }
+            ]
+        },
+        {
+            id: 'row2',
+            direction: 'normal',
+            speed: '50s',
+            logos: [
+                { name: "Mandiri Sekuritas", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+                { name: "BNI Sekuritas", src: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" },
+                { name: "Danareksa", src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+                { name: "Trimegah", src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+                { name: "Ciptadana", src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg" },
+                { name: "Mirae Asset", src: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" },
+                { name: "NH Korindo", src: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" }
+            ]
+        }
+    ]
+};
+
+function renderMarquee() {
+    const container = document.getElementById('marquee-container');
+    if (!container) return;
+    
+    marqueeConfig.rows.forEach(row => {
+        const rowWrapper = document.createElement('div');
+        rowWrapper.className = "flex overflow-hidden relative w-full";
+        
+        const track = document.createElement('div');
+        track.className = "flex w-max animate-scroll";
+        track.style.gap = marqueeConfig.globalGap;
+        track.style.setProperty('--duration', row.speed);
+        track.style.setProperty('--direction', row.direction);
+
+        const logosHTML = row.logos.map(logo => `
+            <div class="flex items-center justify-center bg-gray-50 border border-gray-100 rounded-xl px-8 py-6 h-24 min-w-[180px] grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                <img src="${logo.src}" alt="${logo.name}" class="h-8 w-auto object-contain max-w-[120px]">
+            </div>
+        `).join('');
+
+        track.innerHTML = logosHTML + logosHTML + logosHTML;
+        rowWrapper.appendChild(track);
+        container.appendChild(rowWrapper);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', renderMarquee);
+
+// ─── COPY BUTTONS ───
+function addCopyButtons() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section, i) => {
+        // Skip the legend section at the bottom
+        if (section.querySelector('.section-context')?.textContent === 'info') return;
+        
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+        btn.dataset.index = i;
+        
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // Get the section's inner content (the .section-pad or actual content)
+            const contentEl = section.querySelector('.section-pad') || section;
+            let html = contentEl.innerHTML;
+            
+            // Clean up: remove copy buttons from the copied HTML
+            html = html.replace(/<button[^>]*class="[^"]*copy-btn[^"]*"[^>]*>.*?<\/button>/gs, '');
+            
+            // Wrap in a div with the section's inline styles if any
+            const sectionStyle = section.getAttribute('style') || '';
+            const styleAttr = sectionStyle ? ` style="${sectionStyle}"` : '';
+            
+            // Get the section's class for styling context
+            const sectionClass = section.className.replace('section', '').trim();
+            const classAttr = sectionClass ? ` class="${sectionClass}"` : '';
+            
+            const wrapped = `<div${classAttr}${styleAttr}>\n${html.trim()}\n</div>`;
+            
+            navigator.clipboard.writeText(wrapped).then(() => {
+                btn.classList.add('copied');
+                btn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toastMsg');
+                toastMsg.textContent = `Section ${section.querySelector('.num')?.textContent || ''} copied!`;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+                }, 2000);
+            }).catch(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">error</span> Failed';
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+                }, 2000);
+            });
+        });
+        
+        section.appendChild(btn);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', addCopyButtons);
+
+// ─── TESTIMONIAL CAROUSEL ───
+function initTestimonial() {
+    const dots = document.querySelectorAll('.testi-dots .dot');
+    const slides = document.querySelectorAll('.testi-slide');
+    if (!dots.length) return;
+    
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const idx = parseInt(dot.dataset.slide);
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[idx].classList.add('active');
+            dot.classList.add('active');
+        });
+    });
+    
+    // Auto-rotate every 5 seconds
+    let current = 0;
+    setInterval(() => {
+        current = (current + 1) % slides.length;
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+    }, 5000);
+}
+
+// ─── FAQ ACCORDION ───
+function initFaq() {
+    document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+            // Toggle current
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTestimonial();
+    initFaq();
+});
+</script>
+
+</body>
+</html>

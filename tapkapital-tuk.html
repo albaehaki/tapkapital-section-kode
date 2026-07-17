@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUK & Partner — Tap Kapital Indonesia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#f0f4f8; padding:40px; color:#1f2937; }
+        .container { max-width:1100px; margin:0 auto; }
+        .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 350,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+        :root { --navy:#0a2647; --navy-dark:#051530; --navy-light:#2c4c7e; --gold:#fda527; --bg:#fff; --bg-soft:#f0f4f8; --border:#e9ecf0; --text:#1f2937; --text-mid:#4b5563; --focus:#fda527; }
+        :focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
+        .wf-title { text-align:center; margin-bottom:40px; }
+        .wf-title h1 { font-size:1.5rem; color:var(--navy); font-weight:800; }
+        .wf-title .sub { color:var(--text-mid); font-size:0.8rem; }
+        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:12px; }
+        .section { background:var(--bg); border-radius:20px; margin-bottom:28px; border:2px dashed var(--border); position:relative; box-shadow:0 2px 12px rgba(10,38,71,0.06); }
+        .section:hover { border-color:var(--gold); }
+        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.55rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
+        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.5rem; font-weight:800; }
+        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.5rem; padding:4px 12px; border-radius:0 0 0 14px; }
+        .section-pad { padding:44px 32px; }
+        .accent-bar { width:28px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:10px; }
+        .section-head { margin-bottom:28px; }
+        .section-head .label { font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
+        .section-head h2 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px; }
+        .section-head .sub { font-size:0.7rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
+        .wf-header { background:var(--navy); border-radius:14px; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; }
+        .wf-header .logo { display:flex; align-items:center; gap:10px; }
+        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; }
+        .wf-header .logo-text span { color:var(--gold); }
+        .partner-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+        .partner-card { padding:28px; border-radius:14px; border:1px solid var(--border); display:flex; gap:16px; align-items:flex-start; }
+        .partner-card:hover { border-color:var(--gold); }
+        .partner-card .pc-icon { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem; font-weight:800; }
+        .partner-card .pc-name { font-size:0.9rem; font-weight:700; color:var(--navy); }
+        .partner-card .pc-desc { font-size:0.65rem; color:var(--text-mid); margin-top:4px; line-height:1.6; }
+        .partner-card .pc-tag { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:50px; background:rgba(253,165,39,0.08); color:var(--gold); font-size:0.5rem; font-weight:600; margin-top:8px; letter-spacing:0.5px; }
+        .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
+        .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
+        .wf-footer-col h4 { font-size:0.6rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
+        .wf-footer-col .item { font-size:0.65rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
+        .wf-footer-col .item:hover { color:rgba(255,255,255,0.5); }
+        .wf-footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+        .wf-footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-footer-col .logo-text { font-size:0.8rem; font-weight:700; color:#fff; }
+        .wf-footer-col .logo-text span { color:var(--gold); }
+        .wf-footer-col .desc { font-size:0.6rem; color:rgba(255,255,255,0.2); line-height:1.6; }
+        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.55rem; color:rgba(255,255,255,0.12); }
+    </style>
+</head>
+<body>
+
+    <!-- API Loader -->
+    <script src="js/api-integration.js"></script>
+<div class="container">
+    <div class="wf-title"><div class="tagline">✦ TUK & Kemitraan</div><h1>Tap Kapital — TUK & Partner</h1><div class="sub">Tempat Uji Kompetensi resmi & mitra strategis</div></div>
+    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div></div></div></div>
+
+    <div class="section" style="padding:0;">
+        <div class="section-label"><span class="num">2</span> HERO</div><div class="section-context">tuk & mitra</div>
+        <div style="background:linear-gradient(135deg,#051530,#0a2647,#1a4a7a); border-radius:16px; padding:48px 40px; color:#fff;">
+            <div style="max-width:700px;">
+                <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(253,165,39,0.12); border:1px solid rgba(253,165,39,0.2); padding:6px 16px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:14px;"><span style="width:6px; height:6px; border-radius:50%; background:var(--gold);"></span> LSPPM · LSPFIT · PROPAMI · AAEI</div>
+                <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:10px;">TUK & <span style="background:linear-gradient(135deg,var(--gold),#ffb74d); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Mitra Resmi</span></h1>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.7;">Tap Kapital ditunjuk langsung sebagai Tempat Uji Kompetensi (TUK) oleh LSPPM dan bermitra dengan LSPFIT, PROPAMI, dan AAEI. Semua sertifikasi diakui OJK dan BNSP.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section"><div class="section-label"><span class="num">3</span> PARTNER</div><div class="section-context">mitra resmi</div>
+        <div class="section-pad">
+            <div class="section-head"><div class="accent-bar"></div><div class="label">Lembaga Mitra</div><h2>Mitra Resmi Tap Kapital</h2></div>
+            <div class="partner-grid">
+                <div class="partner-card"><div class="pc-icon" style="background:rgba(253,165,39,0.08); color:var(--gold);">LSPPM</div><div><div class="pc-name">LSP Pasar Modal (LSPPM)</div><div class="pc-desc">Lembaga Sertifikasi Profesi Pasar Modal — menerbitkan sertifikasi profesi di bidang pasar modal yang diakui OJK. Tap Kapital ditunjuk sebagai TUK resmi LSPPM.</div><span class="pc-tag"><span class="material-symbols-outlined" style="font-size:0.6rem;">verified</span> TUK Resmi</span></div></div>
+                <div class="partner-card"><div class="pc-icon" style="background:rgba(44,76,126,0.08); color:var(--navy-light);">LSPFIT</div><div><div class="pc-name">LSP Fasilitator, Instruktur & Tenaga Kepelatihan</div><div class="pc-desc">Menerbitkan sertifikasi trainer dan tenaga kepelatihan, termasuk TOT KKNI Level 4. Tap Kapital bermitra untuk program sertifikasi instruktur.</div><span class="pc-tag">Sertifikasi Trainer</span></div></div>
+                <div class="partner-card"><div class="pc-icon" style="background:rgba(16,185,129,0.08); color:#10b981;">PROPAMI</div><div><div class="pc-name">PROPAMI</div><div class="pc-desc">Asosiasi profesi pasar modal Indonesia — mendukung standarisasi dan pengembangan profesi di industri pasar modal nasional.</div><span class="pc-tag">Asosiasi Profesi</span></div></div>
+                <div class="partner-card"><div class="pc-icon" style="background:rgba(168,85,247,0.08); color:#a855f7;">AAEI</div><div><div class="pc-name">Asosiasi Analis Efek Indonesia (AAEI)</div><div class="pc-desc">Asosiasi profesi analis efek Indonesia — mendukung program sertifikasi analis efek dan pengembangan kompetensi anggota.</div><span class="pc-tag">Asosiasi Profesi</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section"><div class="section-label"><span class="num">4</span> TUK</div><div class="section-context">tempat uji kompetensi</div>
+        <div class="section-pad">
+            <div class="section-head"><div class="accent-bar"></div><div class="label">Tempat Uji Kompetensi</div><h2>Mengapa TUK Penting?</h2></div>
+            <p style="font-size:0.75rem; color:var(--text-mid); line-height:1.8;">Sebagai TUK (Tempat Uji Kompetensi) resmi yang ditunjuk oleh LSPPM, Tap Kapital memiliki kewenangan untuk menyelenggarakan uji kompetensi bagi calon tenaga profesional pasar modal. Ini berarti peserta tidak perlu mencari tempat uji di lembaga lain — seluruh proses pelatihan dan ujian dapat diselesaikan di Tap Kapital. Sertifikat yang diterbitkan oleh LSPPM melalui TUK Tap Kapital diakui oleh OJK dan BNSP, sehingga berlaku secara nasional.</p>
+        </div>
+    </div>
+
+    <div class="section" style="padding:0;"><div class="section-label"><span class="num">5</span> CTA</div>
+        <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; text-align:center; color:#fff;">
+            <h2 style="font-size:1.5rem; font-weight:800;">Sertifikasi Resmi, Diakui Nasional</h2>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Dapatkan sertifikasi dari LSPPM melalui TUK resmi Tap Kapital.</div>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">chat</span> Konsultasi Via WhatsApp</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.15); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">calendar_month</span> Lihat Program</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding:0;"><div class="section-label"><span class="num">6</span> FOOTER</div>
+        <div class="wf-footer"><div class="wf-footer-grid">
+            <div class="wf-footer-col"><div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div><div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div></div>
+            <div class="wf-footer-col"><h4>Program</h4><div class="item">Manajemen Risiko</div><div class="item">Analis Efek</div><div class="item">Investment Banking</div><div class="item">Lisensi OJK</div><div class="item">Training of Trainer</div></div>
+            <div class="wf-footer-col"><h4>Informasi</h4><div class="item">Tentang Kami</div><div class="item">Jadwal</div><div class="item">Artikel</div><div class="item">FAQ</div></div>
+            <div class="wf-footer-col"><h4>Kontak</h4><div class="item">info@tapkapital.co.id</div><div class="item">0878-7255-5540</div><div class="item">0821-1301-6501</div><div class="item">Wisma GKBI Lt.6, Jakarta</div></div>
+        </div><div class="bottom"><span>© 2026 PT Tap Kapital Indonesia</span><span>✦ ✦ ✦</span></div></div>
+    </div>
+</div>
+</body>
+</html>

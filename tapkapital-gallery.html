@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi — Tap Kapital Indonesia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#f0f4f8; padding:40px; color:#1f2937; }
+        .container { max-width:1100px; margin:0 auto; }
+        .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 350,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+        :root { --navy:#0a2647; --navy-dark:#051530; --navy-light:#2c4c7e; --gold:#fda527; --bg:#fff; --bg-soft:#f0f4f8; --border:#e9ecf0; --text:#1f2937; --text-mid:#4b5563; --focus:#fda527; }
+        :focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
+        .wf-title { text-align:center; margin-bottom:40px; }
+        .wf-title h1 { font-size:1.5rem; color:var(--navy); font-weight:800; }
+        .wf-title .sub { color:var(--text-mid); font-size:0.8rem; }
+        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:12px; }
+        .section { background:var(--bg); border-radius:20px; margin-bottom:28px; border:2px dashed var(--border); position:relative; box-shadow:0 2px 12px rgba(10,38,71,0.06); }
+        .section:hover { border-color:var(--gold); }
+        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.55rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
+        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.5rem; font-weight:800; }
+        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.5rem; padding:4px 12px; border-radius:0 0 0 14px; }
+        .section-pad { padding:44px 32px; }
+        .accent-bar { width:28px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:10px; }
+        .section-head { margin-bottom:28px; }
+        .section-head .label { font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
+        .section-head h2 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px; }
+        .section-head .sub { font-size:0.7rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
+        .wf-header { background:var(--navy); border-radius:14px; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; }
+        .wf-header .logo { display:flex; align-items:center; gap:10px; }
+        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; }
+        .wf-header .logo-text span { color:var(--gold); }
+        .gallery-grid { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:auto auto; gap:10px; }
+        .gallery-item { border-radius:14px; overflow:hidden; position:relative; background:var(--bg-soft); border:1px solid var(--border); aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; cursor:default; transition:all 0.3s; }
+        .gallery-item:hover { border-color:var(--gold); transform:scale(1.01); }
+        .gallery-item.featured { grid-row:1/3; aspect-ratio:auto; min-height:320px; }
+        .gallery-item .g-placeholder { color:rgba(10,38,71,0.06); font-size:2.5rem; }
+        .gallery-item .g-label { position:absolute; bottom:0; left:0; right:0; padding:20px 16px 14px; background:linear-gradient(transparent,rgba(10,38,71,0.7)); color:#fff; font-size:0.7rem; font-weight:600; }
+        .gallery-item .g-label span { font-size:0.55rem; color:rgba(255,255,255,0.5); font-weight:400; display:block; margin-top:2px; }
+        .gallery-item .g-badge { position:absolute; top:10px; left:10px; padding:3px 10px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.5rem; font-weight:700; }
+        .g1 { background:linear-gradient(135deg,#0a2647,#1a4a7a); } .g2 { background:linear-gradient(135deg,#1a3a5c,#2c4c7e); }
+        .g3 { background:linear-gradient(135deg,#0d3360,#0a2647); } .g4 { background:linear-gradient(135deg,#2c4c7e,#4a6a9e); }
+        .g5 { background:linear-gradient(135deg,#051530,#0a2647); } .g6 { background:linear-gradient(135deg,#1a4a7a,#3a6a9e); }
+        .g7 { background:linear-gradient(135deg,#2c1a2e,#4a2a4e); } .g8 { background:linear-gradient(135deg,#1a3a2e,#2a5a3e); }
+        .g9 { background:linear-gradient(135deg,#3a2a1a,#5a3a2a); }
+        .cats { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+        .cat-btn { padding:6px 16px; border-radius:50px; font-size:0.6rem; font-weight:600; border:1px solid var(--border); background:var(--bg); color:var(--text-mid); cursor:default; }
+        .cat-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+        .cat-btn:hover:not(.active) { border-color:var(--gold); color:var(--navy); }
+        .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
+        .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
+        .wf-footer-col h4 { font-size:0.6rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
+        .wf-footer-col .item { font-size:0.65rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
+        .wf-footer-col .item:hover { color:rgba(255,255,255,0.5); }
+        .wf-footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+        .wf-footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-footer-col .logo-text { font-size:0.8rem; font-weight:700; color:#fff; }
+        .wf-footer-col .logo-text span { color:var(--gold); }
+        .wf-footer-col .desc { font-size:0.6rem; color:rgba(255,255,255,0.2); line-height:1.6; }
+        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.55rem; color:rgba(255,255,255,0.12); }
+        @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .gallery-grid{grid-template-columns:1fr 1fr;} .gallery-item.featured{grid-column:1/-1;grid-row:auto;min-height:240px;} .wf-footer-grid{grid-template-columns:1fr 1fr;} }
+    </style>
+</head>
+<body>
+
+    <!-- API Loader -->
+    <script src="js/api-integration.js"></script>
+<div class="container">
+    <div class="wf-title"><div class="tagline">✦ Dokumentasi</div><h1>Tap Kapital — Dokumentasi Kegiatan</h1><div class="sub">Momen pelatihan dan sertifikasi bersama peserta dari berbagai institusi</div></div>
+    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div></div></div></div>
+
+    <div class="section" style="padding:0;">
+        <div class="section-label"><span class="num">2</span> HERO</div><div class="section-context">gallery</div>
+        <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:40px; color:#fff;">
+            <h1 style="font-size:2rem; font-weight:800; letter-spacing:-1px;">Dokumentasi <span style="background:linear-gradient(135deg,var(--gold),#ffb74d); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Pelatihan</span></h1>
+            <p style="font-size:0.8rem; color:rgba(255,255,255,0.55); margin-top:6px; max-width:500px;">Momen pelatihan, ujian sertifikasi, dan kegiatan bersama instruktur & peserta Tap Kapital.</p>
+        </div>
+    </div>
+
+    <div class="section"><div class="section-label"><span class="num">3</span> KATEGORI</div><div class="section-context">filter</div>
+        <div class="section-pad" style="padding:14px 20px;">
+            <div class="cats">
+                <span class="cat-btn active">Semua</span>
+                <span class="cat-btn">Pelatihan Offline</span>
+                <span class="cat-btn">Pelatihan Online</span>
+                <span class="cat-btn">Ujian Sertifikasi</span>
+                <span class="cat-btn">Kegiatan</span>
+                <span class="cat-btn">Foto Bersama</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section"><div class="section-label"><span class="num">4</span> GALLERY</div><div class="section-context">dokumentasi</div>
+        <div class="section-pad">
+            <div class="gallery-grid">
+                <div class="gallery-item featured gallery-gradient-1">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:3rem;">photo_camera</span></div>
+                    <span class="g-badge">✦ Terbaru</span>
+                    <div class="g-label">Pelatihan CRP Batch 1 2026 — Offline Jakarta<span>20 peserta · 12-14 Jan 2026</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-2">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">groups</span></div>
+                    <div class="g-label">Sesi Diskusi Kelompok<span>Manajemen Risiko</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-3">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">school</span></div>
+                    <div class="g-label">Ujian Sertifikasi LSPPM<span>TUK Resmi Tap Kapital</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-4">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">laptop</span></div>
+                    <div class="g-label">Kelas Online via Zoom<span>Peserta dari 15+ kota</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-5">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">celebration</span></div>
+                    <div class="g-label">Foto Bersama Instruktur<span>Sesi CRP & WMI</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-6">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">business</span></div>
+                    <div class="g-label">Kunjungan & Audiensi<span>Mitra & Asosiasi</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-7">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">emoji_events</span></div>
+                    <div class="g-label">Wisuda Sertifikasi<span>Batch CRP & CSA 2025</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-8">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">coffee</span></div>
+                    <div class="g-label">Coffee Break & Networking<span>Sesi Offline Jakarta</span></div>
+                </div>
+                <div class="gallery-item gallery-gradient-9">
+                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">workshops</span></div>
+                    <div class="g-label">Simulasi Ujian<span>Persiapan Lisensi OJK</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding:0;"><div class="section-label"><span class="num">5</span> CTA</div>
+        <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; text-align:center; color:#fff;">
+            <h2 style="font-size:1.5rem; font-weight:800;">Ingin Tahu Suasana Pelatihannya?</h2>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Hubungi kami untuk informasi lebih lanjut atau jadwalkan kunjungan ke TUK Tap Kapital.</div>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">chat</span> Konsultasi Via WhatsApp</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding:0;"><div class="section-label"><span class="num">6</span> FOOTER</div>
+        <div class="wf-footer"><div class="wf-footer-grid">
+            <div class="wf-footer-col"><div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div><div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div></div>
+            <div class="wf-footer-col"><h4>Program</h4><div class="item">Manajemen Risiko</div><div class="item">Analis Efek</div><div class="item">Investment Banking</div><div class="item">Lisensi OJK</div><div class="item">Training of Trainer</div></div>
+            <div class="wf-footer-col"><h4>Informasi</h4><div class="item">Tentang Kami</div><div class="item">Jadwal</div><div class="item">Artikel</div><div class="item">FAQ</div></div>
+            <div class="wf-footer-col"><h4>Kontak</h4><div class="item">info@tapkapital.co.id</div><div class="item">0878-7255-5540</div><div class="item">0821-1301-6501</div><div class="item">Wisma GKBI Lt.6, Jakarta</div></div>
+        </div><div class="bottom"><span>© 2026 PT Tap Kapital Indonesia</span><span>✦ ✦ ✦</span></div></div>
+    </div>
+</div>
+</body>
+</html>

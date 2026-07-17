@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak — Tap Kapital Indonesia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#f0f4f8; padding:40px; color:#1f2937; }
+        .container { max-width:1100px; margin:0 auto; }
+        .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 350,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+        :root { --navy:#0a2647; --navy-dark:#051530; --navy-light:#2c4c7e; --gold:#fda527; --bg:#fff; --bg-soft:#f0f4f8; --border:#e9ecf0; --text:#1f2937; --text-mid:#4b5563; --focus:#fda527; }
+        :focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
+        .wf-title { text-align:center; margin-bottom:40px; }
+        .wf-title h1 { font-size:1.5rem; color:var(--navy); font-weight:800; }
+        .wf-title .sub { color:var(--text-mid); font-size:0.8rem; }
+        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:12px; }
+        .section { background:var(--bg); border-radius:20px; margin-bottom:28px; border:2px dashed var(--border); position:relative; box-shadow:0 2px 12px rgba(10,38,71,0.06); }
+        .section:hover { border-color:var(--gold); }
+        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.55rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
+        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.5rem; font-weight:800; }
+        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.5rem; padding:4px 12px; border-radius:0 0 0 14px; }
+        .section-pad { padding:44px 32px; }
+        .accent-bar { width:28px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:10px; }
+        .section-head { margin-bottom:28px; }
+        .section-head .label { font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
+        .section-head h2 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px; }
+        .wf-header { background:var(--navy); border-radius:14px; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; }
+        .wf-header .logo { display:flex; align-items:center; gap:10px; }
+        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; }
+        .wf-header .logo-text span { color:var(--gold); }
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+        .contact-card { padding:24px; border-radius:14px; border:1px solid var(--border); display:flex; gap:16px; align-items:flex-start; }
+        .contact-card:hover { border-color:var(--gold); }
+        .contact-card .cc-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .contact-card .cc-label { font-size:0.55rem; color:var(--text-mid); letter-spacing:1px; text-transform:uppercase; }
+        .contact-card .cc-value { font-size:0.85rem; font-weight:700; color:var(--navy); margin-top:2px; }
+        .contact-card .cc-desc { font-size:0.65rem; color:var(--text-mid); margin-top:2px; }
+        .contact-card .cc-action { display:inline-flex; align-items:center; gap:4px; margin-top:8px; padding:6px 16px; border-radius:50px; font-size:0.6rem; font-weight:600; cursor:default; }
+        .contact-card .cc-action.gold { background:var(--gold); color:var(--navy-dark); }
+        .contact-card .cc-action.navy { background:var(--navy); color:#fff; }
+        .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
+        .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
+        .wf-footer-col h4 { font-size:0.6rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
+        .wf-footer-col .item { font-size:0.65rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
+        .wf-footer-col .item:hover { color:rgba(255,255,255,0.5); }
+        .wf-footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+        .wf-footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-footer-col .logo-text { font-size:0.8rem; font-weight:700; color:#fff; }
+        .wf-footer-col .logo-text span { color:var(--gold); }
+        .wf-footer-col .desc { font-size:0.6rem; color:rgba(255,255,255,0.2); line-height:1.6; }
+        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.55rem; color:rgba(255,255,255,0.12); }
+    </style>
+</head>
+<body>
+
+    <!-- API Loader -->
+    <script src="js/api-integration.js"></script>
+<div class="container">
+    <div class="wf-title"><div class="tagline">✦ Hubungi Kami</div><h1>Tap Kapital Indonesia — Kontak</h1><div class="sub">Konsultasi gratis — tim kami siap membantu</div></div>
+    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div></div></div></div>
+
+    <div class="section" style="padding:0;">
+        <div class="section-label"><span class="num">2</span> HERO</div><div class="section-context">kontak</div>
+        <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; color:#fff;">
+            <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:10px;">Hubungi <span style="background:linear-gradient(135deg,var(--gold),#ffb74d); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Tap Kapital</span></h1>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.7; max-width:500px;">Tim kami siap membantu Anda — konsultasi program, pendaftaran, atau informasi lainnya. Senin-Jumat, 08:00-17:00 WIB.</p>
+        </div>
+    </div>
+
+    <div class="section"><div class="section-label"><span class="num">3</span> KONTAK</div><div class="section-context">informasi</div>
+        <div class="section-pad">
+            <div class="section-head"><div class="accent-bar"></div><div class="label">Informasi Kontak</div><h2>Hubungi Kami</h2></div>
+            <div class="contact-grid">
+                <div class="contact-card"><div class="cc-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">call</span></div><div><div class="cc-label">Telepon</div><div class="cc-value">0878-7255-5540</div><div class="cc-desc">0821-1301-6501 (Alternatif)</div><span class="cc-action gold"><span class="material-symbols-outlined" style="font-size:0.7rem;">call</span> Hubungi Sekarang</span></div></div>
+                <div class="contact-card"><div class="cc-icon" style="background:rgba(16,185,129,0.08);"><span class="material-symbols-outlined" style="color:#10b981;">chat</span></div><div><div class="cc-label">WhatsApp</div><div class="cc-value">0878-7255-5540</div><div class="cc-desc">Respon cepat — chat langsung dengan tim kami</div><span class="cc-action gold"><span class="material-symbols-outlined" style="font-size:0.7rem;">chat</span> Chat WhatsApp</span></div></div>
+                <div class="contact-card"><div class="cc-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">mail</span></div><div><div class="cc-label">Email</div><div class="cc-value">info@tapkapital.co.id</div><div class="cc-desc">marketing@tapkapital.co.id (Pemasaran)</div><span class="cc-action navy"><span class="material-symbols-outlined" style="font-size:0.7rem;">mail</span> Kirim Email</span></div></div>
+                <div class="contact-card"><div class="cc-icon" style="background:rgba(168,85,247,0.08);"><span class="material-symbols-outlined" style="color:#a855f7;">location_on</span></div><div><div class="cc-label">Kantor</div><div class="cc-value">Wisma GKBI Lt. 6</div><div class="cc-desc">Jl. Jend. Sudirman No.28, Jakarta 10210 — Senin-Jumat, 08:00-17:00</div><span class="cc-action navy"><span class="material-symbols-outlined" style="font-size:0.7rem;">map</span> Lihat Peta</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section"><div class="section-label"><span class="num">4</span> SOSMED</div><div class="section-context">media sosial</div>
+        <div class="section-pad">
+            <div class="section-head"><div class="accent-bar"></div><div class="label">Media Sosial</div><h2>Ikuti Kami</h2></div>
+            <p style="font-size:0.75rem; color:var(--text-mid); line-height:1.8;">Ikuti Tap Kapital di media sosial untuk mendapatkan informasi terbaru seputar jadwal pelatihan, artikel edukasi, dan berita pasar modal.</p>
+            <div style="display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; border:1px solid var(--border); font-size:0.75rem; font-weight:600; color:var(--navy); cursor:default;"><span class="material-symbols-outlined" style="color:#1877f2;">thumb_up</span> Facebook</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; border:1px solid var(--border); font-size:0.75rem; font-weight:600; color:var(--navy); cursor:default;"><span class="material-symbols-outlined" style="color:#e4405f;">photo_camera</span> Instagram</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; border:1px solid var(--border); font-size:0.75rem; font-weight:600; color:var(--navy); cursor:default;"><span class="material-symbols-outlined" style="color:#0a66c2;">business</span> LinkedIn</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:12px; border:1px solid var(--border); font-size:0.75rem; font-weight:600; color:var(--navy); cursor:default;"><span class="material-symbols-outlined" style="color:#ff0000;">smart_display</span> YouTube</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding:0;"><div class="section-label"><span class="num">5</span> CTA</div>
+        <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; text-align:center; color:#fff;">
+            <h2 style="font-size:1.5rem; font-weight:800;">Ada Pertanyaan?</h2>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Tim kami siap membantu Anda — konsultasi gratis via WhatsApp.</div>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">chat</span> Chat WhatsApp</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.15); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">call</span> 0878-7255-5540</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding:0;"><div class="section-label"><span class="num">6</span> FOOTER</div>
+        <div class="wf-footer"><div class="wf-footer-grid">
+            <div class="wf-footer-col"><div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div><div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div></div>
+            <div class="wf-footer-col"><h4>Program</h4><div class="item">Manajemen Risiko</div><div class="item">Analis Efek</div><div class="item">Investment Banking</div><div class="item">Lisensi OJK</div><div class="item">Training of Trainer</div></div>
+            <div class="wf-footer-col"><h4>Informasi</h4><div class="item">Tentang Kami</div><div class="item">Jadwal</div><div class="item">Artikel</div><div class="item">FAQ</div></div>
+            <div class="wf-footer-col"><h4>Kontak</h4><div class="item">info@tapkapital.co.id</div><div class="item">0878-7255-5540</div><div class="item">0821-1301-6501</div><div class="item">Wisma GKBI Lt.6, Jakarta</div></div>
+        </div><div class="bottom"><span>© 2026 PT Tap Kapital Indonesia</span><span>✦ ✦ ✦</span></div></div>
+    </div>
+</div>
+</body>
+</html>
