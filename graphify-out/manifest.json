@@ -1,0 +1,12 @@
+{
+  "js/api-integration.js": {
+    "mtime": 1784287863.552328,
+    "ast_hash": "6dd35b7c3e25debeec42d5b63d3d6914",
+    "semantic_hash": "6dd35b7c3e25debeec42d5b63d3d6914"
+  },
+  "tapkapital-shortcodes.php": {
+    "mtime": 1784289205.0997765,
+    "ast_hash": "02f07a4a74ad14a1cfd0e636a818893d",
+    "semantic_hash": "02f07a4a74ad14a1cfd0e636a818893d"
+  }
+}

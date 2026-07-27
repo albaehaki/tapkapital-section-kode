@@ -1,0 +1,148 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "api-integration.js",
+      "file_type": "code",
+      "source_file": "js/api-integration.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "js_api_integration",
+      "community": 0,
+      "norm_label": "api-integration.js"
+    },
+    {
+      "label": "fetchJSON()",
+      "file_type": "code",
+      "source_file": "js/api-integration.js",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "js_api_integration_fetchjson",
+      "community": 0,
+      "norm_label": "fetchjson()"
+    },
+    {
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "js/api-integration.js",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "js_api_integration_fmt",
+      "community": 0,
+      "norm_label": "fmt()"
+    },
+    {
+      "label": "strip()",
+      "file_type": "code",
+      "source_file": "js/api-integration.js",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "js_api_integration_strip",
+      "community": 0,
+      "norm_label": "strip()"
+    },
+    {
+      "label": "renderProgCard()",
+      "file_type": "code",
+      "source_file": "js/api-integration.js",
+      "source_location": "L120",
+      "_origin": "ast",
+      "id": "js_api_integration_renderprogcard",
+      "community": 1,
+      "norm_label": "renderprogcard()"
+    },
+    {
+      "label": "renderAll()",
+      "file_type": "code",
+      "source_file": "js/api-integration.js",
+      "source_location": "L144",
+      "_origin": "ast",
+      "id": "js_api_integration_renderall",
+      "community": 1,
+      "norm_label": "renderall()"
+    },
+    {
+      "label": "tapkapital-shortcodes.php",
+      "file_type": "code",
+      "source_file": "tapkapital-shortcodes.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tapkapital_shortcodes",
+      "community": 2,
+      "norm_label": "tapkapital-shortcodes.php"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "js/api-integration.js",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "js_api_integration",
+      "target": "js_api_integration_fetchjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "js/api-integration.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "js_api_integration",
+      "target": "js_api_integration_fmt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "js/api-integration.js",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "js_api_integration",
+      "target": "js_api_integration_renderall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "js/api-integration.js",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "js_api_integration",
+      "target": "js_api_integration_renderprogcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "js/api-integration.js",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "js_api_integration",
+      "target": "js_api_integration_strip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "js/api-integration.js",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "js_api_integration_renderall",
+      "target": "js_api_integration_renderprogcard",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "fe907a144e7324e795690af6260bfda997396e13"
+}

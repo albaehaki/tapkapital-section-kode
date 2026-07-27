@@ -1,0 +1,39 @@
+{
+  "communities": {
+    "0": [
+      "js_api_integration",
+      "js_api_integration_fetchjson",
+      "js_api_integration_fmt",
+      "js_api_integration_strip"
+    ],
+    "1": [
+      "js_api_integration_renderall",
+      "js_api_integration_renderprogcard"
+    ],
+    "2": [
+      "tapkapital_shortcodes"
+    ]
+  },
+  "cohesion": {
+    "0": 0.5,
+    "1": 1.0,
+    "2": 1.0
+  },
+  "gods": [
+    {
+      "id": "js_api_integration_renderprogcard",
+      "label": "renderProgCard()",
+      "degree": 2
+    },
+    {
+      "id": "js_api_integration_renderall",
+      "label": "renderAll()",
+      "degree": 2
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

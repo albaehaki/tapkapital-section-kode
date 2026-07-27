@@ -158,11 +158,6 @@ function renderAll(){
     d.querySelectorAll('[data-wp-blog]').forEach(function(el){
         var max = parseInt(el.getAttribute('data-wp-blog'))||6;
         el.innerHTML=posts.slice(0,max).map(function(p,i){return TK.postCard(p,i);}).join('');
-        // Tambah tombol di luar grid
-        var btn = document.createElement('div');
-        btn.style.cssText = 'text-align:center;margin-top:24px;';
-        btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:6px;padding:10px 24px;background:#0a2647;color:#fff;border-radius:10px;font-size:0.7rem;font-weight:600;cursor:pointer;" onclick="window.location.href=\'tapkapital-blog.html\'">Lihat Semua Artikel <span class="material-symbols-outlined" style="font-size:0.8rem;">arrow_forward</span></span>';
-        el.parentNode.insertBefore(btn, el.nextSibling);
     });
 }
 
