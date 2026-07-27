@@ -81,6 +81,17 @@
         .wf-footer-col .logo-text span { color: var(--gold); }
         .wf-footer-col .desc { font-size: 0.6rem; color: rgba(255,255,255,0.2); line-height: 1.6; }
         .wf-footer .bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 24px; padding-top: 16px; display: flex; justify-content: space-between; font-size: 0.55rem; color: rgba(255,255,255,0.12); }
+    
+        /* ─── COPY BUTTON ─── */
+        .copy-btn { position:absolute; bottom:8px; right:8px; z-index:10; display:inline-flex; align-items:center; gap:4px; padding:4px 10px; border-radius:6px; font-size:0.5rem; font-weight:600; letter-spacing:0.3px; background:rgba(10,38,71,0.06); color:var(--text-mid); border:1px solid var(--border); cursor:pointer; transition:all 0.2s; opacity:0; }
+        .section:hover .copy-btn { opacity:1; }
+        .copy-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
+        .copy-btn.copied { background:#10b981; color:#fff; border-color:#10b981; }
+        .copy-btn span.material-symbols-outlined { font-size:0.7rem; }
+        .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--navy-dark); color:#fff; padding:10px 20px; border-radius:10px; font-size:0.7rem; font-weight:500; box-shadow:0 8px 30px rgba(0,0,0,0.2); opacity:0; transition:all 0.3s; z-index:999; display:flex; align-items:center; gap:8px; pointer-events:none; }
+        .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+        .toast span.material-symbols-outlined { font-size:1rem; color:#10b981; }
+
     </style>
 </head>
 <body>
@@ -264,5 +275,106 @@
         </div>
     </div>
 </div>
+    <div class="toast" id="toast"><span class="material-symbols-outlined">check_circle</span> <span id="toastMsg">Copied!</span></div>
+
+<script>
+function addCopyButtons() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section, i) => {
+        if (section.querySelector('.section-context')?.textContent === 'info') return;
+
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+        btn.dataset.index = i;
+
+        const cssBtn = document.createElement('button');
+        cssBtn.className = 'copy-btn';
+        cssBtn.innerHTML = '<span class="material-symbols-outlined">style</span> Copy CSS';
+        cssBtn.style.right = '90px';
+        cssBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const styleTag = document.querySelector('style');
+            const allCss = styleTag ? styleTag.innerHTML : '';
+            const classes = new Set();
+            section.querySelectorAll('[class]').forEach(el => {
+                el.className.split(/\s+/).forEach(c => {
+                    if (c && c !== 'section' && c !== 'section-pad' && c !== 'section-label') classes.add(c);
+                });
+            });
+            const lines = allCss.split(String.fromCharCode(92,110));
+            const sectionCss = lines.filter(l => Array.from(classes).some(c => l.includes(String.fromCharCode(46) + c))).join(String.fromCharCode(92,110));
+            const globalLines = lines.filter(l => l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::'));
+            navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalLines.join(String.fromCharCode(92,110)) + String.fromCharCode(92,110) + sectionCss + String.fromCharCode(92,110) + '</style>').then(() => {
+                cssBtn.classList.add('copied');
+                cssBtn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                setTimeout(() => {
+                    cssBtn.classList.remove('copied');
+                    cssBtn.innerHTML = '<span class="material-symbols-outlined">style</span> Copy CSS';
+                }, 2000);
+            });
+        });
+        section.appendChild(cssBtn);
+
+        const globalBtn = document.createElement('button');
+        globalBtn.className = 'copy-btn';
+        globalBtn.innerHTML = '<span class="material-symbols-outlined">globe</span> Copy CSS Global';
+        globalBtn.style.right = '170px';
+        globalBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const styleTag = document.querySelector('style');
+            const allCss = styleTag ? styleTag.innerHTML : '';
+            const globalCss = allCss.split(String.fromCharCode(92,110)).filter(l => {
+                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.section') || l.includes('.section-pad') || l.includes('.section-label') || l.includes('.num') || l.includes('.copy-btn') || l.includes('.toast') || l.includes('.material-symbols');
+            }).join(String.fromCharCode(92,110));
+            navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalCss + String.fromCharCode(92,110) + '</style>').then(() => {
+                globalBtn.classList.add('copied');
+                globalBtn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                setTimeout(() => {
+                    globalBtn.classList.remove('copied');
+                    globalBtn.innerHTML = '<span class="material-symbols-outlined">globe</span> Copy CSS Global';
+                }, 2000);
+            });
+        });
+        section.appendChild(globalBtn);
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const contentEl = section.querySelector('.section-pad') || section;
+            let html = contentEl.innerHTML;
+            html = html.replace(/<button[^>]*class=\"[^\"]*copy-btn[^\"]*\"[^>]*>.*?<\/button>/gs, '');
+            html = html.replace(/<div[^>]*class=\"[^\"]*section-label[^\"]*\"[^>]*>.*?<\/div>/gs, '');
+            html = html.replace(/<div[^>]*class=\"[^\"]*section-context[^\"]*\"[^>]*>.*?<\/div>/gs, '');
+            const sectionStyle = section.getAttribute('style') || '';
+            const styleAttr = sectionStyle ? String.fromCharCode(32,115,116,121,108,101,61,34) + sectionStyle + String.fromCharCode(34) : '';
+            const sectionClass = section.className.replace('section', '').trim();
+            const classAttr = sectionClass ? String.fromCharCode(32,99,108,97,115,115,61,34) + sectionClass + String.fromCharCode(34) : '';
+            const wrapped = String.fromCharCode(60,100,105,118) + classAttr + styleAttr + String.fromCharCode(62,10) + html.trim() + String.fromCharCode(10,60,47,100,105,118,62);
+            navigator.clipboard.writeText(wrapped).then(() => {
+                btn.classList.add('copied');
+                btn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toastMsg');
+                toastMsg.textContent = 'Section copied!';
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+                }, 2000);
+            }).catch(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">error</span> Failed';
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+                }, 2000);
+            });
+        });
+        section.appendChild(btn);
+    });
+}
+document.addEventListener('DOMContentLoaded', addCopyButtons);
+</script>
+
+
 </body>
 </html>
