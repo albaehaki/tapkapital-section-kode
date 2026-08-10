@@ -16,59 +16,89 @@
         :focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
         .wf-title { text-align:center; margin-bottom:40px; }
         .wf-title h1 { font-size:1.5rem; color:var(--navy); font-weight:800; }
-        .wf-title .sub { color:var(--text-mid); font-size:0.8rem; }
-        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:12px; }
+        .wf-title .sub { color:var(--text-mid); font-size:1.05rem; }
+        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.85rem; color:var(--gold); margin-bottom:12px; }
         .section { background:var(--bg); border-radius:20px; margin-bottom:28px; border:2px dashed var(--border); position:relative; box-shadow:0 2px 12px rgba(10,38,71,0.06); }
         .section:hover { border-color:var(--gold); }
-        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.55rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
-        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.5rem; font-weight:800; }
-        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.5rem; padding:4px 12px; border-radius:0 0 0 14px; }
+        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.90rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
+        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:800; }
+        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.85rem; padding:4px 12px; border-radius:0 0 0 14px; }
         .section-pad { padding:44px 32px; }
         .accent-bar { width:28px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:10px; }
         .section-head { margin-bottom:28px; }
-        .section-head .label { font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
+        .section-head .label { font-size:0.90rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
         .section-head h2 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px; }
-        .section-head .sub { font-size:0.7rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
+        .section-head .sub { font-size:0.90rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
         .wf-header { background:var(--navy); border-radius:14px; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; }
         .wf-header .logo { display:flex; align-items:center; gap:10px; }
-        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
-        .wf-header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; }
+        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.90rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-header .logo-text { font-size:1.10rem; font-weight:700; color:#fff; }
         .wf-header .logo-text span { color:var(--gold); }
         .vm-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
         .vm-card { padding:28px; border-radius:14px; border:1px solid var(--border); }
         .vm-card:hover { border-color:var(--gold); }
         .vm-card .vm-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
-        .vm-card h3 { font-size:0.9rem; font-weight:700; color:var(--navy); }
-        .vm-card p { font-size:0.65rem; color:var(--text-mid); margin-top:6px; line-height:1.6; }
+        .vm-card h3 { font-size:1.15rem; font-weight:700; color:var(--navy); }
+        .vm-card p { font-size:0.85rem; color:var(--text-mid); margin-top:6px; line-height:1.6; }
         .milestone { display:flex; flex-direction:column; gap:10px; }
         .ms-item { display:flex; gap:14px; padding:14px 18px; border-radius:12px; border:1px solid var(--border); align-items:flex-start; }
         .ms-item:hover { border-color:var(--gold); }
-        .ms-item .ms-year { font-size:0.85rem; font-weight:800; color:var(--gold); min-width:60px; }
-        .ms-item .ms-text { font-size:0.7rem; color:var(--text-mid); }
+        .ms-item .ms-year { font-size:1.10rem; font-weight:800; color:var(--gold); min-width:60px; }
+        .ms-item .ms-text { font-size:0.90rem; color:var(--text-mid); }
         .ms-item .ms-text strong { color:var(--navy); }
-        .value-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+        .value-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
         .value-card { text-align:center; padding:20px; border-radius:14px; border:1px solid var(--border); }
         .value-card:hover { border-color:var(--gold); }
         .value-card .v-icon span { font-size:1.5rem; color:var(--gold); }
-        .value-card .v-title { font-size:0.75rem; font-weight:600; color:var(--navy); margin-top:8px; }
-        .value-card .v-desc { font-size:0.6rem; color:var(--text-mid); margin-top:4px; }
+        .value-card .v-title { font-size:0.95rem; font-weight:600; color:var(--navy); margin-top:8px; }
+        .value-card .v-sub { font-size:0.80rem; font-weight:600; color:var(--gold); margin-top:2px; }
+        .value-card .v-desc { font-size:0.80rem; color:var(--text-mid); margin-top:6px; }
         .timeline { display:flex; flex-direction:column; gap:10px; }
         .tl-item { display:flex; gap:14px; align-items:flex-start; padding:14px 18px; border-radius:12px; border:1px solid var(--border); }
         .tl-item:hover { border-color:var(--gold); }
-        .tl-item .tl-num { width:28px; height:28px; border-radius:8px; background:var(--gold); color:var(--navy-dark); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:800; flex-shrink:0; }
-        .tl-item .tl-title { font-size:0.75rem; font-weight:600; color:var(--navy); }
-        .tl-item .tl-desc { font-size:0.65rem; color:var(--text-mid); }
+        .tl-item .tl-num { width:28px; height:28px; border-radius:8px; background:var(--gold); color:var(--navy-dark); display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:800; flex-shrink:0; }
+        .tl-item .tl-title { font-size:0.95rem; font-weight:600; color:var(--navy); }
+        .tl-item .tl-desc { font-size:0.85rem; color:var(--text-mid); }
         .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
         .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
-        .wf-footer-col h4 { font-size:0.6rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
-        .wf-footer-col .item { font-size:0.65rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
+        .wf-footer-col h4 { font-size:0.80rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
+        .wf-footer-col .item { font-size:0.85rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
         .wf-footer-col .item:hover { color:rgba(255,255,255,0.5); }
         .wf-footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
         .wf-footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
-        .wf-footer-col .logo-text { font-size:0.8rem; font-weight:700; color:#fff; }
+        .wf-footer-col .logo-text { font-size:1.05rem; font-weight:700; color:#fff; }
         .wf-footer-col .logo-text span { color:var(--gold); }
-        .wf-footer-col .desc { font-size:0.6rem; color:rgba(255,255,255,0.2); line-height:1.6; }
-        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.55rem; color:rgba(255,255,255,0.12); }
+        .wf-footer-col .desc { font-size:0.80rem; color:rgba(255,255,255,0.2); line-height:1.6; }
+        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.90rem; color:rgba(255,255,255,0.12); }
+        /* ─── ❷ HERO ─── */
+        .wf-hero { background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 16px; padding: 40px 48px; display: flex; align-items: center; color: #fff; min-height: 280px; }
+        .wf-hero-left { flex: 1; max-width: 760px; }
+        .wf-hero-right { display: none; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(253,165,39,0.12); border: 1px solid rgba(253,165,39,0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+        .wf-hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 14px; color: #ffffff; }
+        .wf-hero h1 .glow { color: #FFB800; background: none; -webkit-text-fill-color: unset; }
+        .wf-hero .desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+        .hero-cta { display: flex; gap: 10px; align-items: center; }
+        .hero-cta .primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); padding: 12px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 700; cursor: default; box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
+        .hero-cta .primary span.material-symbols-outlined { font-size: 1rem; }
+        .hero-cta .secondary { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.12); padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; color: rgba(255,255,255,0.7); font-weight: 500; cursor: default; }
+        .hero-cta .secondary span.material-symbols-outlined { font-size: 1rem; color: rgba(255,255,255,0.4); }
+        .hero-visual { position: relative; width: 340px; height: 380px; display: flex; align-items: center; justify-content: center; }
+        .hero-visual .ring { position: absolute; border-radius: 50%; }
+        .hero-visual .ring-1 { width: 320px; height: 320px; border: 1px solid rgba(253,165,39,0.08); }
+        .hero-visual .ring-2 { width: 260px; height: 260px; border: 1px dashed rgba(253,165,39,0.1); }
+        .hero-visual .ring-3 { width: 200px; height: 200px; background: rgba(253,165,39,0.03); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+        .hero-visual .ring-3 span.material-symbols-outlined { font-size: 2rem; color: rgba(253,165,39,0.2); }
+        .hero-visual .ring-3 .hint { font-size: 0.65rem; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+        .hero-floating { position: absolute; z-index: 2; }
+        .hero-floating.tl { top: 5px; right: 30px; }
+        .hero-floating.bl { bottom: 25px; left: -5px; }
+        .hero-floating.br { bottom: 45px; right: -5px; }
+        .hf-card { background: rgba(10,38,71,0.92); backdrop-filter: blur(8px); border: 1px solid rgba(253,165,39,0.08); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; min-width: 155px; }
+        .hf-card span.material-symbols-outlined { font-size: 1rem; }
+        .hf-card .hf-main { font-size: 0.7rem; font-weight: 600; color: #fff; }
+        .hf-card .hf-sub { font-size: 0.90rem; color: rgba(255,255,255,0.35); }
         @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .vm-grid,.value-grid{grid-template-columns:1fr;} .wf-footer-grid{grid-template-columns:1fr 1fr;} }
     
         /* ─── COPY BUTTON ─── */
@@ -89,15 +119,19 @@
     <script src="js/api-integration.js"></script>
 <div class="container">
     <div class="wf-title"><div class="tagline">✦ Profil Perusahaan</div><h1>Tap Kapital Indonesia — Tentang Kami</h1><div class="sub">Sejarah, visi, misi, dan nilai-nilai perusahaan</div></div>
-    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div></div></div></div>
+    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div></div></div></div>
 
+    <!-- ❷ HERO -->
     <div class="section" style="padding:0;">
-        <div class="section-label"><span class="num">2</span> HERO</div><div class="section-context">tentang kami</div>
-        <div style="background:linear-gradient(135deg,#051530,#0a2647,#2c4c7e); border-radius:16px; padding:48px 40px; color:#fff;">
-            <div style="max-width:700px;">
-                <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(253,165,39,0.12); border:1px solid rgba(253,165,39,0.2); padding:6px 16px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:14px;"><span style="width:6px; height:6px; border-radius:50%; background:var(--gold);"></span> PT Tap Kapital Indonesia</div>
-                <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:14px;">Mitra Terpercaya <span style="background:linear-gradient(135deg,var(--gold),#ffb74d); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Sertifikasi Pasar Modal</span></h1>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.7;">PT Tap Kapital Indonesia adalah lembaga pelatihan dan Tempat Uji Kompetensi (TUK) resmi yang ditunjuk langsung oleh LSPPM dan LSPFIT. Kami berkomitmen mencetak tenaga profesional pasar modal yang kompeten dan bersertifikasi nasional.</p>
+        <div class="section-label"><span class="num">2</span> HERO</div>
+        <div class="section-context">tentang kami</div>
+        <div class="wf-hero">
+            <div class="wf-hero-left">
+                <div style="max-width:700px;">
+                    <div class="hero-badge"><span class="dot"></span> PT Tap Kapital Indonesia</div>
+                    <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:14px; color:#ffffff;">Lembaga Pelatihan Profesional &amp; <span style="color:#FFB800;">Pengembangan SDM</span></h1>
+                    <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.7;">PT TAP Kapital Indonesia merupakan Lembaga Pelatihan Profesional yang berfokus pada pengembangan kompetensi sumber daya manusia di berbagai instansi dan industri. Kami berkomitmen untuk membantu perusahaan meningkatkan kualitas Sumber Daya Manusia melalui program pelatihan yang aplikatif, berbasis kebutuhan industri, serta didukung oleh Trainer yang berpengalaman di bidangnya. Sehingga kami berkomitmen untuk memberikan solusi terbaik dan inovatif kepada klien di seluruh Indonesia.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -118,8 +152,15 @@
         <div class="section-pad">
             <div class="section-head"><div class="accent-bar"></div><div class="label">Visi & Misi</div><h2>Arah Perusahaan</h2></div>
             <div class="vm-grid">
-                <div class="vm-card"><div class="vm-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">visibility</span></div><h3>Visi</h3><p>Menjadi lembaga pelatihan dan sertifikasi pasar modal terdepan di Indonesia yang mencetak tenaga profesional berstandar internasional.</p></div>
-                <div class="vm-card"><div class="vm-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">flag</span></div><h3>Misi</h3><p>Menyelenggarakan pelatihan berbasis kompetensi, menjadi TUK resmi terpercaya, dan membuka akses sertifikasi bagi seluruh calon tenaga profesional pasar modal di Indonesia.</p></div>
+                <div class="vm-card"><div class="vm-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">visibility</span></div><h3>Visi</h3><p>Penyedia solusi pelatihan dan pengembangan sumber daya manusia yang terpercaya dan dapat diandalkan.</p></div>
+                <div class="vm-card"><div class="vm-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">flag</span></div><h3>Misi</h3>
+                    <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                        <div style="display:flex; gap:8px; align-items:flex-start;"><span style="color:var(--gold); flex-shrink:0;">•</span><div style="font-size:0.85rem; color:var(--text-mid); line-height:1.5;">Menyediakan Program Pelatihan berkualitas yang relevan dengan kebutuhan industri</div></div>
+                        <div style="display:flex; gap:8px; align-items:flex-start;"><span style="color:var(--gold); flex-shrink:0;">•</span><div style="font-size:0.85rem; color:var(--text-mid); line-height:1.5;">Mendukung peningkatan Kompetensi Profesional melalui Sertifikasi</div></div>
+                        <div style="display:flex; gap:8px; align-items:flex-start;"><span style="color:var(--gold); flex-shrink:0;">•</span><div style="font-size:0.85rem; color:var(--text-mid); line-height:1.5;">Mengintegrasikan teknologi dalam proses pembelajaran</div></div>
+                        <div style="display:flex; gap:8px; align-items:flex-start;"><span style="color:var(--gold); flex-shrink:0;">•</span><div style="font-size:0.85rem; color:var(--text-mid); line-height:1.5;">Menjadi partner strategis perusahaan dalam pengembangan Sumber Daya Manusia</div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -128,37 +169,41 @@
         <div class="section-pad">
             <div class="section-head"><div class="accent-bar"></div><div class="label">Nilai Perusahaan</div><h2>Core Values</h2></div>
             <div class="value-grid">
-                <div class="value-card"><div class="v-icon"><span class="material-symbols-outlined">verified</span></div><div class="v-title">Integritas</div><div class="v-desc">Setiap program dan sertifikasi dijalankan dengan standar tertinggi</div></div>
-                <div class="value-card"><div class="v-icon"><span class="material-symbols-outlined">school</span></div><div class="v-title">Kompetensi</div><div class="v-desc">Kurikulum berbasis standar industri yang relevan</div></div>
-                <div class="value-card"><div class="v-icon"><span class="material-symbols-outlined">handshake</span></div><div class="v-title">Kemitraan</div><div class="v-desc">Bekerja sama dengan LSP, asosiasi, dan institusi terpercaya</div></div>
-                <div class="value-card"><div class="v-icon"><span class="material-symbols-outlined">trending_up</span></div><div class="v-title">Inovasi</div><div class="v-desc">Terus mengembangkan metode pelatihan yang efektif</div></div>
+                <div class="value-card"><div class="v-icon"><span style="font-size:2.2rem; font-weight:800; color:var(--gold);">T</span></div><div class="v-title">Trust</div><div class="v-sub">Kepercayaan adalah Fondasi</div><div class="v-desc">Kami membangun hubungan jangka panjang melalui integritas, transparansi, dan konsistensi dalam memberikan layanan.</div></div>
+                <div class="value-card"><div class="v-icon"><span style="font-size:2.2rem; font-weight:800; color:var(--gold);">A</span></div><div class="v-title">Adaptive</div><div class="v-sub">Relevan dengan Perubahan</div><div class="v-desc">Kami memahami perkembangan industri dan kebutuhan kompetensi yang terus berubah untuk menghadirkan pembelajaran yang relevan.</div></div>
+                <div class="value-card"><div class="v-icon"><span style="font-size:2.2rem; font-weight:800; color:var(--gold);">P</span></div><div class="v-title">Professional</div><div class="v-sub">Kompetensi Tanpa Kompromi</div><div class="v-desc">Kami mengedepankan kualitas trainer, materi, metode, sertifikasi, dan layanan untuk menghasilkan pengalaman belajar yang profesional.</div></div>
             </div>
         </div>
     </div>
 
-    <div class="section"><div class="section-label"><span class="num">6</span> TIM</div><div class="section-context">instruktur</div>
+    <div class="section"><div class="section-label"><span class="num">6</span> TRAINER</div><div class="section-context">expert</div>
         <div class="section-pad">
-            <div class="section-head"><div class="accent-bar"></div><div class="label">Tim Kami</div><h2>Diajar oleh Praktisi Berpengalaman</h2></div>
-            <p style="font-size:0.75rem; color:var(--text-mid); line-height:1.8; margin-bottom:20px;">Instruktur Tap Kapital adalah praktisi aktif di industri pasar modal dengan pengalaman minimal 10 tahun di bidangnya. Mereka berasal dari berbagai institusi terkemuka seperti bank investasi, perusahaan sekuritas, dan manajer investasi. Setiap instruktur telah melalui proses sertifikasi dan memiliki lisensi yang diakui OJK.</p>
-            <div class="tl-item"><div class="tl-num"><span class="material-symbols-outlined" style="font-size:0.8rem;">badge</span></div><div><div class="tl-title">Praktisi Aktif Industri</div><div class="tl-desc">Pengalaman 10+ tahun di pasar modal dan investment banking</div></div></div>
-            <div style="margin-top:10px;" class="tl-item"><div class="tl-num"><span class="material-symbols-outlined" style="font-size:0.8rem;">verified</span></div><div><div class="tl-title">Bersertifikasi & Berlisensi</div><div class="tl-desc">Memiliki lisensi OJK aktif dan sertifikasi profesi terkait</div></div></div>
+            <div class="section-head"><div class="accent-bar"></div><div class="label">Trainer Expert</div><h2>Belajar dari Para Praktisi Profesional</h2></div>
+            <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:20px;">Program Pelatihan TAP Kapital Indonesia didukung oleh Trainer yang merupakan praktisi profesional, konsultan serta akademisi yang memiliki pengalaman luas di bidangnya.</p>
+            <div class="timeline">
+                <div class="tl-item"><div class="tl-num">1</div><div><div class="tl-title">Praktisi Industri Berpengalaman</div><div class="tl-desc">Trainer berasal dari kalangan profesional yang memiliki pengalaman langsung di berbagai institusi.</div></div></div>
+                <div style="margin-top:10px;" class="tl-item"><div class="tl-num">2</div><div><div class="tl-title">Memiliki Sertifikasi Profesional</div><div class="tl-desc">Didukung oleh trainer yang memiliki berbagai sertifikasi profesional yang diakui banyak industri.</div></div></div>
+                <div style="margin-top:10px;" class="tl-item"><div class="tl-num">3</div><div><div class="tl-title">Pengalaman Mengajar di Berbagai Institusi</div><div class="tl-desc">Para trainer telah berpengalaman memberikan pelatihan kepada berbagai perusahaan, lembaga keuangan, serta institusi pemerintahan.</div></div></div>
+                <div style="margin-top:10px;" class="tl-item"><div class="tl-num">4</div><div><div class="tl-title">Materi Pelatihan Berbasis Praktik</div><div class="tl-desc">Pendekatan pembelajaran dirancang agar peserta dapat langsung mengaplikasikan materi pelatihan dalam pekerjaan sehari-hari.</div></div></div>
+                <div style="margin-top:10px;" class="tl-item"><div class="tl-num">5</div><div><div class="tl-title">Metode Pembelajaran Interaktif</div><div class="tl-desc">Pelatihan dikemas dalam bentuk diskusi kasus, studi praktik, serta simulasi yang memperkaya pengalaman belajar peserta.</div></div></div>
+            </div>
         </div>
     </div>
 
     <div class="section" style="padding:0;"><div class="section-label"><span class="num">7</span> CTA</div>
         <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; text-align:center; color:#fff;">
             <h2 style="font-size:1.5rem; font-weight:800;">Mulai Perjalanan Sertifikasi Anda</h2>
-            <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Bergabung dengan 500+ alumni Tap Kapital yang telah tersertifikasi.</div>
+            <div style="font-size:1.05rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Bergabung dengan 500+ alumni Tap Kapital yang telah tersertifikasi.</div>
             <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.75rem; font-weight:600; cursor:default; box-shadow:0 4px 15px rgba(253,165,39,0.3);"><span class="material-symbols-outlined">chat</span> Konsultasi Via WhatsApp</span>
-                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.15); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">calendar_month</span> Lihat Program</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.95rem; font-weight:600; cursor:default; box-shadow:0 4px 15px rgba(253,165,39,0.3);"><span class="material-symbols-outlined">chat</span> Konsultasi Via WhatsApp</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.15); font-size:0.95rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">calendar_month</span> Lihat Program</span>
             </div>
         </div>
     </div>
 
     <div class="section" style="padding:0;"><div class="section-label"><span class="num">8</span> FOOTER</div>
         <div class="wf-footer"><div class="wf-footer-grid">
-            <div class="wf-footer-col"><div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div><div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div></div>
+            <div class="wf-footer-col"><div class="logo-row"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div></div>
             <div class="wf-footer-col"><h4>Program</h4><div class="item">Manajemen Risiko</div><div class="item">Analis Efek</div><div class="item">Investment Banking</div><div class="item">Lisensi OJK</div><div class="item">Training of Trainer</div></div>
             <div class="wf-footer-col"><h4>Informasi</h4><div class="item">Tentang Kami</div><div class="item">Jadwal</div><div class="item">Artikel</div><div class="item">FAQ</div></div>
             <div class="wf-footer-col"><h4>Kontak</h4><div class="item">info@tapkapital.co.id</div><div class="item">0878-7255-5540</div><div class="item">0821-1301-6501</div><div class="item">Wisma GKBI Lt.6, Jakarta</div></div>
@@ -215,7 +260,7 @@ function addCopyButtons() {
             const styleTag = document.querySelector('style');
             const allCss = styleTag ? styleTag.innerHTML : '';
             const globalCss = allCss.split(String.fromCharCode(92,110)).filter(l => {
-                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.section') || l.includes('.section-pad') || l.includes('.section-label') || l.includes('.num') || l.includes('.copy-btn') || l.includes('.toast') || l.includes('.material-symbols');
+                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.accent-bar') || l.includes('.active') || l.includes('.arrow') || l.includes('.auth-name') || l.includes('.auth-role') || l.includes('.author') || l.includes('.avatar') || l.includes('.bar') || l.includes('.bg-gray-50') || l.includes('.bl') || l.includes('.bln') || l.includes('.blog-grid') || l.includes('.border') || l.includes('.border-gray-100') || l.includes('.bottom') || l.includes('.br') || l.includes('.btn') || l.includes('.buttons') || l.includes('.cal-day') || l.includes('.cal-dot') || l.includes('.cal-grid') || l.includes('.cal-header') || l.includes('.cal-legend') || l.includes('.carousel-btn') || l.includes('.carousel-container') || l.includes('.carousel-controls') || l.includes('.carousel-dots') || l.includes('.carousel-fade-left') || l.includes('.carousel-fade-right') || l.includes('.carousel-track') || l.includes('.cat-btn') || l.includes('.cats') || l.includes('.cc-action') || l.includes('.cc-desc') || l.includes('.cc-icon') || l.includes('.cc-label') || l.includes('.cc-value') || l.includes('.contact-card') || l.includes('.contact-grid') || l.includes('.container') || l.includes('.cta-section') || l.includes('.desc') || l.includes('.detail-grid') || l.includes('.dot') || l.includes('.duration-300') || l.includes('.faq-a') || l.includes('.faq-grid') || l.includes('.faq-item') || l.includes('.faq-q') || l.includes('.featured') || l.includes('.fill') || l.includes('.filter-bar') || l.includes('.filter-btn') || l.includes('.footer') || l.includes('.footer-col') || l.includes('.footer-grid') || l.includes('.g') || l.includes('.g-badge') || l.includes('.g-label') || l.includes('.gallery-gradient-1') || l.includes('.gallery-gradient-2') || l.includes('.gallery-gradient-3') || l.includes('.gallery-gradient-4') || l.includes('.gallery-gradient-5') || l.includes('.gallery-gradient-6') || l.includes('.gallery-gradient-7') || l.includes('.gallery-gradient-8') || l.includes('.gallery-gradient-9') || l.includes('.gallery-item') || l.includes('.gallery-grid') || l.includes('.header') || l.includes('.hero-badge') || l.includes('.hero-cta') || l.includes('.hero-floating') || l.includes('.hero-visual') || l.includes('.hf-card') || l.includes('.hf-main') || l.includes('.hf-sub') || l.includes('.img-area') || l.includes('.jadwal-link') || l.includes('.jadwal-list') || l.includes('.jadwal-row') || l.includes('.j-mode') || l.includes('.j-name') || l.includes('.j-tgl') || l.includes('.j-cta') || l.includes('.kat-card') || l.includes('.kat-icon') || l.includes('.kat-name') || l.includes('.kat-sub') || l.includes('.kategori-grid') || l.includes('.label') || l.includes('.logo-mark') || l.includes('.logo-row') || l.includes('.logo-text') || l.includes('.mask-gradient-x') || l.includes('.meta') || l.includes('.meta-item') || l.includes('.milestone') || l.includes('.mobile-toggle') || l.includes('.ms-item') || l.includes('.ms-text') || l.includes('.ms-year') || l.includes('.nav-item') || l.includes('.nav-items') || l.includes('.no-scrollbar') || l.includes('.num') || l.includes('.overlay-badge') || l.includes('.overlay-icon') || l.includes('.p-desc') || l.includes('.p-footer') || l.includes('.p-name') || l.includes('.p-tags') || l.includes('.pc-badge') || l.includes('.pc-body') || l.includes('.pc-cta') || l.includes('.pc-desc') || l.includes('.pc-footer') || l.includes('.pc-img') || l.includes('.pc-name') || l.includes('.pc-price') || l.includes('.pc-tags') || l.includes('.placeholder') || l.includes('.prog-card') || l.includes('.prog-grid') || l.includes('.prog-slide') || l.includes('.q-left') || l.includes('.quote') || l.includes('.ring') || l.includes('.ring-1') || l.includes('.ring-2') || l.includes('.ring-3') || l.includes('.section') || l.includes('.section-context') || l.includes('.section-head') || l.includes('.section-label') || l.includes('.section-pad') || l.includes('.space-y-6') || l.includes('.stat-bar') || l.includes('.stat-bar-fill') || l.includes('.stat-card') || l.includes('.stat-icon') || l.includes('.stats-grid') || l.includes('.sub') || l.includes('.tagline') || l.includes('.testi-dots') || l.includes('.testi-inner') || l.includes('.testi-left') || l.includes('.testi-right') || l.includes('.testi-slide') || l.includes('.testi-wrapper') || l.includes('.timeline') || l.includes('.tl-desc') || l.includes('.tl-item') || l.includes('.tl-num') || l.includes('.tl-title') || l.includes('.toast') || l.includes('.value-card') || l.includes('.value-grid') || l.includes('.v-desc') || l.includes('.v-icon') || l.includes('.v-title') || l.includes('.vm-card') || l.includes('.vm-grid') || l.includes('.wf-arrow') || l.includes('.wf-cta-bottom') || l.includes('.wf-footer') || l.includes('.wf-footer-col') || l.includes('.wf-footer-grid') || l.includes('.wf-header') || l.includes('.wf-hero') || l.includes('.wf-hero-left') || l.includes('.wf-hero-right') || l.includes('.wf-title') || l.includes('.why-card') || l.includes('.why-grid') || l.includes('.w-icon')
             }).join(String.fromCharCode(92,110));
             navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalCss + String.fromCharCode(92,110) + '</style>').then(() => {
                 globalBtn.classList.add('copied');
