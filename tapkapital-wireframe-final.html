@@ -60,6 +60,52 @@
         .wf-header .nav-item { padding: 5px 12px; border-radius: 7px; font-size: 0.65rem; color: rgba(255,255,255,0.55); font-weight: 500; cursor: default; }
         .wf-header .nav-item.active { color: #fff; background: rgba(253,165,39,0.15); border: 1px solid rgba(253,165,39,0.2); }
         .wf-header .nav-item.cta { background: var(--gold); color: var(--navy-dark); font-weight: 700; padding: 5px 16px; border-radius: 7px; display: flex; align-items: center; gap: 4px; }
+        /* ─── NAV & DROPDOWN (1b) ─── */
+        .nav-item { position: relative; }
+        .nav-item .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(10,38,71,0.12);
+            min-width: 230px;
+            padding: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.2s;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-item:hover .dropdown-menu,
+        .nav-item:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-item {
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            cursor: pointer;
+            white-space: nowrap;
+            text-align: left;
+        }
+        .dropdown-item:hover { background: var(--bg-soft); color: var(--navy); }
+        /* ─── MOBILE TOGGLE & NAV (desktop: hamburger hidden, nav penuh) ─── */
+        .mobile-toggle { display: none; }
+        .nav-items { display: flex; flex-wrap: wrap; }
+        @media (max-width: 768px) {
+            .mobile-toggle { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--navy); color: #fff; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+            .nav-items { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 8px; box-shadow: 0 8px 24px rgba(10,38,71,0.12); z-index: 50; }
+            .nav-items.open { display: flex; }
+            .nav-item { width: 100%; }
+            .nav-item .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: var(--bg-soft); min-width: auto; margin: 4px 0 0 8px; }
+        }
         .wf-header .meta { display: flex; align-items: center; gap: 6px; }
         .wf-header .meta-item { font-size: 0.55rem; color: rgba(255,255,255,0.35); padding: 3px 8px; border-radius: 5px; background: rgba(255,255,255,0.05); display: flex; align-items: center; gap: 4px; }
         .wf-header .meta-item span.material-symbols-outlined { font-size: 0.65rem; color: rgba(255,255,255,0.2); }
@@ -102,6 +148,13 @@
         /* ─── ❸ TRUSTED BY (marquee) ─── */
         /* ─── ❹ STATISTIK ─── */
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .kategori-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+        .kat-card { padding:24px 20px; border-radius:14px; border:1px solid var(--border); background:var(--bg); transition:all 0.2s; cursor:pointer; }
+        .kat-card:hover { border-color:var(--gold); transform:translateY(-3px); box-shadow:0 8px 20px rgba(10,38,71,0.08); }
+        .kat-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+        .kat-icon span { font-size:1.3rem; }
+        .kat-name { font-size:0.95rem; font-weight:700; color:var(--navy); line-height:1.3; }
+        .kat-sub { font-size:0.78rem; color:var(--text-mid); margin-top:6px; line-height:1.5; }
         .stat-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px 16px; text-align: center; position: relative; overflow: hidden; }
         .stat-card:hover { border-color: var(--gold); }
         .stat-card .num { font-size: 2rem; font-weight: 800; color: var(--navy); letter-spacing: -1px; }
@@ -220,7 +273,7 @@
         .toast span.material-symbols-outlined { font-size: 1rem; color: #10b981; }
 
         /* ─── ❻ WHY US ─── */
-        .why-grid { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr; gap: 14px; }
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
         .why-card { text-align: center; padding: 28px 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; }
         .why-card:hover { border-color: var(--gold); }
         .why-card.featured { 
@@ -353,6 +406,7 @@
             .wf-hero { flex-direction: column; padding: 28px 20px; }
             .wf-hero-right { display: none; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .kategori-grid { grid-template-columns: repeat(2, 1fr); }
             .why-grid { grid-template-columns: 1fr; }
             .why-card.featured { grid-column: auto; }
             .gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -380,41 +434,78 @@
         <div class="sub">12 section · blog · progress bar · social media · navy + emas</div>
     </div>
 
-    <!-- ❶ HEADER (Courssins style) -->
+    <!-- ❶a HEADER · LOGO (CDN Font Global tertanam di sini) -->
     <div class="section solid">
-        <div class="section-label"><span class="num">1</span> HEADER</div>
-        <div class="section-context">Courssins style</div>
-        <div class="section-pad" style="padding: 14px 18px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 0;">
-                <!-- Left: Logo -->
-                <div style="display:flex; align-items:center; gap:10px;">
-                    <div style="width:32px; height:32px; background:var(--gold); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0, 100% 0, 85% 100%, 0% 100%);">TK</div>
-                    <span style="font-size:1.1rem; font-weight:800; color:var(--navy); letter-spacing:-0.5px;">TAP<span style="color:var(--gold);">KAPITAL</span></span>
-                </div>
-
-                <!-- Center: Nav -->
-                <div style="display:flex; align-items:center; gap:2px;">
-                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:600; color:#fff; background:var(--navy); display:inline-flex; align-items:center; gap:4px; cursor:default;">Beranda <span class="material-symbols-outlined" style="font-size:0.6rem;">arrow_drop_down</span></span>
-                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); display:inline-flex; align-items:center; gap:4px; cursor:default;">Program <span class="material-symbols-outlined" style="font-size:0.6rem;">arrow_drop_down</span></span>
-                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); display:inline-flex; align-items:center; gap:4px; cursor:default;">Tentang <span class="material-symbols-outlined" style="font-size:0.6rem;">arrow_drop_down</span></span>
-                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); cursor:default;">Jadwal</span>
-                    <span style="padding:6px 14px; border-radius:6px; font-size:0.7rem; font-weight:500; color:var(--text-mid); cursor:default;">Informasi</span>
-                </div>
-
-                <!-- Right: Corporate + Login -->
-                <div style="display:flex; align-items:center; gap:12px;">
-                    <span style="font-size:0.65rem; color:var(--text-mid); font-weight:500; cursor:default; display:inline-flex; align-items:center; gap:4px;">
-                        <span class="material-symbols-outlined" style="font-size:0.7rem; color:var(--gold);">business</span> Corporate
-                    </span>
-                    <span style="display:inline-flex; align-items:center; gap:6px; padding:8px 20px; border-radius:50px; background:var(--navy); color:#fff; font-size:0.7rem; font-weight:600; cursor:default;">
-                        <span class="material-symbols-outlined" style="font-size:0.8rem;">login</span> Masuk
-                    </span>
-                </div>
+        <div class="section-label"><span class="num">1a</span> HEADER · LOGO</div>
+        <div class="section-context">Logo + CDN Font Global</div>
+        <div class="section-pad" style="padding:14px 18px;">
+            <!-- CDN Font Global — WAJIB: biar icon Material Symbols & font Outfit muncul di WPBakery -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&display=swap" rel="stylesheet">
+            <!-- Logo -->
+            <div style="display:flex; align-items:center; gap:10px; padding:8px 0;">
+                <img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:34px; width:auto; object-fit:contain; display:block;">
             </div>
-            <!-- Badge -->
-            <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
-                <span style="display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:50px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); font-size:0.55rem; font-weight:600; color:var(--gold);">
-                    <span class="material-symbols-outlined" style="font-size:0.65rem;">verified</span> TUK Resmi LSPPM & LSPFIT 2025
+        </div>
+    </div>
+
+    <!-- ❶b HEADER · NAV -->
+    <div class="section solid">
+        <div class="section-label"><span class="num">1b</span> HEADER · NAV</div>
+        <div class="section-context">Menu Navigasi</div>
+        <div class="section-pad" style="padding:14px 18px;">
+            <!-- Nav -->
+            <div class="mobile-toggle" onclick="this.parentNode.querySelector('.nav-items').classList.toggle('open')">
+                <span class="material-symbols-outlined">menu</span> Menu
+            </div>
+            <div class="nav-items" style="align-items:center; gap:2px; padding:8px 0;">
+                <span class="nav-item active" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:600; color:#fff; background:var(--navy); cursor:default;">Beranda</span>
+                <span class="nav-item" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">
+                    Program <span class="material-symbols-outlined" style="font-size:0.80rem;">arrow_drop_down</span>
+                    <span class="dropdown-menu">
+                        <span class="dropdown-item">Manajemen Risiko</span>
+                        <span class="dropdown-item">Pasar Modal</span>
+                        <span class="dropdown-item">Finance & Accounting</span>
+                        <span class="dropdown-item">Audit & Compliance</span>
+                        <span class="dropdown-item">HR & People Development</span>
+                        <span class="dropdown-item">Digital & Office Productivity</span>
+                        <span class="dropdown-item">Soft Skill & Professional Development</span>
+                    </span>
+                </span>
+                <span class="nav-item" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">
+                    Corporate Training <span class="material-symbols-outlined" style="font-size:0.80rem;">arrow_drop_down</span>
+                    <span class="dropdown-menu">
+                        <span class="dropdown-item">In-House Training</span>
+                        <span class="dropdown-item">Customized Training</span>
+                        <span class="dropdown-item">Corporate Learning</span>
+                    </span>
+                </span>
+                <span class="nav-item" style="padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">Jadwal</span>
+                <span class="nav-item" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">
+                    Tentang <span class="material-symbols-outlined" style="font-size:0.80rem;">arrow_drop_down</span>
+                    <span class="dropdown-menu">
+                        <span class="dropdown-item">Profil Perusahaan</span>
+                        <span class="dropdown-item">Visi & Misi</span>
+                        <span class="dropdown-item">Trainer Expert</span>
+                    </span>
+                </span>
+                <span class="nav-item" style="padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">Insight</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ❶c HEADER · CTA -->
+    <div class="section solid">
+        <div class="section-label"><span class="num">1c</span> HEADER · CTA</div>
+        <div class="section-context">Corporate + Login</div>
+        <div class="section-pad" style="padding:14px 18px;">
+            <!-- Corporate + Login -->
+            <div style="display:flex; align-items:center; gap:12px; padding:8px 0;">
+                <span style="font-size:0.85rem; color:var(--text-mid); font-weight:500; cursor:default; display:inline-flex; align-items:center; gap:4px;">
+                    <span class="material-symbols-outlined" style="font-size:0.90rem; color:var(--gold);">business</span> Corporate
+                </span>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:8px 20px; border-radius:50px; background:var(--navy); color:#fff; font-size:0.90rem; font-weight:600; cursor:default;">
+                    <span class="material-symbols-outlined" style="font-size:1.05rem;">login</span> Masuk
                 </span>
             </div>
         </div>
@@ -428,13 +519,13 @@
         <div class="section-context">split + floating cards</div>
         <div class="wf-hero">
             <div class="wf-hero-left">
-                <div class="hero-badge"><span class="dot"></span> Resmi & Terdaftar OJK</div>
+                <div class="hero-badge"><span class="dot"></span> Lembaga Pelatihan Profesional</div>
                 <h1>
-                    Sertifikasi Pasar Modal<br>
-                    <span class="glow">TUK Resmi</span> & Terpercaya
+                    Pelatihan, Sertifikasi &<br>
+                    <span class="glow">Pengembangan Kompetensi</span> Profesional
                 </h1>
                 <div class="desc">
-                    Satu-satunya TUK yang ditunjuk langsung oleh LSPPM & LSPFIT untuk sertifikasi profesi pasar modal. Online & Offline.
+                    Solusi pengembangan kompetensi untuk individu, profesional, dan organisasi melalui pelatihan, sertifikasi, dan corporate training yang relevan dengan kebutuhan industri.
                 </div>
                 <div class="hero-cta">
                     <span class="primary"><span class="material-symbols-outlined">calendar_month</span> Lihat Jadwal & Daftar</span>
@@ -453,7 +544,7 @@
                         <div class="hf-card"><span class="material-symbols-outlined" style="color:var(--gold);">verified</span><div><div class="hf-main">Diakui OJK</div><div class="hf-sub">Lisensi resmi terdaftar</div></div></div>
                     </div>
                     <div class="hero-floating bl">
-                        <div class="hf-card"><span class="material-symbols-outlined" style="color:#3b82f6;">diversity_3</span><div><div class="hf-main">500+ Alumni</div><div class="hf-sub">Tersebar di 50+ institusi</div></div></div>
+                        <div class="hf-card"><span class="material-symbols-outlined" style="color:#3b82f6;">diversity_3</span><div><div class="hf-main">2500+ Peserta</div><div class="hf-sub">Program pelatihan & sertifikasi</div></div></div>
                     </div>
                     <div class="hero-floating br">
                         <div class="hf-card"><span class="material-symbols-outlined" style="color:#22c55e;">globe</span><div><div class="hf-main">Online & Offline</div><div class="hf-sub">Weekday & Weekend</div></div></div>
@@ -528,26 +619,26 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">badge</span></div>
-                    <div class="num"><span class="g">500</span>+</div>
-                    <div class="lbl">Peserta Tersertifikasi</div>
+                    <div class="num"><span class="g">2500</span>+</div>
+                    <div class="lbl">Peserta Pelatihan</div>
                     <div class="stat-bar"><div class="stat-bar-fill" style="width:85%;"></div></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">school</span></div>
                     <div class="num"><span class="g">20</span>+</div>
-                    <div class="lbl">Program Pelatihan</div>
+                    <div class="lbl">Program Kompetensi</div>
                     <div class="stat-bar"><div class="stat-bar-fill" style="width:70%;"></div></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">trending_up</span></div>
                     <div class="num"><span class="g">96</span>%</div>
-                    <div class="lbl">Tingkat Kelulusan</div>
+                    <div class="lbl">Kepuasan Peserta</div>
                     <div class="stat-bar"><div class="stat-bar-fill" style="width:96%;"></div></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon"><span class="material-symbols-outlined" style="font-size:1.4rem;">handshake</span></div>
-                    <div class="num"><span class="g">50</span>+</div>
-                    <div class="lbl">Mitra Institusi</div>
+                    <div class="num"><span class="g">25</span>+</div>
+                    <div class="lbl">Mitra & Klien</div>
                     <div class="stat-bar"><div class="stat-bar-fill" style="width:60%;"></div></div>
                 </div>
             </div>
@@ -563,33 +654,19 @@
         <div class="section-pad">
             <div class="section-head">
                 <div class="accent-bar"></div>
-                <div class="label">Program Sertifikasi</div>
-                <h2>Pilih Program Sesuai Kebutuhan Anda</h2>
-                <div class="sub">Geser untuk melihat semua program — dari risk management hingga lisensi OJK</div>
+                <div class="label">Program Pelatihan</div>
+                <h2>Pelatihan &amp; Sertifikasi Sesuai Kebutuhan Anda</h2>
+                <div class="sub">Temukan program pelatihan profesional dan sertifikasi kompetensi yang sesuai dengan kebutuhan karier, pekerjaan, dan organisasi Anda.</div>
             </div>
 
-            <div class="carousel-container">
-                <div class="carousel-fade-left"></div>
-                <div class="carousel-fade-right"></div>
-
-                <div class="carousel-track" id="carouselTrack" data-wp-produk="6"></div>
-
-                <div class="carousel-controls">
-                    <button class="carousel-btn" onclick="document.getElementById('carouselTrack').scrollBy({left: -336, behavior: 'smooth'})">
-                        <span class="material-symbols-outlined">chevron_left</span>
-                    </button>
-                    <div class="carousel-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <button class="carousel-btn" onclick="document.getElementById('carouselTrack').scrollBy({left: 336, behavior: 'smooth'})">
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </button>
-                </div>
+            <div class="kategori-grid">
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">security</span></div><div class="kat-name">Manajemen Risiko</div><div class="kat-sub">CRP, CRA, CRO</div></div>
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">monitoring</span></div><div class="kat-name">Pasar Modal</div><div class="kat-sub">CIB, WMI, CFIA, CTA, CSA, WPPE</div></div>
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(16,185,129,0.08);"><span class="material-symbols-outlined" style="color:#10b981;">account_balance</span></div><div class="kat-name">Finance & Accounting</div><div class="kat-sub">Financial Analyst, Modelling, M&A</div></div>
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(168,85,247,0.08);"><span class="material-symbols-outlined" style="color:#a855f7;">fact_check</span></div><div class="kat-name">Audit, Governance & Compliance</div><div class="kat-sub">Kepatuhan, Audit Internal, GRC, APU-PPT</div></div>
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(59,130,246,0.08);"><span class="material-symbols-outlined" style="color:#3b82f6;">groups</span></div><div class="kat-name">HR & People Development</div><div class="kat-sub">Human Capital, L&D, Recruitment</div></div>
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(234,179,8,0.08);"><span class="material-symbols-outlined" style="color:#eab308;">computer</span></div><div class="kat-name">Digital & Office Productivity</div><div class="kat-sub">Excel, AI Productivity, Digital Marketing</div></div>
+                <div class="kat-card"><div class="kat-icon" style="background:rgba(236,72,153,0.08);"><span class="material-symbols-outlined" style="color:#ec4899;">trending_up</span></div><div class="kat-name">Soft Skill & Professional Development</div><div class="kat-sub">TOT, Leadership, Public Speaking, TOT</div></div>
             </div>
 
             <div style="text-align: center; margin-top: 24px;">
@@ -610,24 +687,30 @@
         <div class="section-pad">
             <div class="section-head">
                 <div class="accent-bar"></div>
-                <div class="label">Kenapa Tap Kapital</div>
-                <h2>Kenapa Memilih Kami?</h2>
+                <div class="label">Kenapa Memilih Kami</div>
+                <h2>Mengapa Memilih TAP Kapital Indonesia?</h2>
+                <div class="sub">Kami membantu individu dan organisasi membangun kompetensi melalui program pelatihan dan sertifikasi yang relevan, profesional, dan berorientasi pada kebutuhan industri.</div>
             </div>
             <div class="why-grid">
                 <div class="why-card featured">
                     <div class="w-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">description</span></div>
                     <h3>Kurikulum Berbasis Kompetensi</h3>
-                    <p>Materi disusun mengacu unit kompetensi LSPPM & LSPFIT — langsung siap uji sertifikasi nasional. Proses pembelajaran terstruktur dengan bimbingan instruktur profesional.</p>
+                    <p>Program dirancang untuk membantu peserta membangun kompetensi yang relevan dengan kebutuhan pekerjaan dan industri.</p>
                 </div>
                 <div class="why-card">
-                    <div class="w-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">verified</span></div>
-                    <h3>Mitra Resmi & Terdaftar</h3>
-                    <p>Ditunjuk langsung sebagai TUK resmi oleh LSPPM. Terafiliasi dengan PROPAMI dan AAEI.</p>
+                    <div class="w-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">school</span></div>
+                    <h3>Trainer Berpengalaman</h3>
+                    <p>Belajar bersama instruktur dan praktisi yang memahami kebutuhan profesional dan dunia kerja.</p>
                 </div>
                 <div class="why-card">
                     <div class="w-icon" style="background:rgba(16,185,129,0.08);"><span class="material-symbols-outlined" style="color:#10b981;">schedule</span></div>
-                    <h3>Fleksibel & Terjangkau</h3>
-                    <p>Pilih kelas Online (LMS/Zoom) atau Offline (Jakarta). Tersedia opsi cicilan 2-3 kali.</p>
+                    <h3>Program Fleksibel</h3>
+                    <p>Tersedia pilihan pelatihan online, offline, dan customized training sesuai kebutuhan peserta maupun organisasi.</p>
+                </div>
+                <div class="why-card">
+                    <div class="w-icon" style="background:rgba(168,85,247,0.08);"><span class="material-symbols-outlined" style="color:#a855f7;">handshake</span></div>
+                    <h3>Solusi untuk Individu & Perusahaan</h3>
+                    <p>Mulai dari sertifikasi profesi hingga corporate training dan pengembangan kompetensi organisasi.</p>
                 </div>
             </div>
         </div>
@@ -643,7 +726,8 @@
             <div class="section-head">
                 <div class="accent-bar"></div>
                 <div class="label">Testimonial</div>
-                <h2>Apa Kata Mereka?</h2>
+                <h2>Dipercaya Profesional &amp; Organisasi</h2>
+                <div class="sub">Dipercaya Profesional &amp; Organisasi</div>
             </div>
             <div class="testi-wrapper">
                 <div class="testi-slide active" data-index="0">
@@ -713,29 +797,29 @@
             <div class="section-head">
                 <div class="accent-bar"></div>
                 <div class="label">Dokumentasi</div>
-                <h2>Suasana Pelatihan Tap Kapital</h2>
-                <div class="sub">Momen pelatihan dan sertifikasi bersama peserta dari berbagai institusi — offline & online</div>
+                <h2>Dokumentasi Pelatihan &amp; Kegiatan TAP Kapital Indonesia</h2>
+                <div class="sub">Gallery Dokumentasi Pelatihan Profesional, Sertifikasi Kompetensi, Corporate Training, dan berbagai kegiatan TAP Kapital Indonesia Bersama Peserta, Trainer dan Mitra dari berbagai Industri</div>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item featured gallery-gradient-1">
-                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:3rem;">photo_camera</span></div>
+                    <img src="https://www.tapkapital.co.id/wp-content/uploads/2026/08/tap-kapital-foto-bersama-peserta-pelatihan-2024.jpg" alt="Pelatihan CRP Batch 1 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;">
                     <span class="g-badge">✦ Terbaru</span>
                     <div class="g-label">Pelatihan CRP Batch 1 2026 — Offline Jakarta<span>20 peserta · 12-14 Jan 2026</span></div>
                 </div>
                 <div class="gallery-item gallery-gradient-2">
-                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">groups</span></div>
+                    <img src="https://www.tapkapital.co.id/wp-content/uploads/2026/08/tap-kapital-pelatihan-sesi-kelas-2024-10-08-1.jpg" alt="Sesi Diskusi Kelompok" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;">
                     <div class="g-label">Sesi Diskusi Kelompok<span>Manajemen Risiko</span></div>
                 </div>
                 <div class="gallery-item gallery-gradient-3">
-                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">school</span></div>
+                    <img src="https://www.tapkapital.co.id/wp-content/uploads/2026/08/tap-kapital-foto-bersama-pelatihan-analis-efek-aula-2024-09-03-1.jpg" alt="Ujian Sertifikasi" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;">
                     <div class="g-label">Ujian Sertifikasi<span>LSPPM — TUK Resmi</span></div>
                 </div>
                 <div class="gallery-item gallery-gradient-4">
-                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">laptop</span></div>
+                    <img src="https://www.tapkapital.co.id/wp-content/uploads/2026/08/tap-kapital-pelatihan-analis-efek-sesi-kelas-2024-09-03.jpg" alt="Kelas Online via Zoom" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;">
                     <div class="g-label">Kelas Online via Zoom<span>Peserta dari 15+ kota</span></div>
                 </div>
                 <div class="gallery-item gallery-gradient-5">
-                    <div class="g-placeholder"><span class="material-symbols-outlined" style="font-size:2rem;">celebration</span></div>
+                    <img src="https://www.tapkapital.co.id/wp-content/uploads/2026/08/tap-kapital-foto-bersama-pelatihan-bni-corporate-university-2024-1.jpg" alt="Foto Bersama Instruktur" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;">
                     <div class="g-label">Foto Bersama Instruktur<span>Sesi CRP & WMI</span></div>
                 </div>
             </div>
@@ -845,7 +929,7 @@
         <div class="wf-footer">
             <div class="wf-footer-grid">
                 <div class="wf-footer-col">
-                    <div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div>
+                    <div class="logo-row"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div>
                     <div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div>
                 </div>
                 <div class="wf-footer-col">
