@@ -16,69 +16,104 @@
 
         .section { background:var(--bg); border-radius:20px; margin-bottom:28px; border:2px dashed var(--border); position:relative; box-shadow:0 2px 12px rgba(10,38,71,0.06); transition:all 0.3s; }
         .section:hover { border-color:var(--gold); box-shadow:0 6px 24px rgba(10,38,71,0.1); }
-        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.55rem; font-weight:700; letter-spacing:1.5px; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
-        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.5rem; font-weight:800; }
-        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.5rem; padding:4px 12px; border-radius:0 0 0 14px; font-weight:500; }
+        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.90rem; font-weight:700; letter-spacing:1.5px; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
+        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:800; }
+        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.85rem; padding:4px 12px; border-radius:0 0 0 14px; font-weight:500; }
         .section-pad { padding:44px 32px; }
         .accent-bar { width:28px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:10px; }
         .section-head { margin-bottom:28px; }
-        .section-head .label { font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
+        .section-head .label { font-size:0.90rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
         .section-head h2 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px; }
-        .section-head .sub { font-size:0.7rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
-        .wf-arrow { text-align:center; padding:4px 0 8px; color:var(--text-light); font-size:0.6rem; letter-spacing:3px; }
+        .section-head .sub { font-size:0.90rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
+        .wf-arrow { text-align:center; padding:4px 0 8px; color:var(--text-mid); font-size:0.80rem; letter-spacing:3px; }
 
         .header { background:var(--navy); border-radius:14px; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; }
         .header .logo { display:flex; align-items:center; gap:10px; }
-        .header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
-        .header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; letter-spacing:-0.3px; }
+        .header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.90rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .header .logo-text { font-size:1.10rem; font-weight:700; color:#fff; letter-spacing:-0.3px; }
         .header .logo-text span { color:var(--gold); }
 
         .filter-bar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-        .filter-btn { padding:8px 20px; border-radius:50px; font-size:0.65rem; font-weight:600; border:1px solid var(--border); background:var(--bg); color:var(--text-mid); cursor:default; transition:all 0.2s; }
+        .filter-btn { padding:8px 20px; border-radius:50px; font-size:0.85rem; font-weight:600; border:1px solid var(--border); background:var(--bg); color:var(--text-mid); cursor:default; transition:all 0.2s; }
         .filter-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
         .filter-btn:hover:not(.active) { border-color:var(--gold); color:var(--navy); }
 
         .prog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+        .kategori-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+        .kat-card { display:block; text-decoration:none; padding:24px 20px; border-radius:14px; border:1px solid var(--border); background:var(--bg); transition:all 0.2s; }
+        .kat-card:hover { border-color:var(--gold); transform:translateY(-3px); box-shadow:0 8px 20px rgba(10,38,71,0.08); }
+        .kat-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+        .kat-icon span { font-size:1.3rem; }
+        .kat-name { font-size:0.95rem; font-weight:700; color:var(--navy); line-height:1.3; }
+        .kat-sub { font-size:0.78rem; color:var(--text-mid); margin-top:6px; line-height:1.5; }
         .prog-card { background:var(--bg); border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:all 0.3s; cursor:default; }
         .prog-card:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:0 12px 32px rgba(10,38,71,0.1); }
         .prog-card .pc-img { height:160px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
         .prog-card .pc-img .pc-icon { font-size:2.5rem; color:rgba(255,255,255,0.12); }
-        .prog-card .pc-badge { position:absolute; top:12px; right:12px; background:var(--gold); color:var(--navy-dark); font-size:0.5rem; font-weight:700; padding:3px 10px; border-radius:50px; }
+        .prog-card .pc-badge { position:absolute; top:12px; right:12px; background:var(--gold); color:var(--navy-dark); font-size:0.85rem; font-weight:700; padding:3px 10px; border-radius:50px; }
         .prog-card .pc-body { padding:16px 18px 20px; }
-        .prog-card .pc-name { font-size:0.85rem; font-weight:700; color:var(--navy); }
+        .prog-card .pc-name { font-size:1.10rem; font-weight:700; color:var(--navy); }
         .prog-card .pc-tags { display:flex; gap:4px; flex-wrap:wrap; margin-top:6px; }
-        .prog-card .pc-tags span { font-size:0.5rem; padding:2px 10px; border-radius:50px; background:rgba(253,165,39,0.08); color:var(--gold); font-weight:600; }
-        .prog-card .pc-desc { font-size:0.65rem; color:var(--text-mid); margin-top:8px; line-height:1.5; }
+        .prog-card .pc-tags span { font-size:0.85rem; padding:2px 10px; border-radius:50px; background:rgba(253,165,39,0.08); color:var(--gold); font-weight:600; }
+        .prog-card .pc-desc { font-size:0.85rem; color:var(--text-mid); margin-top:8px; line-height:1.5; }
         .prog-card .pc-footer { margin-top:14px; padding-top:12px; border-top:1px solid var(--bg-soft); display:flex; align-items:center; justify-content:space-between; }
-        .prog-card .pc-price { font-size:0.75rem; font-weight:700; color:var(--navy); }
-        .prog-card .pc-price span { font-size:0.55rem; color:var(--text-mid); font-weight:400; }
-        .prog-card .pc-cta { font-size:0.6rem; color:var(--gold); font-weight:600; display:flex; align-items:center; gap:4px; cursor:default; }
+        .prog-card .pc-price { font-size:0.95rem; font-weight:700; color:var(--navy); }
+        .prog-card .pc-price span { font-size:0.90rem; color:var(--text-mid); font-weight:400; }
+        .prog-card .pc-cta { font-size:0.80rem; color:var(--gold); font-weight:600; display:flex; align-items:center; gap:4px; cursor:default; }
 
         .cta-section { background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; text-align:center; color:#fff; }
-        .cta-section h2 { font-size:1.5rem; font-weight:800; }
-        .cta-section .desc { font-size:0.8rem; color:rgba(255,255,255,0.5); margin:8px 0 24px; }
+        .cta-section h2 { font-size:1.5rem; font-weight:800; color:#fff; }
+        .cta-section .desc { font-size:1.05rem; color:rgba(255,255,255,0.5); margin:8px 0 24px; }
         .cta-section .buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-        .cta-section .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; font-size:0.75rem; font-weight:600; cursor:default; }
+        .cta-section .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; font-size:0.95rem; font-weight:600; cursor:default; }
         .cta-section .btn.p { background:var(--gold); color:var(--navy-dark); box-shadow:0 4px 15px rgba(253,165,39,0.3); }
         .cta-section .btn.s { background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.15); }
 
-        .footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
-        .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
-        .footer-col h4 { font-size:0.6rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
-        .footer-col .item { font-size:0.65rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
-        .footer-col .item:hover { color:rgba(255,255,255,0.5); }
-        .footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
-        .footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:800; color:var(--navy-dark); }
-        .footer-col .logo-text { font-size:0.8rem; font-weight:700; color:#fff; }
-        .footer-col .logo-text span { color:var(--gold); }
-        .footer-col .desc { font-size:0.6rem; color:rgba(255,255,255,0.2); line-height:1.6; }
-        .footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.55rem; color:rgba(255,255,255,0.12); }
+        .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
+        .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
+        .wf-footer-col h4 { font-size:0.80rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
+        .wf-footer-col .item { font-size:0.85rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
+        .wf-footer-col .item:hover { color:rgba(255,255,255,0.5); }
+        .wf-footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+        .wf-footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:800; color:var(--navy-dark); }
+        .wf-footer-col .logo-text { font-size:1.05rem; font-weight:700; color:#fff; }
+        .wf-footer-col .logo-text span { color:var(--gold); }
+        .wf-footer-col .desc { font-size:0.80rem; color:rgba(255,255,255,0.2); line-height:1.6; }
+        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.90rem; color:rgba(255,255,255,0.12); }
 
-        .copy-btn { position:absolute; bottom:10px; right:10px; z-index:10; display:inline-flex; align-items:center; gap:6px; padding:6px 14px; background:var(--navy); color:#fff; border:none; border-radius:8px; font-size:0.6rem; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; transition:all 0.2s; opacity:0.6; }
-        .section:hover .copy-btn { opacity:1; }
-        .copy-btn:hover { background:var(--gold); color:var(--navy-dark); }
+        
+        /* ─── ❷ HERO ─── */
+        .wf-hero { background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 16px; padding: 40px 48px; display: flex; align-items: center; color: #fff; min-height: 280px; }
+        .wf-hero-left { flex: 1; max-width: 760px; }
+        .wf-hero-right { display: none; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(253,165,39,0.12); border: 1px solid rgba(253,165,39,0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+        .wf-hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 14px; color: #ffffff; }
+        .wf-hero h1 .glow { color: #FFB800; background: none; -webkit-text-fill-color: unset; }
+        .wf-hero .desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+        .hero-cta { display: flex; gap: 10px; align-items: center; }
+        .hero-cta .primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); padding: 12px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 700; cursor: default; box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
+        .hero-cta .primary span.material-symbols-outlined { font-size: 1rem; }
+        .hero-cta .secondary { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.12); padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; color: rgba(255,255,255,0.7); font-weight: 500; cursor: default; }
+        .hero-cta .secondary span.material-symbols-outlined { font-size: 1rem; color: rgba(255,255,255,0.4); }
+        .hero-visual { position: relative; width: 340px; height: 380px; display: flex; align-items: center; justify-content: center; }
+        .hero-visual .ring { position: absolute; border-radius: 50%; }
+        .hero-visual .ring-1 { width: 320px; height: 320px; border: 1px solid rgba(253,165,39,0.08); }
+        .hero-visual .ring-2 { width: 260px; height: 260px; border: 1px dashed rgba(253,165,39,0.1); }
+        .hero-visual .ring-3 { width: 200px; height: 200px; background: rgba(253,165,39,0.03); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+        .hero-visual .ring-3 span.material-symbols-outlined { font-size: 2rem; color: rgba(253,165,39,0.2); }
+        .hero-visual .ring-3 .hint { font-size: 0.65rem; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+        .hero-floating { position: absolute; z-index: 2; }
+        .hero-floating.tl { top: 5px; right: 30px; }
+        .hero-floating.bl { bottom: 25px; left: -5px; }
+        .hero-floating.br { bottom: 45px; right: -5px; }
+        .hf-card { background: rgba(10,38,71,0.92); backdrop-filter: blur(8px); border: 1px solid rgba(253,165,39,0.08); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; min-width: 155px; }
+        .hf-card span.material-symbols-outlined { font-size: 1rem; }
+        .hf-card .hf-main { font-size: 0.7rem; font-weight: 600; color: #fff; }
+        .hf-card .hf-sub { font-size: 0.90rem; color: rgba(255,255,255,0.35); }
 
-        @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .prog-grid{grid-template-columns:1fr;} .footer-grid{grid-template-columns:1fr 1fr;} }
+@media (max-width:1024px) { .prog-grid{grid-template-columns:repeat(2,1fr);} }
+        @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .prog-grid{grid-template-columns:1fr;} .wf-footer-grid{grid-template-columns:1fr 1fr;} }
     
         /* ─── COPY BUTTON ─── */
         .copy-btn { position:absolute; bottom:8px; right:8px; z-index:10; display:inline-flex; align-items:center; gap:4px; padding:4px 10px; border-radius:6px; font-size:0.5rem; font-weight:600; letter-spacing:0.3px; background:rgba(10,38,71,0.06); color:var(--text-mid); border:1px solid var(--border); cursor:pointer; transition:all 0.2s; opacity:0; }
@@ -104,28 +139,23 @@
         <div class="section-context">navigasi</div>
         <div class="section-pad" style="padding:14px 18px;">
             <div class="header">
-                <div class="logo">
-                    <div class="logo-mark">TK</div>
-                    <div class="logo-text">TAP<span>KAPITAL</span></div>
-                </div>
+                <div class="logo"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div>
             </div>
         </div>
     </div>
 
     <div class="wf-arrow">▼</div>
 
-    <!-- ❷ HERO -->
-    <div class="section">
+        <!-- ❷ HERO -->
+    <div class="section" style="padding:0;">
         <div class="section-label"><span class="num">2</span> HERO</div>
         <div class="section-context">semua program</div>
-        <div class="section-pad" style="text-align:center;">
-            <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:6px 16px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:12px; font-weight:600;">
-                <span class="material-symbols-outlined" style="font-size:0.7rem;">diamond</span> 15+ Program Sertifikasi
+        <div class="wf-hero">
+            <div class="wf-hero-left">
+                <div class="hero-badge"><span class="dot"></span> 7 Kategori Program</div>
+                <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:14px; color:#ffffff;">Semua Program <span style="color:#FFB800;">Tap Kapital</span></h1>
+                <div class="desc">Jelajahi semua program pelatihan dan sertifikasi Tap Kapital Indonesia dalam 7 kategori kompetensi profesional.</div>
             </div>
-            <h1 style="font-size:1.8rem; font-weight:800; color:var(--navy); letter-spacing:-1px;">Semua Program Tap Kapital</h1>
-            <p style="font-size:0.8rem; color:var(--text-mid); margin-top:6px; max-width:600px; margin-left:auto; margin-right:auto;">
-                Pilih program sertifikasi sesuai kebutuhan Anda — dari Risk Management hingga Lisensi OJK
-            </p>
         </div>
     </div>
 
@@ -138,11 +168,13 @@
         <div class="section-pad" style="padding:16px 20px;">
             <div class="filter-bar">
                 <span class="filter-btn active">Semua</span>
-                <span class="filter-btn">Risk Management</span>
-                <span class="filter-btn">Analis Efek</span>
-                <span class="filter-btn">Investment Banking</span>
-                <span class="filter-btn">Lisensi OJK</span>
-                <span class="filter-btn">TOT</span>
+                <a class="filter-btn" href="manajemen-risiko.html">Manajemen Risiko</a>
+                <a class="filter-btn" href="pasar-modal.html">Pasar Modal</a>
+                <a class="filter-btn" href="finance-accounting.html">Finance & Accounting</a>
+                <a class="filter-btn" href="audit-compliance.html">Audit & Compliance</a>
+                <a class="filter-btn" href="hr-people.html">HR & People Development</a>
+                <a class="filter-btn" href="digital-office.html">Digital & Office Productivity</a>
+                <a class="filter-btn" href="soft-skill.html">Soft Skill</a>
             </div>
         </div>
     </div>
@@ -156,11 +188,19 @@
         <div class="section-pad">
             <div class="section-head">
                 <div class="accent-bar"></div>
-                <div class="label">Program Sertifikasi</div>
-                <h2>Semua Program</h2>
-                <div class="sub">Geser untuk melihat semua program — dari risk management hingga lisensi OJK</div>
+                <div class="label">Kategori Program</div>
+                <h2>Semua Kategori Program</h2>
+                <div class="sub">Pilih kategori untuk melihat semua program pelatihan dan sertifikasi di dalamnya.</div>
             </div>
-            <div class="prog-grid" data-wp-produk="15"></div>
+            <div class="kategori-grid">
+                <a class="kat-card" href="manajemen-risiko.html"><div class="kat-icon" style="background:rgba(253,165,39,0.08);"><span class="material-symbols-outlined" style="color:var(--gold);">security</span></div><div class="kat-name">Manajemen Risiko</div><div class="kat-sub">CRP, CRA, CRO</div></a>
+                <a class="kat-card" href="pasar-modal.html"><div class="kat-icon" style="background:rgba(44,76,126,0.08);"><span class="material-symbols-outlined" style="color:var(--navy-light);">monitoring</span></div><div class="kat-name">Pasar Modal</div><div class="kat-sub">CIB, WMI, CFIA, CTA, CSA</div></a>
+                <a class="kat-card" href="finance-accounting.html"><div class="kat-icon" style="background:rgba(16,185,129,0.08);"><span class="material-symbols-outlined" style="color:#10b981;">account_balance</span></div><div class="kat-name">Finance & Accounting</div><div class="kat-sub">Financial Analyst, M&A, ESG</div></a>
+                <a class="kat-card" href="audit-compliance.html"><div class="kat-icon" style="background:rgba(168,85,247,0.08);"><span class="material-symbols-outlined" style="color:#a855f7;">fact_check</span></div><div class="kat-name">Audit, Governance & Compliance</div><div class="kat-sub">Kepatuhan, GRC, APU-PPT</div></a>
+                <a class="kat-card" href="hr-people.html"><div class="kat-icon" style="background:rgba(59,130,246,0.08);"><span class="material-symbols-outlined" style="color:#3b82f6;">groups</span></div><div class="kat-name">HR & People Development</div><div class="kat-sub">Human Capital, L&D, Recruitment</div></a>
+                <a class="kat-card" href="digital-office.html"><div class="kat-icon" style="background:rgba(234,179,8,0.08);"><span class="material-symbols-outlined" style="color:#eab308;">computer</span></div><div class="kat-name">Digital & Office Productivity</div><div class="kat-sub">Excel, AI Productivity, Digital Marketing</div></a>
+                <a class="kat-card" href="soft-skill.html"><div class="kat-icon" style="background:rgba(236,72,153,0.08);"><span class="material-symbols-outlined" style="color:#ec4899;">trending_up</span></div><div class="kat-name">Soft Skill & Professional Development</div><div class="kat-sub">TOT, Leadership, Public Speaking</div></a>
+            </div>
         </div>
     </div>
 
@@ -186,13 +226,13 @@
     <div class="section" style="padding:0;border:none;background:transparent;box-shadow:none;">
         <div class="section-label"><span class="num">6</span> FOOTER</div>
         <div class="section-context">informasi</div>
-        <div class="footer">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div>
-                    <div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div>
+        <div class="wf-footer">
+            <div class="wf-footer-grid">
+                <div class="wf-footer-col">
+                    <div class="logo-row"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div>
+                    
                 </div>
-                <div class="footer-col">
+                <div class="wf-footer-col">
                     <h4>Program</h4>
                     <div class="item">Manajemen Risiko</div>
                     <div class="item">Analis Efek</div>
@@ -200,14 +240,14 @@
                     <div class="item">Lisensi OJK</div>
                     <div class="item">Training of Trainer</div>
                 </div>
-                <div class="footer-col">
+                <div class="wf-footer-col">
                     <h4>Informasi</h4>
                     <div class="item">Tentang Kami</div>
                     <div class="item">Jadwal</div>
                     <div class="item">Artikel</div>
                     <div class="item">FAQ</div>
                 </div>
-                <div class="footer-col">
+                <div class="wf-footer-col">
                     <h4>Kontak</h4>
                     <div class="item">info@tapkapital.co.id</div>
                     <div class="item">0878-7255-5540</div>
@@ -221,38 +261,6 @@
 
 </div>
 
-<script>
-// ─── COPY BUTTON ───
-function addCopyButtons() {
-    var sections = document.querySelectorAll('.section');
-    sections.forEach(function(section) {
-        var label = section.querySelector('.section-label');
-        if (!label) return;
-        var btn = document.createElement('button');
-        btn.className = 'copy-btn';
-        btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:0.7rem;">content_copy</span> Copy HTML';
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            var contentEl = section.querySelector('.section-pad') || section;
-            var html = contentEl.innerHTML;
-            html = html.replace(/<button[^>]*class="[^"]*copy-btn[^"]*"[^>]*>.*?<\/button>/gs, '');
-            var classAttr = section.className.replace('section', '').trim();
-            var styleAttr = section.getAttribute('style') || '';
-            var cls = classAttr ? ' class="' + classAttr + '"' : '';
-            var sty = styleAttr ? ' style="' + styleAttr + '"' : '';
-            var wrapped = '<div' + cls + sty + '>\n' + html.trim() + '\n</div>';
-            navigator.clipboard.writeText(wrapped).then(function() {
-                btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:0.7rem;">check</span> Copied!';
-                setTimeout(function() {
-                    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:0.7rem;">content_copy</span> Copy HTML';
-                }, 2000);
-            });
-        });
-        section.appendChild(btn);
-    });
-}
-document.addEventListener('DOMContentLoaded', addCopyButtons);
-</script>
     <div class="toast" id="toast"><span class="material-symbols-outlined">check_circle</span> <span id="toastMsg">Copied!</span></div>
 
 <script>
@@ -303,7 +311,7 @@ function addCopyButtons() {
             const styleTag = document.querySelector('style');
             const allCss = styleTag ? styleTag.innerHTML : '';
             const globalCss = allCss.split(String.fromCharCode(92,110)).filter(l => {
-                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.section') || l.includes('.section-pad') || l.includes('.section-label') || l.includes('.num') || l.includes('.copy-btn') || l.includes('.toast') || l.includes('.material-symbols');
+                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.accent-bar') || l.includes('.active') || l.includes('.arrow') || l.includes('.auth-name') || l.includes('.auth-role') || l.includes('.author') || l.includes('.avatar') || l.includes('.bar') || l.includes('.bg-gray-50') || l.includes('.bl') || l.includes('.bln') || l.includes('.blog-grid') || l.includes('.border') || l.includes('.border-gray-100') || l.includes('.bottom') || l.includes('.br') || l.includes('.btn') || l.includes('.buttons') || l.includes('.cal-day') || l.includes('.cal-dot') || l.includes('.cal-grid') || l.includes('.cal-header') || l.includes('.cal-legend') || l.includes('.carousel-btn') || l.includes('.carousel-container') || l.includes('.carousel-controls') || l.includes('.carousel-dots') || l.includes('.carousel-fade-left') || l.includes('.carousel-fade-right') || l.includes('.carousel-track') || l.includes('.cat-btn') || l.includes('.cats') || l.includes('.cc-action') || l.includes('.cc-desc') || l.includes('.cc-icon') || l.includes('.cc-label') || l.includes('.cc-value') || l.includes('.contact-card') || l.includes('.contact-grid') || l.includes('.container') || l.includes('.cta-section') || l.includes('.desc') || l.includes('.detail-grid') || l.includes('.dot') || l.includes('.duration-300') || l.includes('.faq-a') || l.includes('.faq-grid') || l.includes('.faq-item') || l.includes('.faq-q') || l.includes('.featured') || l.includes('.fill') || l.includes('.filter-bar') || l.includes('.filter-btn') || l.includes('.wf-footer') || l.includes('.wf-footer-col') || l.includes('.wf-footer-grid') || l.includes('.g') || l.includes('.g-badge') || l.includes('.g-label') || l.includes('.gallery-gradient-1') || l.includes('.gallery-gradient-2') || l.includes('.gallery-gradient-3') || l.includes('.gallery-gradient-4') || l.includes('.gallery-gradient-5') || l.includes('.gallery-gradient-6') || l.includes('.gallery-gradient-7') || l.includes('.gallery-gradient-8') || l.includes('.gallery-gradient-9') || l.includes('.gallery-grid') || l.includes('.gallery-item') || l.includes('.glow') || l.includes('.gold') || l.includes('.grayscale') || l.includes('.has-event') || l.includes('.header') || l.includes('.hero-badge') || l.includes('.hero-cta') || l.includes('.hero-floating') || l.includes('.hero-visual') || l.includes('.hf-card') || l.includes('.hf-main') || l.includes('.hf-sub') || l.includes('.hint') || l.includes('.ic-desc') || l.includes('.ic-icon') || l.includes('.ic-label') || l.includes('.ic-value') || l.includes('.info-card') || l.includes('.item') || l.includes('.items-center') || l.includes('.items-end') || l.includes('.j-bulan') || l.includes('.j-cta') || l.includes('.j-info') || l.includes('.j-meta') || l.includes('.j-mode') || l.includes('.j-nama') || l.includes('.j-name') || l.includes('.j-tgl') || l.includes('.jadwal-link') || l.includes('.jadwal-list') || l.includes('.jadwal-row') || l.includes('.justify-between') || l.includes('.justify-center') || l.includes('.label') || l.includes('.lbl') || l.includes('.logo') || l.includes('.logo-row') || l.includes('.mask-gradient-x') || l.includes('.material-symbols-outlined') || l.includes('.mb-6') || l.includes('.milestone') || l.includes('.ms-item') || l.includes('.ms-text') || l.includes('.ms-year') || l.includes('.navy') || l.includes('.object-contain') || l.includes('.offline') || l.includes('.online') || l.includes('.opacity-70') || l.includes('.open') || l.includes('.other-month') || l.includes('.p') || l.includes('.page-btn') || l.includes('.pagination') || l.includes('.partner-card') || l.includes('.partner-grid') || l.includes('.pc-benefits') || l.includes('.pc-desc') || l.includes('.pc-icon') || l.includes('.pc-label') || l.includes('.pc-level') || l.includes('.pc-name') || l.includes('.pc-price') || l.includes('.pc-tag') || l.includes('.pc-title') || l.includes('.pc-unit') || l.includes('.pricing-card') || l.includes('.pricing-grid') || l.includes('.primary') || l.includes('.prog-grid') || l.includes('.px-8') || l.includes('.py-6') || l.includes('.q-left') || l.includes('.quote') || l.includes('.ring') || l.includes('.ring-1') || l.includes('.ring-2') || l.includes('.ring-3') || l.includes('.rounded-xl') || l.includes('.s') || l.includes('.secondary') || l.includes('.section-context') || l.includes('.section-head') || l.includes('.sectionClass') || l.includes('.solid') || l.includes('.stat') || l.includes('.stat-bar') || l.includes('.stat-bar-fill') || l.includes('.stat-card') || l.includes('.stat-icon') || l.includes('.stats-grid') || l.includes('.sub') || l.includes('.tagline') || l.includes('.testi-dots') || l.includes('.testi-left') || l.includes('.testi-right') || l.includes('.testi-slide') || l.includes('.testi-wrapper') || l.includes('.tgl') || l.includes('.timeline') || l.includes('.tl') || l.includes('.tl-desc') || l.includes('.tl-item') || l.includes('.tl-num') || l.includes('.tl-title') || l.includes('.transition-all') || l.includes('.v-desc') || l.includes('.v-icon') || l.includes('.v-title') || l.includes('.value-card') || l.includes('.value-grid') || l.includes('.vm-card') || l.includes('.vm-grid') || l.includes('.vm-icon') || l.includes('.wf-arrow') || l.includes('.wf-cta-bottom') || l.includes('.wf-footer') || l.includes('.wf-footer-col') || l.includes('.wf-footer-grid') || l.includes('.wf-header') || l.includes('.wf-hero') || l.includes('.wf-hero-left') || l.includes('.wf-hero-right') || l.includes('.wf-title') || l.includes('.why-card') || l.includes('.why-grid');
             }).join(String.fromCharCode(92,110));
             navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalCss + String.fromCharCode(92,110) + '</style>').then(() => {
                 globalBtn.classList.add('copied');
@@ -319,7 +327,12 @@ function addCopyButtons() {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
             const contentEl = section.querySelector('.section-pad') || section;
+            // Dynamic section: kosongkan container data-wp-produk agar yang di-copy = container kosong + script inline
+            const dynEl = section.querySelector('[data-wp-produk]');
+            const dynHtml = dynEl ? dynEl.innerHTML : '';
+            if (dynEl) dynEl.innerHTML = '';
             let html = contentEl.innerHTML;
+            if (dynEl) dynEl.innerHTML = dynHtml;
             html = html.replace(/<button[^>]*class=\"[^\"]*copy-btn[^\"]*\"[^>]*>.*?<\/button>/gs, '');
             html = html.replace(/<div[^>]*class=\"[^\"]*section-label[^\"]*\"[^>]*>.*?<\/div>/gs, '');
             html = html.replace(/<div[^>]*class=\"[^\"]*section-context[^\"]*\"[^>]*>.*?<\/div>/gs, '');

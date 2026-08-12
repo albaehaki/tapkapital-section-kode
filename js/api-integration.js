@@ -28,6 +28,17 @@ var WC_PRODS = [
     {n:"Pengelolaan Investasi",p:"Hubungi kami",tags:["Mandatory OJK"],desc:"Program mandatory OJK untuk profesi pengelolaan investasi.",icon:"verified",img:""}
 ];
 
+// ─── KEYWORD PER KATEGORI (untuk halaman kategori) ───
+var KAT_KEYWORDS = {
+    'manajemen-risiko': ['manajemen risiko','risk officer','crp','risk','executive'],
+    'pasar-modal': ['analis efek','investment banking','lisensi ojk','cfia','teknikal','cib','csa','cta','wmi','wppe','wpee','mandatory ojk','pengelolaan investasi','rta','investasi','wakil'],
+    'finance-accounting': ['financial','finance','keuangan','modelling','merger','esg','akuisisi'],
+    'audit-compliance': ['audit','governance','compliance','kepatuhan','grc','corporate secretary','apu','ppt','k3','perlindungan konsumen'],
+    'hr-people': ['human capital','recruitment','learning & development','hr','people','industrial','hc ','hc officer','hc supervisor','hc manager'],
+    'digital-office': ['digital','excel','data analyst','presentation','productivity','collaboration','marketing'],
+    'soft-skill': ['tot','leadership','communication','public speaking','resilience','agile','emotional','service excellent','problem solving','trainer','presentation']
+};
+
 var FALLBACK_POSTS = [
     {t:"Panduan Lengkap Sertifikasi WMI untuk Pemula",d:"2026-06-05",e:"Pelajari langkah-langkah, biaya, dan tips lulus ujian WMI.",c:"Karir"},
     {t:"Perbedaan CSA Level 1, 2, dan 3",d:"2026-05-28",e:"Membandingkan ketiga level sertifikasi CSA.",c:"Edukasi"},
@@ -125,7 +136,7 @@ function renderProgCard(p, i) {
     var desc = p.desc||'';
     var icon = p.icon||'school';
     var badge = i===0?'Unggulan':'';
-    var gradients = ['0a2647,1a4a7a','1a3a5c,2c4c7e','0d3360,0a2647','2c4c7e,4a6a9e','051530,0a2647','1a4a7a,3a6a9e','2c1a2e,4a2a4e','1a3a2e,2a5a3e','3a2a1a,5a3a2a','0a2647,1a4a7a','1a3a5c,2c4c7e','0d3360,0a2647','2c4c7e,4a6a9e','051530,0a2647','1a4a7a,3a6a9e'];
+    var gradients = ['#0a2647,#1a4a7a','#1a3a5c,#2c4c7e','#0d3360,#0a2647','#2c4c7e,#4a6a9e','#051530,#0a2647','#1a4a7a,#3a6a9e','#2c1a2e,#4a2a4e','#1a3a2e,#2a5a3e','#3a2a1a,#5a3a2a','#0a2647,#1a4a7a','#1a3a5c,#2c4c7e','#0d3360,#0a2647','#2c4c7e,#4a6a9e','#051530,#0a2647','#1a4a7a,#3a6a9e'];
     var img = p.img||'';
     var icons = {'shield':'diamond','finance':'bar_chart','account_balance':'account_balance','trending_up':'trending_up','assignment':'assignment','groups':'groups','school':'school','verified':'verified'};
     var ic = icons[icon]||'school';
@@ -151,6 +162,23 @@ function renderAll(){
             el.innerHTML=WC_PRODS.slice(0,max).map(function(p,i){return renderProgCard(p,i);}).join('');
         } else {
             el.innerHTML=WC_PRODS.slice(0,max).map(function(p,i){return TK.prodCard(p,i);}).join('');
+        }
+    });
+    // Kategori — untuk halaman per kategori (filter WC_PRODS by keyword)
+    d.querySelectorAll('[data-wp-kategori]').forEach(function(el){
+        var kat = (el.getAttribute('data-wp-kategori')||'').toLowerCase();
+        var kws = KAT_KEYWORDS[kat] || [];
+        var prods = WC_PRODS.filter(function(p){
+            var hay = (p.n+' '+(p.tags||[]).join(' ')).toLowerCase();
+            return kws.some(function(k){ return hay.indexOf(k)>=0; });
+        });
+        if(prods.length===0){
+            el.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:50px 20px;">'+
+                '<span class="material-symbols-outlined" style="font-size:2.6rem;color:#9ca3af;">upcoming</span>'+
+                '<p style="color:#4b5563;font-size:0.95rem;margin-top:10px;font-weight:600;">Program Segera Hadir</p>'+
+                '<p style="color:#9ca3af;font-size:0.8rem;margin-top:4px;">Kami sedang menyiapkan program untuk kategori ini. Pantau terus ya!</p></div>';
+        } else {
+            el.innerHTML=prods.map(function(p,i){return renderProgCard(p,i);}).join('');
         }
     });
     // Blog — fallback, background fetch
