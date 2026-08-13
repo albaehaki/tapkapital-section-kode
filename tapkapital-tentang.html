@@ -11,6 +11,9 @@
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family:'Inter',sans-serif; background:#f0f4f8; padding:40px; color:#1f2937; }
         .container { max-width:1100px; margin:0 auto; }
+        /* ═══════════════════════════════════════════ */
+        /*  GLOBAL · DASAR (variabel, title, section)   */
+        /* ═══════════════════════════════════════════ */
         .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 350,'GRAD' 0,'opsz' 24; vertical-align:middle; }
         :root { --navy:#0a2647; --navy-dark:#051530; --navy-light:#2c4c7e; --gold:#fda527; --bg:#fff; --bg-soft:#f0f4f8; --border:#e9ecf0; --text:#1f2937; --text-mid:#4b5563; --focus:#fda527; }
         :focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
@@ -34,18 +37,27 @@
         .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.90rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
         .wf-header .logo-text { font-size:1.10rem; font-weight:700; color:#fff; }
         .wf-header .logo-text span { color:var(--gold); }
+        /* ═══════════════════════════════════════════ */
+        /*  ❺ VISI & MISI (vm grid)                     */
+        /* ═══════════════════════════════════════════ */
         .vm-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
         .vm-card { padding:28px; border-radius:14px; border:1px solid var(--border); }
         .vm-card:hover { border-color:var(--gold); }
         .vm-card .vm-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
         .vm-card h3 { font-size:1.15rem; font-weight:700; color:var(--navy); }
         .vm-card p { font-size:0.85rem; color:var(--text-mid); margin-top:6px; line-height:1.6; }
+        /* ═══════════════════════════════════════════ */
+        /*  ❸ SEJARAH · MILESTONE (perjalanan)          */
+        /* ═══════════════════════════════════════════ */
         .milestone { display:flex; flex-direction:column; gap:10px; }
         .ms-item { display:flex; gap:14px; padding:14px 18px; border-radius:12px; border:1px solid var(--border); align-items:flex-start; }
         .ms-item:hover { border-color:var(--gold); }
         .ms-item .ms-year { font-size:1.10rem; font-weight:800; color:var(--gold); min-width:60px; }
         .ms-item .ms-text { font-size:0.90rem; color:var(--text-mid); }
         .ms-item .ms-text strong { color:var(--navy); }
+        /* ═══════════════════════════════════════════ */
+        /*  ⓮ CORE VALUES · T-A-P (value grid)          */
+        /* ═══════════════════════════════════════════ */
         .value-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
         .value-card { text-align:center; padding:20px; border-radius:14px; border:1px solid var(--border); }
         .value-card:hover { border-color:var(--gold); }
@@ -53,12 +65,18 @@
         .value-card .v-title { font-size:0.95rem; font-weight:600; color:var(--navy); margin-top:8px; }
         .value-card .v-sub { font-size:0.80rem; font-weight:600; color:var(--gold); margin-top:2px; }
         .value-card .v-desc { font-size:0.80rem; color:var(--text-mid); margin-top:6px; }
+        /* ═══════════════════════════════════════════ */
+        /*  ⓯ TIMELINE / JALUR PERUSAHAAN               */
+        /* ═══════════════════════════════════════════ */
         .timeline { display:flex; flex-direction:column; gap:10px; }
         .tl-item { display:flex; gap:14px; align-items:flex-start; padding:14px 18px; border-radius:12px; border:1px solid var(--border); }
         .tl-item:hover { border-color:var(--gold); }
         .tl-item .tl-num { width:28px; height:28px; border-radius:8px; background:var(--gold); color:var(--navy-dark); display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:800; flex-shrink:0; }
         .tl-item .tl-title { font-size:0.95rem; font-weight:600; color:var(--navy); }
         .tl-item .tl-desc { font-size:0.85rem; color:var(--text-mid); }
+        /* ═══════════════════════════════════════════ */
+        /*  ⓬ FOOTER                                    */
+        /* ═══════════════════════════════════════════ */
         .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
         .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
         .wf-footer-col h4 { font-size:0.80rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
@@ -70,7 +88,9 @@
         .wf-footer-col .logo-text span { color:var(--gold); }
         .wf-footer-col .desc { font-size:0.80rem; color:rgba(255,255,255,0.2); line-height:1.6; }
         .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.90rem; color:rgba(255,255,255,0.12); }
-        /* ─── ❷ HERO ─── */
+        /* ═══════════════════════════════════════════ */
+        /*  ❷ HERO                                       */
+        /* ═══════════════════════════════════════════ */
         .wf-hero { background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 16px; padding: 40px 48px; display: flex; align-items: center; color: #fff; min-height: 280px; }
         .wf-hero-left { flex: 1; max-width: 760px; }
         .wf-hero-right { display: none; }
@@ -99,9 +119,10 @@
         .hf-card span.material-symbols-outlined { font-size: 1rem; }
         .hf-card .hf-main { font-size: 0.7rem; font-weight: 600; color: #fff; }
         .hf-card .hf-sub { font-size: 0.90rem; color: rgba(255,255,255,0.35); }
+        /* ─── GLOBAL · RESPONSIVE (mobile) ─── */
         @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .vm-grid,.value-grid{grid-template-columns:1fr;} .wf-footer-grid{grid-template-columns:1fr 1fr;} }
-    
-        /* ─── COPY BUTTON ─── */
+
+        /* ─── TOOLS · COPY BUTTON ─── */
         .copy-btn { position:absolute; bottom:8px; right:8px; z-index:10; display:inline-flex; align-items:center; gap:4px; padding:4px 10px; border-radius:6px; font-size:0.5rem; font-weight:600; letter-spacing:0.3px; background:rgba(10,38,71,0.06); color:var(--text-mid); border:1px solid var(--border); cursor:pointer; transition:all 0.2s; opacity:0; }
         .section:hover .copy-btn { opacity:1; }
         .copy-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }

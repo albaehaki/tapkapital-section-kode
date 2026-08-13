@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Verifikasi — Tap Kapital Indonesia</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+body { background:#f0f4f8; padding:30px 20px; color:#1f2937; }
+.container { max-width:860px; margin:0 auto; }
+h1 { font-size:1.6rem; color:#0a2647; text-align:center; margin-bottom:4px; }
+.sub { text-align:center; color:#4b5563; font-size:0.9rem; margin-bottom:24px; }
+.progress-wrap { background:#fff; border-radius:12px; padding:16px 20px; margin-bottom:24px; box-shadow:0 2px 10px rgba(10,38,71,0.06); position:sticky; top:10px; z-index:10; }
+.progress-bar-bg { background:#e5e7eb; border-radius:50px; height:12px; overflow:hidden; }
+.progress-fill { background:linear-gradient(90deg,#fda527,#0a2647); height:100%; width:0%; transition:width .3s; border-radius:50px; }
+.progress-txt { margin-top:8px; font-size:0.85rem; color:#0a2647; font-weight:600; text-align:center; }
+.panel { background:#fff; border-radius:14px; margin-bottom:20px; box-shadow:0 2px 10px rgba(10,38,71,0.06); overflow:hidden; }
+.panel-head { background:#0a2647; color:#fff; padding:14px 20px; font-weight:700; font-size:1.05rem; display:flex; justify-content:space-between; align-items:center; }
+.panel-head .pct { background:#fda527; color:#0a2647; border-radius:50px; padding:2px 10px; font-size:0.75rem; font-weight:700; }
+.panel-body { padding:10px 20px 16px; }
+.item { display:flex; gap:12px; align-items:flex-start; padding:10px 0; border-bottom:1px solid #f3f4f6; cursor:pointer; }
+.item:last-child { border-bottom:none; }
+.item input { width:20px; height:20px; margin-top:2px; accent-color:#fda527; flex-shrink:0; cursor:pointer; }
+.item .label { font-size:0.92rem; line-height:1.5; color:#374151; }
+.item .label b { color:#0a2647; }
+.item.checked .label { color:#9ca3af; text-decoration:line-through; }
+.item .hint { display:block; font-size:0.78rem; color:#9ca3af; margin-top:2px; }
+.reset { display:block; margin:24px auto; padding:10px 24px; border:none; border-radius:8px; background:#ef4444; color:#fff; font-weight:600; cursor:pointer; }
+.reset:hover { background:#dc2626; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📋 Checklist Verifikasi</h1>
+  <div class="sub">Centang satu-satu setelah kamu cek di halaman website. Progress otomatis tersimpan.</div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar-bg"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-txt" id="progTxt">0 / 0 dicentang</div>
+  </div>
+
+  <!-- PANEL TENTANG -->
+  <div class="panel">
+    <div class="panel-head"><span>📄 Panel Tentang</span><span class="pct" id="pct0">0%</span></div>
+    <div class="panel-body">
+      <label class="item" data-k="t1"><input type="checkbox"><span class="label"><b>About Perusahaan</b> — Lembaga Pelatihan Profesional, pengembangan kompetensi SDM, pelatihan aplikatif & berbasis kebutuhan industri, didukung Trainer berpengalaman, solusi terbaik & inovatif untuk klien seluruh Indonesia</span></label>
+      <label class="item" data-k="t2"><input type="checkbox"><span class="label"><b>Misi (4 poin)</b> — Program berkualitas relevan industri, dukung kompetensi via sertifikasi, integrasi teknologi, partner strategis pengembangan SDM</span></label>
+      <label class="item" data-k="t3"><input type="checkbox"><span class="label"><b>Visi</b> — Penyedia solusi pelatihan & pengembangan SDM yang terpercaya dan dapat diandalkan</span></label>
+      <label class="item" data-k="t4"><input type="checkbox"><span class="label"><b>Trainer Expert</b> — 5 poin: Praktisi Industri, Sertifikasi Profesional, Pengalaman Mengajar, Materi Berbasis Praktik, Metode Interaktif</span></label>
+      <label class="item" data-k="t5"><input type="checkbox"><span class="label"><b>Core Values T-A-P</b> — Trust (Kepercayaan Fondasi), Adaptive (Relevan Perubahan), Professional (Kompetensi Tanpa Kompromi)</span></label>
+    </div>
+  </div>
+
+  <!-- PANEL HUBUNGI KAMI -->
+  <div class="panel">
+    <div class="panel-head"><span>📞 Panel Hubungi Kami</span><span class="pct" id="pct1">0%</span></div>
+    <div class="panel-body">
+      <label class="item" data-k="h1"><input type="checkbox"><span class="label"><b>Telepon</b> — +62 21-38820552</span></label>
+      <label class="item" data-k="h2"><input type="checkbox"><span class="label"><b>WhatsApp</b> — 0821-1301-6501 atau 0878-7255-5540</span></label>
+      <label class="item" data-k="h3"><input type="checkbox"><span class="label"><b>Email</b> — marketing@tapkapital.co.id</span></label>
+      <label class="item" data-k="h4"><input type="checkbox"><span class="label"><b>Alamat</b> — Wisma GKBI</span></label>
+      <label class="item" data-k="h5"><input type="checkbox"><span class="label"><b>Media Sosial</b> — logo FB, IG, LinkedIn, YouTube</span></label>
+    </div>
+  </div>
+
+  <!-- PANEL GALLERY DOKUMENTASI -->
+  <div class="panel">
+    <div class="panel-head"><span>🖼 Panel Gallery Dokumentasi</span><span class="pct" id="pct2">0%</span></div>
+    <div class="panel-body">
+      <label class="item" data-k="g1"><input type="checkbox"><span class="label"><b>Headline</b> — "Dokumentasi Pelatihan & Kegiatan TAP Kapital Indonesia"</span></label>
+      <label class="item" data-k="g2"><input type="checkbox"><span class="label"><b>Sub</b> — "Gallery Dokumentasi Pelatihan Profesional, Sertifikasi Kompetensi, Corporate Training... Bersama Peserta, Trainer dan Mitra dari berbagai Industri"</span></label>
+      <label class="item" data-k="g3"><input type="checkbox"><span class="label"><b>Gambar dijelaskan</b> — tiap dokumentasi ada keterangan pelatihan apa</span></label>
+    </div>
+  </div>
+
+  <!-- PANEL BERANDA -->
+  <div class="panel">
+    <div class="panel-head"><span>🏠 Panel Beranda</span><span class="pct" id="pct3">0%</span></div>
+    <div class="panel-body">
+      <label class="item" data-k="b1"><input type="checkbox"><span class="label"><b>Judul</b> — "Pelatihan, Sertifikasi & Pengembangan Kompetensi Profesional"</span></label>
+      <label class="item" data-k="b2"><input type="checkbox"><span class="label"><b>Sub Judul</b> — "Solusi pengembangan kompetensi untuk individu, profesional, dan organisasi..."</span></label>
+      <label class="item" data-k="b3"><input type="checkbox"><span class="label"><b>Statistik</b> — 2500+ Peserta, 20+ Program Kompetensi, 96% Kepuasan, 25+ Mitra & Klien</span></label>
+      <label class="item" data-k="b4"><input type="checkbox"><span class="label"><b>Menu</b> — Beranda, Program Pelatihan, Corporate Training (In-House/Customized/Corporate Learning), Jadwal, Tentang Kami, Insight</span></label>
+      <label class="item" data-k="b5"><input type="checkbox"><span class="label"><b>Heading Program</b> — "Pelatihan & Sertifikasi Sesuai Kebutuhan Anda" + sub "Temukan program..."</span></label>
+      <label class="item" data-k="b6"><input type="checkbox"><span class="label"><b>Tampilkan Kategori saja</b> — Manajemen Risiko, Pasar Modal, Finance & Accounting, Audit/Governance/Compliance, HR, Digital, Soft Skill (7 kategori)</span></label>
+      <label class="item" data-k="b7"><input type="checkbox"><span class="label"><b>Mengapa Memilih TAP Kapital Indonesia?</b> + sub brief</span></label>
+      <label class="item" data-k="b8"><input type="checkbox"><span class="label"><b>4 Values</b> — Kurikulum Berbasis Kompetensi, Trainer Berpengalaman, Program Fleksibel, Solusi untuk Individu & Perusahaan</span></label>
+      <label class="item" data-k="b9"><input type="checkbox"><span class="label"><b>Testimonial</b> — Headline & Sub "Dipercaya Profesional & Organisasi"</span></label>
+      <label class="item" data-k="b10"><input type="checkbox"><span class="label"><b>Dokumentasi</b> — Headline & Sub sesuai brief</span></label>
+      <label class="item" data-k="b11"><input type="checkbox"><span class="label"><b>Isi Program (7 kategori)</b> — Pasar Modal, Finance, Manajemen Risiko, Audit, HR, Digital, Soft Skill lengkap</span></label>
+    </div>
+  </div>
+
+  <button class="reset" onclick="resetAll()">↺ Reset Semua</button>
+</div>
+
+<script>
+const groups = ['t','h','g','b'];
+function update() {
+  let total=0, done=0;
+  groups.forEach((g,gi) => {
+    const boxes = document.querySelectorAll(`.item[data-k^="${g}"]`);
+    let d=0;
+    boxes.forEach(it => {
+      const cb = it.querySelector('input');
+      const k = it.dataset.k;
+      if (localStorage.getItem('tk_'+k)==='1') { cb.checked=true; it.classList.add('checked'); d++; }
+      else { cb.checked=false; it.classList.remove('checked'); }
+    });
+    const pct = boxes.length ? Math.round(d/boxes.length*100) : 0;
+    document.getElementById('pct'+gi).textContent = pct+'%';
+    total += boxes.length; done += d;
+  });
+  document.getElementById('fill').style.width = (total? Math.round(done/total*100):0)+'%';
+  document.getElementById('progTxt').textContent = done+' / '+total+' dicentang';
+}
+document.querySelectorAll('.item').forEach(it => {
+  it.addEventListener('click', e => {
+    if (e.target.tagName==='INPUT') return;
+    const cb = it.querySelector('input');
+    cb.checked = !cb.checked;
+    save(it, cb.checked);
+  });
+  it.querySelector('input').addEventListener('change', e => save(it, e.target.checked));
+});
+function save(it, checked) {
+  localStorage.setItem('tk_'+it.dataset.k, checked?'1':'0');
+  update();
+}
+function resetAll() {
+  if (!confirm('Yakin reset semua checklist?')) return;
+  groups.forEach(g => document.querySelectorAll(`.item[data-k^="${g}"]`).forEach(it => localStorage.removeItem('tk_'+it.dataset.k)));
+  update();
+}
+update();
+</script>
+</body>
+</html>
