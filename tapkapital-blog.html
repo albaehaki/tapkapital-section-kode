@@ -5,61 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel — Tap Kapital Indonesia</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Inter',sans-serif; background:#f0f4f8; padding:40px; color:#1f2937; }
+        body { font-family:'Poppins',sans-serif; background:#f0f4f8; padding:0; color:#1f2937; }
         .container { max-width:1100px; margin:0 auto; }
         .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 350,'GRAD' 0,'opsz' 24; vertical-align:middle; }
         :root { --navy:#0a2647; --navy-dark:#051530; --navy-light:#2c4c7e; --gold:#fda527; --bg:#fff; --bg-soft:#f0f4f8; --border:#e9ecf0; --text:#1f2937; --text-mid:#4b5563; --focus:#fda527; }
         :focus-visible { outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
         .wf-title { text-align:center; margin-bottom:40px; }
         .wf-title h1 { font-size:1.5rem; color:var(--navy); font-weight:800; }
-        .wf-title .sub { color:var(--text-mid); font-size:0.8rem; }
-        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:12px; }
+        .wf-title .sub { color:var(--text-mid); font-size:1.05rem; }
+        .wf-title .tagline { display:inline-flex; align-items:center; gap:6px; background:rgba(253,165,39,0.1); border:1px solid rgba(253,165,39,0.2); padding:4px 14px; border-radius:50px; font-size:0.85rem; color:var(--gold); margin-bottom:12px; }
         .section { background:var(--bg); border-radius:20px; margin-bottom:28px; border:2px dashed var(--border); position:relative; box-shadow:0 2px 12px rgba(10,38,71,0.06); }
         .section:hover { border-color:var(--gold); }
-        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.55rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
-        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.5rem; font-weight:800; }
-        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.5rem; padding:4px 12px; border-radius:0 0 0 14px; }
+        .section-label { position:absolute; top:0; left:0; z-index:5; display:flex; align-items:center; gap:8px; background:var(--gold); color:var(--navy-dark); font-size:0.90rem; font-weight:700; padding:4px 12px 4px 8px; border-radius:0 0 14px 0; }
+        .section-label .num { background:var(--navy-dark); color:var(--gold); width:16px; height:16px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:800; }
+        .section-context { position:absolute; top:0; right:0; z-index:5; background:var(--bg-soft); color:var(--text-mid); font-size:0.85rem; padding:4px 12px; border-radius:0 0 0 14px; }
         .section-pad { padding:44px 32px; }
         .accent-bar { width:28px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:10px; }
         .section-head { margin-bottom:28px; }
-        .section-head .label { font-size:0.55rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
+        .section-head .label { font-size:0.90rem; color:var(--text-mid); letter-spacing:2px; text-transform:uppercase; }
         .section-head h2 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-top:4px; letter-spacing:-0.5px; }
-        .section-head .sub { font-size:0.7rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
+        .section-head .sub { font-size:0.90rem; color:var(--text-mid); margin-top:4px; max-width:500px; }
         .wf-header { background:var(--navy); border-radius:14px; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; }
         .wf-header .logo { display:flex; align-items:center; gap:10px; }
-        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
-        .wf-header .logo-text { font-size:0.85rem; font-weight:700; color:#fff; }
+        .wf-header .logo-mark { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.90rem; font-weight:800; color:var(--navy-dark); clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
+        .wf-header .logo-text { font-size:1.10rem; font-weight:700; color:#fff; }
         .wf-header .logo-text span { color:var(--gold); }
         .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
         .blog-card { border-radius:14px; border:1px solid var(--border); overflow:hidden; transition:all 0.3s; cursor:default; }
         .blog-card:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:0 12px 32px rgba(10,38,71,0.08); }
         .blog-img { position:relative; height:160px; overflow:hidden; }
         .blog-img-placeholder { width:100%; height:100%; background:linear-gradient(135deg,var(--navy-dark),var(--navy-light)); display:flex; align-items:center; justify-content:center; }
-        .blog-cat { position:absolute; top:10px; left:10px; padding:3px 12px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.5rem; font-weight:700; letter-spacing:0.5px; }
+        .blog-cat { position:absolute; top:10px; left:10px; padding:3px 12px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.85rem; font-weight:700; letter-spacing:0.5px; }
         .blog-body { padding:16px; }
-        .blog-meta { font-size:0.55rem; color:var(--text-light); margin-bottom:6px; }
-        .blog-body h3 { font-size:0.8rem; font-weight:700; color:var(--navy); line-height:1.4; }
-        .blog-body p { font-size:0.65rem; color:var(--text-mid); margin-top:6px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-        .blog-link { font-size:0.6rem; color:var(--gold); font-weight:600; margin-top:10px; display:inline-flex; align-items:center; gap:4px; cursor:default; }
+        .blog-meta { font-size:0.90rem; color:var(--text-light); margin-bottom:6px; }
+        .blog-body h3 { font-size:1.05rem; font-weight:700; color:var(--navy); line-height:1.4; }
+        .blog-body p { font-size:0.85rem; color:var(--text-mid); margin-top:6px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+        .blog-link { font-size:0.80rem; color:var(--gold); font-weight:600; margin-top:10px; display:inline-flex; align-items:center; gap:4px; cursor:default; }
         .pagination { display:flex; justify-content:center; gap:8px; margin-top:28px; }
-        .page-btn { width:36px; height:36px; border-radius:10px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:600; color:var(--text-mid); cursor:default; }
+        .page-btn { width:36px; height:36px; border-radius:10px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:0.90rem; font-weight:600; color:var(--text-mid); cursor:default; }
         .page-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
         .page-btn:hover:not(.active) { border-color:var(--gold); color:var(--navy); }
         .wf-footer { background:var(--navy-dark); border-radius:16px; padding:36px; }
         .wf-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:28px; }
-        .wf-footer-col h4 { font-size:0.6rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
-        .wf-footer-col .item { font-size:0.65rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
+        .wf-footer-col h4 { font-size:0.80rem; color:rgba(255,255,255,0.3); letter-spacing:2px; margin-bottom:14px; }
+        .wf-footer-col .item { font-size:0.85rem; color:rgba(255,255,255,0.35); margin-bottom:6px; cursor:default; }
         .wf-footer-col .item:hover { color:rgba(255,255,255,0.5); }
         .wf-footer-col .logo-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
         .wf-footer-col .logo-mark { width:28px; height:28px; background:var(--gold); border-radius:6px; clip-path:polygon(0 0,100% 0,85% 100%,0% 100%); }
-        .wf-footer-col .logo-text { font-size:0.8rem; font-weight:700; color:#fff; }
+        .wf-footer-col .logo-text { font-size:1.05rem; font-weight:700; color:#fff; }
         .wf-footer-col .logo-text span { color:var(--gold); }
-        .wf-footer-col .desc { font-size:0.6rem; color:rgba(255,255,255,0.2); line-height:1.6; }
-        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.55rem; color:rgba(255,255,255,0.12); }
+        .wf-footer-col .desc { font-size:0.80rem; color:rgba(255,255,255,0.2); line-height:1.6; }
+        .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.90rem; color:rgba(255,255,255,0.12); }
         /* ─── COPY BUTTON ─── */
         .copy-btn { position:absolute; bottom:8px; right:8px; z-index:10; display:inline-flex; align-items:center; gap:4px; padding:4px 10px; border-radius:6px; font-size:0.5rem; font-weight:600; letter-spacing:0.3px; background:rgba(10,38,71,0.06); color:var(--text-mid); border:1px solid var(--border); cursor:pointer; transition:all 0.2s; opacity:0; }
         .section:hover .copy-btn { opacity:1; }
@@ -69,6 +69,35 @@
         .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--navy-dark); color:#fff; padding:10px 20px; border-radius:10px; font-size:0.7rem; font-weight:500; box-shadow:0 8px 30px rgba(0,0,0,0.2); opacity:0; transition:all 0.3s; z-index:999; display:flex; align-items:center; gap:8px; pointer-events:none; }
         .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
         .toast span.material-symbols-outlined { font-size:1rem; color:#10b981; }
+        /* ─── ❷ HERO ─── */
+        .wf-hero { background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 0; padding: 48px 40px; display: flex; gap: 40px; align-items: center; color: #fff; min-height: 420px; }
+        .wf-hero-left { flex: 1; }
+        .wf-hero-right { flex: 1; position: relative; display: flex; justify-content: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(253,165,39,0.12); border: 1px solid rgba(253,165,39,0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+        .wf-hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 14px; color: #ffffff; }
+        .wf-hero h1 .glow { color: #FFB800; background: none; -webkit-text-fill-color: unset; }
+        .wf-hero .desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+        .hero-cta { display: flex; gap: 10px; align-items: center; }
+        .hero-cta .primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); padding: 12px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 700; cursor: default; box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
+        .hero-cta .primary span.material-symbols-outlined { font-size: 1rem; }
+        .hero-cta .secondary { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.12); padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; color: rgba(255,255,255,0.7); font-weight: 500; cursor: default; }
+        .hero-cta .secondary span.material-symbols-outlined { font-size: 1rem; color: rgba(255,255,255,0.4); }
+        .hero-visual { position: relative; width: 340px; height: 380px; display: flex; align-items: center; justify-content: center; }
+        .hero-visual .ring { position: absolute; border-radius: 50%; }
+        .hero-visual .ring-1 { width: 320px; height: 320px; border: 1px solid rgba(253,165,39,0.08); }
+        .hero-visual .ring-2 { width: 260px; height: 260px; border: 1px dashed rgba(253,165,39,0.1); }
+        .hero-visual .ring-3 { width: 200px; height: 200px; background: rgba(253,165,39,0.03); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+        .hero-visual .ring-3 span.material-symbols-outlined { font-size: 2rem; color: rgba(253,165,39,0.2); }
+        .hero-visual .ring-3 .hint { font-size: 0.65rem; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+        .hero-floating { position: absolute; z-index: 2; }
+        .hero-floating.tl { top: 5px; right: 30px; }
+        .hero-floating.bl { bottom: 25px; left: -5px; }
+        .hero-floating.br { bottom: 45px; right: -5px; }
+        .hf-card { background: rgba(10,38,71,0.92); backdrop-filter: blur(8px); border: 1px solid rgba(253,165,39,0.08); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; min-width: 155px; }
+        .hf-card span.material-symbols-outlined { font-size: 1rem; }
+        .hf-card .hf-main { font-size: 0.7rem; font-weight: 600; color: #fff; }
+        .hf-card .hf-sub { font-size: 0.90rem; color: rgba(255,255,255,0.35); }
         @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .blog-grid{grid-template-columns:1fr;} .wf-footer-grid{grid-template-columns:1fr 1fr;} }
     </style>
 </head>
@@ -78,13 +107,23 @@
     <script src="js/api-integration.js"></script>
 <div class="container">
     <div class="wf-title"><div class="tagline">✦ Artikel</div><h1>Tap Kapital — Artikel & Edukasi</h1><div class="sub">Tips, panduan, dan berita seputar sertifikasi dan karir di pasar modal</div></div>
-    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div></div></div></div>
+    <div class="section"><div class="section-label"><span class="num">1</span> HEADER</div><div class="section-pad" style="padding:14px 18px;"><div class="wf-header"><div class="logo"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div></div></div></div>
 
+    <!-- ❷ HERO -->
     <div class="section" style="padding:0;">
-        <div class="section-label"><span class="num">2</span> HERO</div><div class="section-context">blog</div>
-        <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:40px; color:#fff;">
-            <h1 style="font-size:2rem; font-weight:800; letter-spacing:-1px;">Artikel & <span style="background:linear-gradient(135deg,var(--gold),#ffb74d); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Edukasi</span></h1>
-            <p style="font-size:0.8rem; color:rgba(255,255,255,0.55); margin-top:6px; max-width:500px;">Wawasan pasar modal, tips sertifikasi, dan panduan karir dari praktisi berpengalaman.</p>
+        <div class="section-label"><span class="num">2</span> HERO</div>
+        <div class="section-context">blog</div>
+        <div class="wf-hero">
+            <div class="wf-hero-left">
+                <div class="hero-badge"><span class="dot"></span> ✦ Artikel Terbaru</div>
+                <h1>Artikel &<br><span class="glow">Edukasi</span> Pasar Modal</h1>
+                <div class="desc">Wawasan pasar modal, tips sertifikasi, dan panduan karir dari praktisi berpengalaman.</div>
+                <div class="hero-cta">
+                    <span class="primary"><span class="material-symbols-outlined">calendar_month</span> Lihat Jadwal & Daftar</span>
+                    <span class="secondary"><span class="material-symbols-outlined">chat</span> Konsultasi WA</span>
+                </div>
+            </div>
+            <div class="wf-hero-right"><div class="hero-visual"><div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"><span class="material-symbols-outlined">school</span><span class="hint">FOTO PELATIHAN</span></div><div class="hero-floating tl"><div class="hf-card"><span class="material-symbols-outlined" style="color:var(--gold);">verified</span><div><div class="hf-main">Diakui OJK</div><div class="hf-sub">Lisensi resmi terdaftar</div></div></div></div><div class="hero-floating bl"><div class="hf-card"><span class="material-symbols-outlined" style="color:#3b82f6;">diversity_3</span><div><div class="hf-main">500+ Alumni</div><div class="hf-sub">Tersebar di 50+ institusi</div></div></div></div><div class="hero-floating br"><div class="hf-card"><span class="material-symbols-outlined" style="color:#22c55e;">globe</span><div><div class="hf-main">Online & Offline</div><div class="hf-sub">Weekday & Weekend</div></div></div></div></div></div>
         </div>
     </div>
 
@@ -96,7 +135,7 @@
                 <span class="page-btn active">1</span>
                 <span class="page-btn">2</span>
                 <span class="page-btn">3</span>
-                <span class="page-btn" style="width:auto; padding:0 12px;">Berikutnya <span class="material-symbols-outlined" style="font-size:0.7rem;">arrow_forward</span></span>
+                <span class="page-btn" style="width:auto; padding:0 12px;">Berikutnya <span class="material-symbols-outlined" style="font-size:0.90rem;">arrow_forward</span></span>
             </div>
         </div>
     </div>
@@ -104,16 +143,16 @@
     <div class="section" style="padding:0;"><div class="section-label"><span class="num">4</span> CTA</div>
         <div style="background:linear-gradient(135deg,#051530,#0a2647); border-radius:16px; padding:48px 40px; text-align:center; color:#fff;">
             <h2 style="font-size:1.5rem; font-weight:800;">Dapatkan Info Terbaru?</h2>
-            <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Ikuti kami di media sosial untuk update artikel dan jadwal pelatihan.</div>
+            <div style="font-size:1.05rem; color:rgba(255,255,255,0.5); margin:8px 0 24px;">Ikuti kami di media sosial untuk update artikel dan jadwal pelatihan.</div>
             <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.75rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">chat</span> Konsultasi Via WhatsApp</span>
+                <span style="display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:50px; background:var(--gold); color:var(--navy-dark); font-size:0.95rem; font-weight:600; cursor:default;"><span class="material-symbols-outlined">chat</span> Konsultasi Via WhatsApp</span>
             </div>
         </div>
     </div>
 
     <div class="section" style="padding:0;"><div class="section-label"><span class="num">5</span> FOOTER</div>
         <div class="wf-footer"><div class="wf-footer-grid">
-            <div class="wf-footer-col"><div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div><div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div></div>
+            <div class="wf-footer-col"><div class="logo-row"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div></div>
             <div class="wf-footer-col"><h4>Program</h4><div class="item">Manajemen Risiko</div><div class="item">Analis Efek</div><div class="item">Investment Banking</div><div class="item">Lisensi OJK</div><div class="item">Training of Trainer</div></div>
             <div class="wf-footer-col"><h4>Informasi</h4><div class="item">Tentang Kami</div><div class="item">Jadwal</div><div class="item">Artikel</div><div class="item">FAQ</div></div>
             <div class="wf-footer-col"><h4>Kontak</h4><div class="item">info@tapkapital.co.id</div><div class="item">0878-7255-5540</div><div class="item">0821-1301-6501</div><div class="item">Wisma GKBI Lt.6, Jakarta</div></div>
@@ -170,7 +209,7 @@ function addCopyButtons() {
             const styleTag = document.querySelector('style');
             const allCss = styleTag ? styleTag.innerHTML : '';
             const globalCss = allCss.split('\n').filter(l => {
-                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.section') || l.includes('.section-pad') || l.includes('.section-label') || l.includes('.num') || l.includes('.copy-btn') || l.includes('.toast') || l.includes('.material-symbols');
+                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.accent-bar') || l.includes('.active') || l.includes('.arrow') || l.includes('.auth-name') || l.includes('.auth-role') || l.includes('.author') || l.includes('.avatar') || l.includes('.bar') || l.includes('.bg-gray-50') || l.includes('.bl') || l.includes('.bln') || l.includes('.blog-grid') || l.includes('.border') || l.includes('.border-gray-100') || l.includes('.bottom') || l.includes('.br') || l.includes('.btn') || l.includes('.buttons') || l.includes('.cal-day') || l.includes('.cal-dot') || l.includes('.cal-grid') || l.includes('.cal-header') || l.includes('.cal-legend') || l.includes('.carousel-btn') || l.includes('.carousel-container') || l.includes('.carousel-controls') || l.includes('.carousel-dots') || l.includes('.carousel-fade-left') || l.includes('.carousel-fade-right') || l.includes('.carousel-track') || l.includes('.cat-btn') || l.includes('.cats') || l.includes('.cc-action') || l.includes('.cc-desc') || l.includes('.cc-icon') || l.includes('.cc-label') || l.includes('.cc-value') || l.includes('.contact-card') || l.includes('.contact-grid') || l.includes('.container') || l.includes('.cta-section') || l.includes('.desc') || l.includes('.detail-grid') || l.includes('.dot') || l.includes('.duration-300') || l.includes('.faq-a') || l.includes('.faq-grid') || l.includes('.faq-item') || l.includes('.faq-q') || l.includes('.featured') || l.includes('.fill') || l.includes('.filter-bar') || l.includes('.filter-btn') || l.includes('.footer') || l.includes('.footer-col') || l.includes('.footer-grid') || l.includes('.g') || l.includes('.g-badge') || l.includes('.g-label') || l.includes('.gallery-gradient-1') || l.includes('.gallery-gradient-2') || l.includes('.gallery-gradient-3') || l.includes('.gallery-gradient-4') || l.includes('.gallery-gradient-5') || l.includes('.gallery-gradient-6') || l.includes('.gallery-gradient-7') || l.includes('.gallery-gradient-8') || l.includes('.gallery-gradient-9') || l.includes('.gallery-grid') || l.includes('.gallery-item') || l.includes('.glow') || l.includes('.gold') || l.includes('.grayscale') || l.includes('.has-event') || l.includes('.header') || l.includes('.hero-badge') || l.includes('.hero-cta') || l.includes('.hero-floating') || l.includes('.hero-visual') || l.includes('.hf-card') || l.includes('.hf-main') || l.includes('.hf-sub') || l.includes('.hint') || l.includes('.ic-desc') || l.includes('.ic-icon') || l.includes('.ic-label') || l.includes('.ic-value') || l.includes('.info-card') || l.includes('.item') || l.includes('.items-center') || l.includes('.items-end') || l.includes('.j-bulan') || l.includes('.j-cta') || l.includes('.j-info') || l.includes('.j-meta') || l.includes('.j-mode') || l.includes('.j-nama') || l.includes('.j-name') || l.includes('.j-tgl') || l.includes('.jadwal-link') || l.includes('.jadwal-list') || l.includes('.jadwal-row') || l.includes('.justify-between') || l.includes('.justify-center') || l.includes('.label') || l.includes('.lbl') || l.includes('.logo') || l.includes('.logo-row') || l.includes('.mask-gradient-x') || l.includes('.material-symbols-outlined') || l.includes('.mb-6') || l.includes('.milestone') || l.includes('.ms-item') || l.includes('.ms-text') || l.includes('.ms-year') || l.includes('.navy') || l.includes('.object-contain') || l.includes('.offline') || l.includes('.online') || l.includes('.opacity-70') || l.includes('.open') || l.includes('.other-month') || l.includes('.p') || l.includes('.page-btn') || l.includes('.pagination') || l.includes('.partner-card') || l.includes('.partner-grid') || l.includes('.pc-benefits') || l.includes('.pc-desc') || l.includes('.pc-icon') || l.includes('.pc-label') || l.includes('.pc-level') || l.includes('.pc-name') || l.includes('.pc-price') || l.includes('.pc-tag') || l.includes('.pc-title') || l.includes('.pc-unit') || l.includes('.pricing-card') || l.includes('.pricing-grid') || l.includes('.primary') || l.includes('.prog-grid') || l.includes('.px-8') || l.includes('.py-6') || l.includes('.q-left') || l.includes('.quote') || l.includes('.ring') || l.includes('.ring-1') || l.includes('.ring-2') || l.includes('.ring-3') || l.includes('.rounded-xl') || l.includes('.s') || l.includes('.secondary') || l.includes('.section-context') || l.includes('.section-head') || l.includes('.sectionClass') || l.includes('.solid') || l.includes('.stat') || l.includes('.stat-bar') || l.includes('.stat-bar-fill') || l.includes('.stat-card') || l.includes('.stat-icon') || l.includes('.stats-grid') || l.includes('.sub') || l.includes('.tagline') || l.includes('.testi-dots') || l.includes('.testi-left') || l.includes('.testi-right') || l.includes('.testi-slide') || l.includes('.testi-wrapper') || l.includes('.tgl') || l.includes('.timeline') || l.includes('.tl') || l.includes('.tl-desc') || l.includes('.tl-item') || l.includes('.tl-num') || l.includes('.tl-title') || l.includes('.transition-all') || l.includes('.v-desc') || l.includes('.v-icon') || l.includes('.v-title') || l.includes('.value-card') || l.includes('.value-grid') || l.includes('.vm-card') || l.includes('.vm-grid') || l.includes('.vm-icon') || l.includes('.wf-arrow') || l.includes('.wf-cta-bottom') || l.includes('.wf-footer') || l.includes('.wf-footer-col') || l.includes('.wf-footer-grid') || l.includes('.wf-header') || l.includes('.wf-hero') || l.includes('.wf-hero-left') || l.includes('.wf-hero-right') || l.includes('.wf-title') || l.includes('.why-card') || l.includes('.why-grid');
             }).join('\n');
             navigator.clipboard.writeText('<style>\n' + globalCss + '\n</style>').then(() => {
                 globalBtn.classList.add('copied');

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Pelatihan — Tap Kapital Indonesia</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #f0f4f8; padding: 40px; color: #1f2937; }
+        body { font-family: 'Poppins', sans-serif; background:#f0f4f8; padding:0; color:#1f2937; }
         .container { max-width: 1100px; margin: 0 auto; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
         :root {
@@ -24,17 +24,17 @@
         .wf-title { text-align: center; margin-bottom: 40px; }
         .wf-title h1 { font-size: 1.5rem; color: var(--navy); font-weight: 800; letter-spacing: -0.5px; }
         .wf-title .sub { color: var(--text-mid); font-size: 0.8rem; margin-top: 4px; }
-        .wf-title .tagline { display: inline-flex; align-items: center; gap: 6px; background: rgba(253,165,39,0.1); border: 1px solid rgba(253,165,39,0.2); padding: 4px 14px; border-radius: 50px; font-size: 0.65rem; color: var(--gold); margin-bottom: 12px; }
+        .wf-title .tagline { display: inline-flex; align-items: center; gap: 6px; background: rgba(253,165,39,0.1); border: 1px solid rgba(253,165,39,0.2); padding: 4px 14px; border-radius: 50px; font-size: 0.85rem; color: var(--gold); margin-bottom: 12px; }
 
         .section { background: var(--bg); border-radius: 20px; margin-bottom: 28px; border: 2px dashed var(--border); position: relative; box-shadow: 0 2px 12px rgba(10,38,71,0.06); transition: all 0.3s; }
         .section:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(10,38,71,0.1); }
-        .section-label { position: absolute; top: 0; left: 0; z-index: 5; display: flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); font-size: 0.55rem; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px 4px 8px; border-radius: 0 0 14px 0; }
-        .section-label .num { background: var(--navy-dark); color: var(--gold); width: 16px; height: 16px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.5rem; font-weight: 800; }
-        .section-context { position: absolute; top: 0; right: 0; z-index: 5; background: var(--bg-soft); color: var(--text-mid); font-size: 0.5rem; padding: 4px 12px; border-radius: 0 0 0 14px; font-weight: 500; }
+        .section-label { position: absolute; top: 0; left: 0; z-index: 5; display: flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); font-size: 0.90rem; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px 4px 8px; border-radius: 0 0 14px 0; }
+        .section-label .num { background: var(--navy-dark); color: var(--gold); width: 16px; height: 16px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; }
+        .section-context { position: absolute; top: 0; right: 0; z-index: 5; background: var(--bg-soft); color: var(--text-mid); font-size: 0.65rem; padding: 4px 12px; border-radius: 0 0 0 14px; font-weight: 500; }
         .section-pad { padding: 44px 32px; }
         .accent-bar { width: 28px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 10px; }
         .section-head { margin-bottom: 28px; }
-        .section-head .label { font-size: 0.55rem; color: var(--text-mid); letter-spacing: 2px; text-transform: uppercase; }
+        .section-head .label { font-size: 0.90rem; color: var(--text-mid); letter-spacing: 2px; text-transform: uppercase; }
         .section-head h2 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-top: 4px; letter-spacing: -0.5px; }
         .section-head .sub { font-size: 0.7rem; color: var(--text-mid); margin-top: 4px; max-width: 500px; }
 
@@ -42,12 +42,12 @@
         .wf-header { background: var(--navy); border-radius: 14px; padding: 10px 22px; display: flex; align-items: center; justify-content: space-between; }
         .wf-header .logo { display: flex; align-items: center; gap: 10px; }
         .wf-header .logo-mark { width: 30px; height: 30px; background: var(--gold); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; color: var(--navy-dark); clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); }
-        .wf-header .logo-text { font-size: 0.85rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+        .wf-header .logo-text { font-size: 1.10rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
         .wf-header .logo-text span { color: var(--gold); }
 
         /* ─── FILTER ─── */
         .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 24px; }
-        .filter-btn { padding: 8px 18px; border-radius: 50px; font-size: 0.65rem; font-weight: 600; border: 1px solid var(--border); background: var(--bg); color: var(--text-mid); cursor: default; transition: all 0.2s; }
+        .filter-btn { padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); background: var(--bg); color: var(--text-mid); cursor: default; transition: all 0.2s; }
         .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
         .filter-btn:hover:not(.active) { border-color: var(--gold); color: var(--navy); }
 
@@ -56,13 +56,13 @@
         .jadwal-row { display: grid; grid-template-columns: 80px 1fr 100px 100px; gap: 14px; align-items: center; padding: 18px 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 14px; transition: all 0.2s; margin-bottom: 10px; cursor: default; }
         .jadwal-row:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(10,38,71,0.1); transform: translateY(-2px); }
         .jadwal-row .j-bulan { text-align: center; }
-        .jadwal-row .j-bulan .bln { font-size: 0.55rem; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .jadwal-row .j-bulan .bln { font-size: 0.90rem; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
         .jadwal-row .j-bulan .tgl { font-size: 1.4rem; font-weight: 800; color: var(--navy); line-height: 1.1; }
         .jadwal-row .j-info .j-nama { font-size: 0.8rem; font-weight: 700; color: var(--navy); }
         .jadwal-row .j-info .j-meta { font-size: 0.6rem; color: var(--text-mid); margin-top: 3px; display: flex; gap: 10px; align-items: center; }
         .jadwal-row .j-info .j-meta span { display: inline-flex; align-items: center; gap: 3px; }
         .jadwal-row .j-info .j-meta span .material-symbols-outlined { font-size: 0.7rem; }
-        .jadwal-row .j-mode { font-size: 0.55rem; padding: 4px 12px; border-radius: 6px; background: var(--bg-soft); border: 1px solid var(--border); text-align: center; color: var(--text-mid); font-weight: 500; }
+        .jadwal-row .j-mode { font-size: 0.90rem; padding: 4px 12px; border-radius: 6px; background: var(--bg-soft); border: 1px solid var(--border); text-align: center; color: var(--text-mid); font-weight: 500; }
         .jadwal-row .j-mode.offline { background: rgba(253,165,39,0.08); border-color: rgba(253,165,39,0.2); color: var(--gold); }
         .jadwal-row .j-mode.online { background: rgba(44,76,126,0.08); border-color: rgba(44,76,126,0.2); color: var(--navy-light); }
         .jadwal-row .j-cta { padding: 7px 16px; border-radius: 50px; background: var(--gold); color: var(--navy-dark); font-size: 0.6rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px; cursor: default; }
@@ -85,10 +85,10 @@
 
         /* ─── CTA ─── */
         .wf-cta-bottom { background: linear-gradient(135deg, #051530, #0a2647); border-radius: 16px; padding: 48px 40px; text-align: center; color: #fff; }
-        .wf-cta-bottom h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        .wf-cta-bottom h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
         .wf-cta-bottom .desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 8px 0 24px; }
         .wf-cta-bottom .buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .wf-cta-bottom .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; cursor: default; }
+        .wf-cta-bottom .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; cursor: default; }
         .wf-cta-bottom .btn.p { background: var(--gold); color: var(--navy-dark); box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
         .wf-cta-bottom .btn.s { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.15); }
 
@@ -96,14 +96,44 @@
         .wf-footer { background: var(--navy-dark); border-radius: 16px; padding: 36px; }
         .wf-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 28px; }
         .wf-footer-col h4 { font-size: 0.6rem; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
-        .wf-footer-col .item { font-size: 0.65rem; color: rgba(255,255,255,0.35); margin-bottom: 6px; cursor: default; display: flex; align-items: center; gap: 6px; }
+        .wf-footer-col .item { font-size: 0.85rem; color: rgba(255,255,255,0.35); margin-bottom: 6px; cursor: default; display: flex; align-items: center; gap: 6px; }
         .wf-footer-col .item:hover { color: rgba(255,255,255,0.5); }
         .wf-footer-col .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-        .wf-footer-col .logo-mark { width: 28px; height: 28px; background: var(--gold); border-radius: 6px; clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; color: var(--navy-dark); }
+        .wf-footer-col .logo-mark { width: 28px; height: 28px; background: var(--gold); border-radius: 6px; clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; color: var(--navy-dark); }
         .wf-footer-col .logo-text { font-size: 0.8rem; font-weight: 700; color: #fff; }
         .wf-footer-col .logo-text span { color: var(--gold); }
         .wf-footer-col .desc { font-size: 0.6rem; color: rgba(255,255,255,0.2); line-height: 1.6; }
-        .wf-footer .bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 24px; padding-top: 16px; display: flex; justify-content: space-between; font-size: 0.55rem; color: rgba(255,255,255,0.12); }
+        .wf-footer .bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 24px; padding-top: 16px; display: flex; justify-content: space-between; font-size: 0.90rem; color: rgba(255,255,255,0.12); }
+
+        /* ─── ❷ HERO ─── */
+        .wf-hero { background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 16px; padding: 32px 48px; display: flex; align-items: center; color: #fff; min-height: 220px; }
+        .wf-hero-left { flex: 1; max-width: 760px; }
+        .wf-hero-right { display: none; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(253,165,39,0.12); border: 1px solid rgba(253,165,39,0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+        .wf-hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 14px; color: #ffffff; }
+        .wf-hero h1 .glow { color: #FFB800; background: none; -webkit-text-fill-color: unset; }
+        .wf-hero .desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 440px; margin-bottom: 24px; }
+        .hero-cta { display: flex; gap: 10px; align-items: center; }
+        .hero-cta .primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-dark); padding: 12px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 700; cursor: default; box-shadow: 0 4px 15px rgba(253,165,39,0.3); }
+        .hero-cta .primary span.material-symbols-outlined { font-size: 1rem; }
+        .hero-cta .secondary { display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.12); padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; color: rgba(255,255,255,0.7); font-weight: 500; cursor: default; }
+        .hero-cta .secondary span.material-symbols-outlined { font-size: 1rem; color: rgba(255,255,255,0.4); }
+        .hero-visual { position: relative; width: 340px; height: 380px; display: flex; align-items: center; justify-content: center; }
+        .hero-visual .ring { position: absolute; border-radius: 50%; }
+        .hero-visual .ring-1 { width: 320px; height: 320px; border: 1px solid rgba(253,165,39,0.08); }
+        .hero-visual .ring-2 { width: 260px; height: 260px; border: 1px dashed rgba(253,165,39,0.1); }
+        .hero-visual .ring-3 { width: 200px; height: 200px; background: rgba(253,165,39,0.03); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+        .hero-visual .ring-3 span.material-symbols-outlined { font-size: 2rem; color: rgba(253,165,39,0.2); }
+        .hero-visual .ring-3 .hint { font-size: 0.65rem; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+        .hero-floating { position: absolute; z-index: 2; }
+        .hero-floating.tl { top: 5px; right: 30px; }
+        .hero-floating.bl { bottom: 25px; left: -5px; }
+        .hero-floating.br { bottom: 45px; right: -5px; }
+        .hf-card { background: rgba(10,38,71,0.92); backdrop-filter: blur(8px); border: 1px solid rgba(253,165,39,0.08); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; min-width: 155px; }
+        .hf-card span.material-symbols-outlined { font-size: 1rem; }
+        .hf-card .hf-main { font-size: 0.7rem; font-weight: 600; color: #fff; }
+        .hf-card .hf-sub { font-size: 0.90rem; color: rgba(255,255,255,0.35); }
 
         @media (max-width: 768px) {
             body { padding: 16px; }
@@ -144,44 +174,19 @@
         <div class="section-context">navigasi</div>
         <div class="section-pad" style="padding: 14px 18px;">
             <div class="wf-header">
-                <div class="logo">
-                    <div class="logo-mark">TK</div>
-                    <div class="logo-text">TAP<span>KAPITAL</span></div>
-                </div>
+                <div class="logo"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div>
             </div>
         </div>
     </div>
 
-    <!-- ❷ HERO JADWAL -->
+    <!-- ❷ HERO -->
     <div class="section" style="padding:0;">
         <div class="section-label"><span class="num">2</span> HERO</div>
         <div class="section-context">filter + stats</div>
-        <div style="background: linear-gradient(135deg, #051530 0%, #0a2647 50%, #0d3360 100%); border-radius: 16px; padding: 40px; color: #fff;">
-            <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
-                <div style="flex:1; min-width:280px;">
-                    <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(253,165,39,0.12); border:1px solid rgba(253,165,39,0.2); padding:6px 16px; border-radius:50px; font-size:0.65rem; color:var(--gold); margin-bottom:14px;">
-                        <span style="width:6px; height:6px; border-radius:50%; background:var(--gold);"></span> 12 Program Aktif Bulan Ini
-                    </div>
-                    <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:10px;">
-                        Jadwal & Pendaftaran<br>
-                        <span style="background:linear-gradient(135deg, var(--gold), #ffb74d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Program Sertifikasi</span>
-                    </h1>
-                    <p style="font-size:0.8rem; color:rgba(255,255,255,0.55); line-height:1.7; max-width:440px;">Pilih program, lihat jadwal tersedia, dan daftar langsung secara online. Tersedia offline & online.</p>
-                </div>
-                <div style="display:flex; gap:14px; flex-wrap:wrap;">
-                    <div style="text-align:center; padding:16px 24px; background:rgba(255,255,255,0.05); border-radius:14px; border:1px solid rgba(255,255,255,0.08); min-width:120px;">
-                        <div style="font-size:1.6rem; font-weight:800; color:var(--gold);">12</div>
-                        <div style="font-size:0.55rem; color:rgba(255,255,255,0.4); letter-spacing:1px;">Program Aktif</div>
-                    </div>
-                    <div style="text-align:center; padding:16px 24px; background:rgba(255,255,255,0.05); border-radius:14px; border:1px solid rgba(255,255,255,0.08); min-width:120px;">
-                        <div style="font-size:1.6rem; font-weight:800; color:var(--gold);">6</div>
-                        <div style="font-size:0.55rem; color:rgba(255,255,255,0.4); letter-spacing:1px;">Bulan Ini</div>
-                    </div>
-                    <div style="text-align:center; padding:16px 24px; background:rgba(255,255,255,0.05); border-radius:14px; border:1px solid rgba(255,255,255,0.08); min-width:120px;">
-                        <div style="font-size:1.6rem; font-weight:800; color:var(--gold);">24</div>
-                        <div style="font-size:0.55rem; color:rgba(255,255,255,0.4); letter-spacing:1px;">Tahun 2026</div>
-                    </div>
-                </div>
+        <div class="wf-hero">
+            <div class="wf-hero-left">
+                <h1 style="font-size:2rem; font-weight:800; line-height:1.15; letter-spacing:-1px; margin-bottom:14px; color:#ffffff;">Jadwal & <span style="color:#FFB800;">Pendaftaran</span> Program Sertifikasi</h1>
+                <div class="desc">Pilih program, lihat jadwal tersedia, dan daftar langsung secara online. Tersedia offline & online.</div>
             </div>
         </div>
     </div>
@@ -200,6 +205,10 @@
                 <span class="filter-btn">Technical Analyst</span>
                 <span class="filter-btn">Training of Trainer</span>
             </div>
+            <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+                <span class="material-symbols-outlined" style="font-size:1.05rem; color:var(--text-light);">search</span>
+                <input type="text" id="searchJadwal" placeholder="Cari program pelatihan..." style="flex:1; padding:10px 14px; border:1px solid var(--border); border-radius:10px; font-size:0.90rem; font-family:'Poppins',sans-serif; outline:none; background:var(--bg); color:var(--text);">
+            </div>
         </div>
     </div>
 
@@ -214,95 +223,42 @@
                 <h2>Program Bulan Januari 2026</h2>
             </div>
 
-            <div class="jadwal-list">
-                <div class="jadwal-row">
-                    <div class="j-bulan"><div class="bln">Jan</div><div class="tgl">20</div></div>
-                    <div class="j-info">
-                        <div class="j-nama">Certified Risk Professional (CRP)</div>
-                        <div class="j-meta">
-                            <span><span class="material-symbols-outlined">schedule</span> 3 Hari</span>
-                            <span><span class="material-symbols-outlined">location_on</span> Jakarta</span>
-                            <span><span class="material-symbols-outlined">group</span> 20 slot</span>
-                        </div>
-                    </div>
-                    <div class="j-mode offline">Offline</div>
-                    <div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.7rem;">shopping_cart</span> Daftar</div>
-                </div>
-
-                <div class="jadwal-row">
-                    <div class="j-bulan"><div class="bln">Jan</div><div class="tgl">10</div></div>
-                    <div class="j-info">
-                        <div class="j-nama">Wakil Manajer Investasi (WMI)</div>
-                        <div class="j-meta">
-                            <span><span class="material-symbols-outlined">schedule</span> 2 Minggu</span>
-                            <span><span class="material-symbols-outlined">laptop</span> Zoom</span>
-                            <span><span class="material-symbols-outlined">group</span> 30 slot</span>
-                        </div>
-                    </div>
-                    <div class="j-mode online">Online</div>
-                    <div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.7rem;">shopping_cart</span> Daftar</div>
-                </div>
-
-                <div class="jadwal-row">
-                    <div class="j-bulan"><div class="bln">Feb</div><div class="tgl">7</div></div>
-                    <div class="j-info">
-                        <div class="j-nama">Certified Risk Professional (CRP)</div>
-                        <div class="j-meta">
-                            <span><span class="material-symbols-outlined">schedule</span> 3 Hari</span>
-                            <span><span class="material-symbols-outlined">laptop</span> Zoom</span>
-                            <span><span class="material-symbols-outlined">group</span> 25 slot</span>
-                        </div>
-                    </div>
-                    <div class="j-mode online">Online</div>
-                    <div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.7rem;">shopping_cart</span> Daftar</div>
-                </div>
-
-                <div class="jadwal-row">
-                    <div class="j-bulan"><div class="bln">Feb</div><div class="tgl">14</div></div>
-                    <div class="j-info">
-                        <div class="j-nama">Certified Securities Analyst (CSA)</div>
-                        <div class="j-meta">
-                            <span><span class="material-symbols-outlined">schedule</span> 5 Hari</span>
-                            <span><span class="material-symbols-outlined">location_on</span> Jakarta</span>
-                            <span><span class="material-symbols-outlined">group</span> 15 slot</span>
-                        </div>
-                    </div>
-                    <div class="j-mode offline">Offline</div>
-                    <div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.7rem;">shopping_cart</span> Daftar</div>
-                </div>
-
-                <div class="jadwal-row">
-                    <div class="j-bulan"><div class="bln">Feb</div><div class="tgl">21</div></div>
-                    <div class="j-info">
-                        <div class="j-nama">Investment Banking (CIB)</div>
-                        <div class="j-meta">
-                            <span><span class="material-symbols-outlined">schedule</span> 4 Hari</span>
-                            <span><span class="material-symbols-outlined">laptop</span> Zoom</span>
-                            <span><span class="material-symbols-outlined">group</span> 20 slot</span>
-                        </div>
-                    </div>
-                    <div class="j-mode online">Online</div>
-                    <div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.7rem;">shopping_cart</span> Daftar</div>
-                </div>
-
-                <div class="jadwal-row">
-                    <div class="j-bulan"><div class="bln">Mar</div><div class="tgl">5</div></div>
-                    <div class="j-info">
-                        <div class="j-nama">Training of Trainer (TOT) KKNI Lv4</div>
-                        <div class="j-meta">
-                            <span><span class="material-symbols-outlined">schedule</span> 5 Hari</span>
-                            <span><span class="material-symbols-outlined">location_on</span> Jakarta</span>
-                            <span><span class="material-symbols-outlined">group</span> 12 slot</span>
-                        </div>
-                    </div>
-                    <div class="j-mode offline">Offline</div>
-                    <div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.7rem;">shopping_cart</span> Daftar</div>
-                </div>
-            </div>
+            <div class="jadwal-list" data-wp-jadwal="6"></div>
+            <script>
+(function(){
+var jadwal = [
+    {bln:"Jan",tgl:20,nama:"Certified Risk Professional (CRP)",durasi:"3 Hari",tempat:"Jakarta",slot:20,icon:"location_on",mode:"offline"},
+    {bln:"Jan",tgl:10,nama:"Wakil Manajer Investasi (WMI)",durasi:"2 Minggu",tempat:"Zoom",slot:30,icon:"laptop",mode:"online"},
+    {bln:"Feb",tgl:7,nama:"Certified Risk Professional (CRP)",durasi:"3 Hari",tempat:"Zoom",slot:25,icon:"laptop",mode:"online"},
+    {bln:"Feb",tgl:14,nama:"Certified Securities Analyst (CSA)",durasi:"5 Hari",tempat:"Jakarta",slot:15,icon:"location_on",mode:"offline"},
+    {bln:"Feb",tgl:21,nama:"Investment Banking (CIB)",durasi:"4 Hari",tempat:"Zoom",slot:20,icon:"laptop",mode:"online"},
+    {bln:"Mar",tgl:5,nama:"Training of Trainer (TOT) KKNI Lv4",durasi:"5 Hari",tempat:"Jakarta",slot:12,icon:"location_on",mode:"offline"}
+];
+function render(j){
+    return '<div class="jadwal-row"><div class="j-bulan"><div class="bln">'+j.bln+'</div><div class="tgl">'+j.tgl+'</div></div><div class="j-info"><div class="j-nama">'+j.nama+'</div><div class="j-meta"><span><span class="material-symbols-outlined">schedule</span> '+j.durasi+'</span><span><span class="material-symbols-outlined">'+j.icon+'</span> '+j.tempat+'</span><span><span class="material-symbols-outlined">group</span> '+j.slot+' slot</span></div></div><div class="j-mode '+j.mode+'">'+(j.mode==='offline'?'Offline':'Online')+'</div><div class="j-cta"><span class="material-symbols-outlined" style="font-size:0.90rem;">shopping_cart</span> Daftar</div></div>';
+}
+function filterJadwal(q){
+    var el = document.querySelector('[data-wp-jadwal]');
+    if(!el) return;
+    var filtered = q ? jadwal.filter(function(j){return j.nama.toLowerCase().indexOf(q.toLowerCase())>-1;}) : jadwal;
+    el.innerHTML = filtered.map(render).join('');
+    // Update heading jumlah
+    var h2 = document.querySelector('.section-head h2');
+    if(h2) h2.textContent = filtered.length > 0 ? 'Program '+jadwal[0].bln+' '+jadwal[0].tgl : 'Tidak ditemukan';
+}
+// Render awal
+filterJadwal('');
+// Search handler
+setTimeout(function(){
+    var inp = document.getElementById('searchJadwal');
+    if(inp) inp.addEventListener('input', function(){filterJadwal(this.value);});
+}, 100);
+})();
+</script>
 
             <div style="text-align:center; margin-top:20px;">
-                <span style="display:inline-flex; align-items:center; gap:6px; padding:10px 24px; background:var(--navy); color:#fff; border-radius:10px; font-size:0.7rem; font-weight:600; cursor:default;">
-                    Lihat Jadwal Lengkap 2026 <span class="material-symbols-outlined" style="font-size:0.8rem;">arrow_forward</span>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:10px 24px; background:var(--navy); color:#fff; border-radius:10px; font-size:0.90rem; font-weight:600; cursor:default;">
+                    Lihat Jadwal Lengkap 2026 <span class="material-symbols-outlined" style="font-size:1.05rem;">arrow_forward</span>
                 </span>
             </div>
         </div>
@@ -390,8 +346,8 @@
         <div class="wf-footer">
             <div class="wf-footer-grid">
                 <div class="wf-footer-col">
-                    <div class="logo-row"><div class="logo-mark">TK</div><div class="logo-text">TAP<span>KAPITAL</span></div></div>
-                    <div class="desc">Lembaga pelatihan dan TUK pasar modal resmi — mitra LSPPM & LSPFIT. Terdaftar dan diawasi OJK.</div>
+                    <div class="logo-row"><img src="https://www.tapkapital.co.id/wp-content/uploads/2019/04/logo-tap-kapital.png" alt="Tap Kapital Indonesia" style="height:26px; width:auto; object-fit:contain; display:block;"></div>
+                    
                 </div>
                 <div class="wf-footer-col">
                     <h4>Program</h4>
@@ -471,7 +427,7 @@ function addCopyButtons() {
             const styleTag = document.querySelector('style');
             const allCss = styleTag ? styleTag.innerHTML : '';
             const globalCss = allCss.split(String.fromCharCode(92,110)).filter(l => {
-                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.section') || l.includes('.section-pad') || l.includes('.section-label') || l.includes('.num') || l.includes('.copy-btn') || l.includes('.toast') || l.includes('.material-symbols');
+                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.accent-bar') || l.includes('.active') || l.includes('.arrow') || l.includes('.auth-name') || l.includes('.auth-role') || l.includes('.author') || l.includes('.avatar') || l.includes('.bar') || l.includes('.bg-gray-50') || l.includes('.bl') || l.includes('.bln') || l.includes('.blog-grid') || l.includes('.border') || l.includes('.border-gray-100') || l.includes('.bottom') || l.includes('.br') || l.includes('.btn') || l.includes('.buttons') || l.includes('.cal-day') || l.includes('.cal-dot') || l.includes('.cal-grid') || l.includes('.cal-header') || l.includes('.cal-legend') || l.includes('.carousel-btn') || l.includes('.carousel-container') || l.includes('.carousel-controls') || l.includes('.carousel-dots') || l.includes('.carousel-fade-left') || l.includes('.carousel-fade-right') || l.includes('.carousel-track') || l.includes('.cat-btn') || l.includes('.cats') || l.includes('.cc-action') || l.includes('.cc-desc') || l.includes('.cc-icon') || l.includes('.cc-label') || l.includes('.cc-value') || l.includes('.contact-card') || l.includes('.contact-grid') || l.includes('.container') || l.includes('.cta-section') || l.includes('.desc') || l.includes('.detail-grid') || l.includes('.dot') || l.includes('.duration-300') || l.includes('.faq-a') || l.includes('.faq-grid') || l.includes('.faq-item') || l.includes('.faq-q') || l.includes('.featured') || l.includes('.fill') || l.includes('.filter-bar') || l.includes('.filter-btn') || l.includes('.footer') || l.includes('.footer-col') || l.includes('.footer-grid') || l.includes('.g') || l.includes('.g-badge') || l.includes('.g-label') || l.includes('.gallery-gradient-1') || l.includes('.gallery-gradient-2') || l.includes('.gallery-gradient-3') || l.includes('.gallery-gradient-4') || l.includes('.gallery-gradient-5') || l.includes('.gallery-gradient-6') || l.includes('.gallery-gradient-7') || l.includes('.gallery-gradient-8') || l.includes('.gallery-gradient-9') || l.includes('.gallery-grid') || l.includes('.gallery-item') || l.includes('.glow') || l.includes('.gold') || l.includes('.grayscale') || l.includes('.has-event') || l.includes('.header') || l.includes('.hero-badge') || l.includes('.hero-cta') || l.includes('.hero-floating') || l.includes('.hero-visual') || l.includes('.hf-card') || l.includes('.hf-main') || l.includes('.hf-sub') || l.includes('.hint') || l.includes('.ic-desc') || l.includes('.ic-icon') || l.includes('.ic-label') || l.includes('.ic-value') || l.includes('.info-card') || l.includes('.item') || l.includes('.items-center') || l.includes('.items-end') || l.includes('.j-bulan') || l.includes('.j-cta') || l.includes('.j-info') || l.includes('.j-meta') || l.includes('.j-mode') || l.includes('.j-nama') || l.includes('.j-name') || l.includes('.j-tgl') || l.includes('.jadwal-link') || l.includes('.jadwal-list') || l.includes('.jadwal-row') || l.includes('.justify-between') || l.includes('.justify-center') || l.includes('.label') || l.includes('.lbl') || l.includes('.logo') || l.includes('.logo-row') || l.includes('.mask-gradient-x') || l.includes('.material-symbols-outlined') || l.includes('.mb-6') || l.includes('.milestone') || l.includes('.ms-item') || l.includes('.ms-text') || l.includes('.ms-year') || l.includes('.navy') || l.includes('.object-contain') || l.includes('.offline') || l.includes('.online') || l.includes('.opacity-70') || l.includes('.open') || l.includes('.other-month') || l.includes('.p') || l.includes('.page-btn') || l.includes('.pagination') || l.includes('.partner-card') || l.includes('.partner-grid') || l.includes('.pc-benefits') || l.includes('.pc-desc') || l.includes('.pc-icon') || l.includes('.pc-label') || l.includes('.pc-level') || l.includes('.pc-name') || l.includes('.pc-price') || l.includes('.pc-tag') || l.includes('.pc-title') || l.includes('.pc-unit') || l.includes('.pricing-card') || l.includes('.pricing-grid') || l.includes('.primary') || l.includes('.prog-grid') || l.includes('.px-8') || l.includes('.py-6') || l.includes('.q-left') || l.includes('.quote') || l.includes('.ring') || l.includes('.ring-1') || l.includes('.ring-2') || l.includes('.ring-3') || l.includes('.rounded-xl') || l.includes('.s') || l.includes('.secondary') || l.includes('.section-context') || l.includes('.section-head') || l.includes('.sectionClass') || l.includes('.solid') || l.includes('.stat') || l.includes('.stat-bar') || l.includes('.stat-bar-fill') || l.includes('.stat-card') || l.includes('.stat-icon') || l.includes('.stats-grid') || l.includes('.sub') || l.includes('.tagline') || l.includes('.testi-dots') || l.includes('.testi-left') || l.includes('.testi-right') || l.includes('.testi-slide') || l.includes('.testi-wrapper') || l.includes('.tgl') || l.includes('.timeline') || l.includes('.tl') || l.includes('.tl-desc') || l.includes('.tl-item') || l.includes('.tl-num') || l.includes('.tl-title') || l.includes('.transition-all') || l.includes('.v-desc') || l.includes('.v-icon') || l.includes('.v-title') || l.includes('.value-card') || l.includes('.value-grid') || l.includes('.vm-card') || l.includes('.vm-grid') || l.includes('.vm-icon') || l.includes('.wf-arrow') || l.includes('.wf-cta-bottom') || l.includes('.wf-footer') || l.includes('.wf-footer-col') || l.includes('.wf-footer-grid') || l.includes('.wf-header') || l.includes('.wf-hero') || l.includes('.wf-hero-left') || l.includes('.wf-hero-right') || l.includes('.wf-title') || l.includes('.why-card') || l.includes('.why-grid');
             }).join(String.fromCharCode(92,110));
             navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalCss + String.fromCharCode(92,110) + '</style>').then(() => {
                 globalBtn.classList.add('copied');
@@ -487,7 +443,12 @@ function addCopyButtons() {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
             const contentEl = section.querySelector('.section-pad') || section;
+            // Dynamic section: kosongkan container data-wp-jadwal agar yang di-copy = container kosong + script inline
+            const dynEl = section.querySelector('[data-wp-jadwal]');
+            const dynHtml = dynEl ? dynEl.innerHTML : '';
+            if (dynEl) dynEl.innerHTML = '';
             let html = contentEl.innerHTML;
+            if (dynEl) dynEl.innerHTML = dynHtml;
             html = html.replace(/<button[^>]*class=\"[^\"]*copy-btn[^\"]*\"[^>]*>.*?<\/button>/gs, '');
             html = html.replace(/<div[^>]*class=\"[^\"]*section-label[^\"]*\"[^>]*>.*?<\/div>/gs, '');
             html = html.replace(/<div[^>]*class=\"[^\"]*section-context[^\"]*\"[^>]*>.*?<\/div>/gs, '');
