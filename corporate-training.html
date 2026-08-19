@@ -74,6 +74,14 @@
         .wf-footer .bottom { border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; padding-top:16px; display:flex; justify-content:space-between; font-size:0.90rem; color:rgba(255,255,255,0.12); }
         .ct-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
         @media (max-width:768px) { body{padding:16px;} .section-pad{padding:24px 16px;} .prog-grid{grid-template-columns:1fr;} .ct-grid{grid-template-columns:1fr;} .wf-hero{padding:32px 24px;} .wf-hero h1{font-size:1.6rem !important;} .wf-footer-grid{grid-template-columns:1fr 1fr;} }
+.copy-btn { position:absolute; bottom:8px; right:8px; z-index:10; display:inline-flex; align-items:center; gap:4px; padding:4px 10px; border-radius:6px; font-size:0.5rem; font-weight:600; letter-spacing:0.3px; background:rgba(10,38,71,0.06); color:var(--text-mid); border:1px solid var(--border); cursor:pointer; transition:all 0.2s; opacity:0; }
+        .section:hover .copy-btn { opacity:1; }
+        .copy-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
+        .copy-btn.copied { background:#10b981; color:#fff; border-color:#10b981; }
+        .copy-btn span.material-symbols-outlined { font-size:0.7rem; }
+        .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--navy-dark); color:#fff; padding:10px 20px; border-radius:10px; font-size:0.7rem; font-weight:500; box-shadow:0 8px 30px rgba(0,0,0,0.2); opacity:0; transition:all 0.3s; z-index:999; display:flex; align-items:center; gap:8px; pointer-events:none; }
+        .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+        .toast span.material-symbols-outlined { font-size:1rem; color:#10b981; }
     </style>
 </head>
 <body>
@@ -141,5 +149,104 @@
         </div><div class="bottom"><span>© 2026 PT Tap Kapital Indonesia</span><span>✦ ✦ ✦</span></div></div>
     </div>
 </div>
+<div class="toast" id="toast"><span class="material-symbols-outlined">check_circle</span> <span id="toastMsg">Copied!</span></div>
+
+<script>
+function addCopyButtons() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section, i) => {
+        if (section.querySelector('.section-context')?.textContent === 'info') return;
+
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+        btn.dataset.index = i;
+
+        const cssBtn = document.createElement('button');
+        cssBtn.className = 'copy-btn';
+        cssBtn.innerHTML = '<span class="material-symbols-outlined">style</span> Copy CSS';
+        cssBtn.style.right = '90px';
+        cssBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const styleTag = document.querySelector('style');
+            const allCss = styleTag ? styleTag.innerHTML : '';
+            const classes = new Set();
+            section.querySelectorAll('[class]').forEach(el => {
+                el.className.split(/\s+/).forEach(c => {
+                    if (c && c !== 'section' && c !== 'section-pad' && c !== 'section-label') classes.add(c);
+                });
+            });
+            const lines = allCss.split(String.fromCharCode(92,110));
+            const sectionCss = lines.filter(l => Array.from(classes).some(c => l.includes(String.fromCharCode(46) + c))).join(String.fromCharCode(92,110));
+            const globalLines = lines.filter(l => l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::'));
+            navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalLines.join(String.fromCharCode(92,110)) + String.fromCharCode(92,110) + sectionCss + String.fromCharCode(92,110) + '</style>').then(() => {
+                cssBtn.classList.add('copied');
+                cssBtn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                setTimeout(() => {
+                    cssBtn.classList.remove('copied');
+                    cssBtn.innerHTML = '<span class="material-symbols-outlined">style</span> Copy CSS';
+                }, 2000);
+            });
+        });
+        section.appendChild(cssBtn);
+
+        const globalBtn = document.createElement('button');
+        globalBtn.className = 'copy-btn';
+        globalBtn.innerHTML = '<span class="material-symbols-outlined">globe</span> Copy CSS Global';
+        globalBtn.style.right = '170px';
+        globalBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const styleTag = document.querySelector('style');
+            const allCss = styleTag ? styleTag.innerHTML : '';
+            const globalCss = allCss.split(String.fromCharCode(92,110)).filter(l => {
+                return l.includes(':root') || l.includes('* {') || l.includes('body') || l.includes('@import') || l.includes('@font') || l.includes('html') || l.includes('::') || l.includes('@media') || l.includes('.accent-bar') || l.includes('.active') || l.includes('.arrow') || l.includes('.auth-name') || l.includes('.auth-role') || l.includes('.author') || l.includes('.avatar') || l.includes('.bar') || l.includes('.bg-gray-50') || l.includes('.bl') || l.includes('.bln') || l.includes('.blog-grid') || l.includes('.border') || l.includes('.border-gray-100') || l.includes('.bottom') || l.includes('.br') || l.includes('.btn') || l.includes('.buttons') || l.includes('.cal-day') || l.includes('.cal-dot') || l.includes('.cal-grid') || l.includes('.cal-header') || l.includes('.cal-legend') || l.includes('.carousel-btn') || l.includes('.carousel-container') || l.includes('.carousel-controls') || l.includes('.carousel-dots') || l.includes('.carousel-fade-left') || l.includes('.carousel-fade-right') || l.includes('.carousel-track') || l.includes('.cat-btn') || l.includes('.cats') || l.includes('.cc-action') || l.includes('.cc-desc') || l.includes('.cc-icon') || l.includes('.cc-label') || l.includes('.cc-value') || l.includes('.contact-card') || l.includes('.contact-grid') || l.includes('.container') || l.includes('.cta-section') || l.includes('.desc') || l.includes('.detail-grid') || l.includes('.dot') || l.includes('.duration-300') || l.includes('.faq-a') || l.includes('.faq-grid') || l.includes('.faq-item') || l.includes('.faq-q') || l.includes('.featured') || l.includes('.fill') || l.includes('.filter-bar') || l.includes('.filter-btn') || l.includes('.footer') || l.includes('.footer-col') || l.includes('.footer-grid') || l.includes('.g') || l.includes('.g-badge') || l.includes('.g-label') || l.includes('.gallery-gradient-1') || l.includes('.gallery-gradient-2') || l.includes('.gallery-gradient-3') || l.includes('.gallery-gradient-4') || l.includes('.gallery-gradient-5') || l.includes('.gallery-gradient-6') || l.includes('.gallery-gradient-7') || l.includes('.gallery-gradient-8') || l.includes('.gallery-gradient-9') || l.includes('.gallery-item') || l.includes('.gallery-grid') || l.includes('.header') || l.includes('.hero-badge') || l.includes('.hero-cta') || l.includes('.hero-floating') || l.includes('.hero-visual') || l.includes('.hf-card') || l.includes('.hf-main') || l.includes('.hf-sub') || l.includes('.img-area') || l.includes('.jadwal-link') || l.includes('.jadwal-list') || l.includes('.jadwal-row') || l.includes('.j-mode') || l.includes('.j-name') || l.includes('.j-tgl') || l.includes('.j-cta') || l.includes('.kat-card') || l.includes('.kat-icon') || l.includes('.kat-name') || l.includes('.kat-sub') || l.includes('.kategori-grid') || l.includes('.label') || l.includes('.logo-mark') || l.includes('.logo-row') || l.includes('.logo-text') || l.includes('.mask-gradient-x') || l.includes('.meta') || l.includes('.meta-item') || l.includes('.milestone') || l.includes('.mobile-toggle') || l.includes('.ms-item') || l.includes('.ms-text') || l.includes('.ms-year') || l.includes('.nav-item') || l.includes('.nav-items') || l.includes('.no-scrollbar') || l.includes('.num') || l.includes('.overlay-badge') || l.includes('.overlay-icon') || l.includes('.p-desc') || l.includes('.p-footer') || l.includes('.p-name') || l.includes('.p-tags') || l.includes('.pc-badge') || l.includes('.pc-body') || l.includes('.pc-cta') || l.includes('.pc-desc') || l.includes('.pc-footer') || l.includes('.pc-img') || l.includes('.pc-name') || l.includes('.pc-price') || l.includes('.pc-tags') || l.includes('.placeholder') || l.includes('.prog-card') || l.includes('.prog-grid') || l.includes('.prog-slide') || l.includes('.q-left') || l.includes('.quote') || l.includes('.ring') || l.includes('.ring-1') || l.includes('.ring-2') || l.includes('.ring-3') || l.includes('.section') || l.includes('.section-context') || l.includes('.section-head') || l.includes('.section-label') || l.includes('.section-pad') || l.includes('.space-y-6') || l.includes('.stat-bar') || l.includes('.stat-bar-fill') || l.includes('.stat-card') || l.includes('.stat-icon') || l.includes('.stats-grid') || l.includes('.sub') || l.includes('.tagline') || l.includes('.testi-dots') || l.includes('.testi-inner') || l.includes('.testi-left') || l.includes('.testi-right') || l.includes('.testi-slide') || l.includes('.testi-wrapper') || l.includes('.timeline') || l.includes('.tl-desc') || l.includes('.tl-item') || l.includes('.tl-num') || l.includes('.tl-title') || l.includes('.toast') || l.includes('.value-card') || l.includes('.value-grid') || l.includes('.v-desc') || l.includes('.v-icon') || l.includes('.v-title') || l.includes('.vm-card') || l.includes('.vm-grid') || l.includes('.wf-arrow') || l.includes('.wf-cta-bottom') || l.includes('.wf-footer') || l.includes('.wf-footer-col') || l.includes('.wf-footer-grid') || l.includes('.wf-header') || l.includes('.wf-hero') || l.includes('.wf-hero-left') || l.includes('.wf-hero-right') || l.includes('.wf-title') || l.includes('.why-card') || l.includes('.why-grid') || l.includes('.w-icon')
+            }).join(String.fromCharCode(92,110));
+            navigator.clipboard.writeText('<style>' + String.fromCharCode(92,110) + globalCss + String.fromCharCode(92,110) + '</style>').then(() => {
+                globalBtn.classList.add('copied');
+                globalBtn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                setTimeout(() => {
+                    globalBtn.classList.remove('copied');
+                    globalBtn.innerHTML = '<span class="material-symbols-outlined">globe</span> Copy CSS Global';
+                }, 2000);
+            });
+        });
+        section.appendChild(globalBtn);
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const contentEl = section.querySelector('.section-pad') || section;
+            let html = contentEl.innerHTML;
+            html = html.replace(/<button[^>]*class=\"[^\"]*copy-btn[^\"]*\"[^>]*>.*?<\/button>/gs, '');
+            html = html.replace(/<div[^>]*class=\"[^\"]*section-label[^\"]*\"[^>]*>.*?<\/div>/gs, '');
+            html = html.replace(/<div[^>]*class=\"[^\"]*section-context[^\"]*\"[^>]*>.*?<\/div>/gs, '');
+            const sectionStyle = section.getAttribute('style') || '';
+            const styleAttr = sectionStyle ? String.fromCharCode(32,115,116,121,108,101,61,34) + sectionStyle + String.fromCharCode(34) : '';
+            const sectionClass = section.className.replace('section', '').trim();
+            const classAttr = sectionClass ? String.fromCharCode(32,99,108,97,115,115,61,34) + sectionClass + String.fromCharCode(34) : '';
+            const wrapped = String.fromCharCode(60,100,105,118) + classAttr + styleAttr + String.fromCharCode(62,10) + html.trim() + String.fromCharCode(10,60,47,100,105,118,62);
+            navigator.clipboard.writeText(wrapped).then(() => {
+                btn.classList.add('copied');
+                btn.innerHTML = '<span class="material-symbols-outlined">check</span> Copied!';
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toastMsg');
+                toastMsg.textContent = 'Section copied!';
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+                }, 2000);
+            }).catch(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">error</span> Failed';
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span> Copy HTML';
+                }, 2000);
+            });
+        });
+        section.appendChild(btn);
+    });
+}
+document.addEventListener('DOMContentLoaded', addCopyButtons);
+</script>
 </body>
 </html>

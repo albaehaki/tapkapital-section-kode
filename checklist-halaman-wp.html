@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Halaman — Tap Kapital</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',system-ui,sans-serif; }
+body { background:#f0f4f8; padding:30px 20px; color:#1f2937; }
+.container { max-width:860px; margin:0 auto; }
+h1 { font-size:1.5rem; color:#0a2647; text-align:center; margin-bottom:6px; }
+.sub { text-align:center; color:#4b5563; font-size:0.9rem; margin-bottom:24px; }
+.progress-wrap { background:#fff; border-radius:12px; padding:16px 20px; margin-bottom:24px; box-shadow:0 2px 10px rgba(10,38,71,0.06); position:sticky; top:10px; z-index:10; }
+.progress-bar-bg { background:#e5e7eb; border-radius:50px; height:12px; overflow:hidden; }
+.progress-fill { background:linear-gradient(90deg,#fda527,#0a2647); height:100%; width:0%; transition:width .3s; }
+.progress-txt { margin-top:8px; font-size:0.85rem; color:#0a2647; font-weight:600; text-align:center; }
+.group { background:#fff; border-radius:14px; margin-bottom:16px; box-shadow:0 2px 10px rgba(10,38,71,0.06); overflow:hidden; }
+.group-head { background:#0a2647; color:#fff; padding:12px 18px; font-weight:700; font-size:1rem; display:flex; justify-content:space-between; align-items:center; }
+.group-head .pct { background:#fda527; color:#0a2647; border-radius:50px; padding:2px 10px; font-size:0.75rem; font-weight:700; }
+.row { display:flex; gap:12px; align-items:center; padding:12px 18px; border-bottom:1px solid #f3f4f6; cursor:pointer; }
+.row:last-child { border-bottom:none; }
+.row input { width:18px; height:18px; accent-color:#fda527; flex-shrink:0; cursor:pointer; }
+.row .info { flex:1; }
+.row .info b { color:#0a2647; font-size:0.92rem; }
+.row .info .file { display:block; font-size:0.75rem; color:#9ca3af; font-family:monospace; margin-top:2px; }
+.row.checked .info { color:#9ca3af; text-decoration:line-through; }
+.row.checked .info .file { color:#d1d5db; }
+.reset { display:block; margin:24px auto; padding:10px 24px; border:none; border-radius:8px; background:#ef4444; color:#fff; font-weight:600; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🗂 Checklist Halaman Website Tap Kapital</h1>
+  <div class="sub">Centang halaman yang SUDAH ada & sesuai di WordPress. Progress tersimpan otomatis.</div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar-bg"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-txt" id="progTxt">0 / 0 dicentang</div>
+  </div>
+
+  <div class="group">
+    <div class="group-head"><span>🏠 Halaman Utama</span><span class="pct" id="p0">0%</span></div>
+    <div class="body">
+      <label class="row" data-k="m1"><input type="checkbox"><span class="info"><b>Beranda</b><span class="file">tapkapital-wireframe-final.html</span></span></label>
+      <label class="row" data-k="m2"><input type="checkbox"><span class="info"><b>Semua Program</b><span class="file">tapkapital-semua-program.html</span></span></label>
+      <label class="row" data-k="m3"><input type="checkbox"><span class="info"><b>Corporate Training</b><span class="file">corporate-training.html</span></span></label>
+      <label class="row" data-k="m4"><input type="checkbox"><span class="info"><b>Jadwal</b><span class="file">tapkapital-jadwal.html</span></span></label>
+      <label class="row" data-k="m5"><input type="checkbox"><span class="info"><b>Tentang Kami</b><span class="file">tapkapital-tentang.html</span></span></label>
+      <label class="row" data-k="m6"><input type="checkbox"><span class="info"><b>Hubungi Kami / Kontak</b><span class="file">tapkapital-kontak.html</span></span></label>
+      <label class="row" data-k="m7"><input type="checkbox"><span class="info"><b>Gallery / Dokumentasi</b><span class="file">tapkapital-gallery.html</span></span></label>
+      <label class="row" data-k="m8"><input type="checkbox"><span class="info"><b>Insight / Artikel / Blog</b><span class="file">tapkapital-blog.html</span></span></label>
+      <label class="row" data-k="m9"><input type="checkbox"><span class="info"><b>TUK (Tempat Uji Kompetensi / LSP)</b><span class="file">tapkapital-tuk.html</span></span></label>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-head"><span>📚 7 Halaman Kategori Program</span><span class="pct" id="p1">0%</span></div>
+    <div class="body">
+      <label class="row" data-k="k1"><input type="checkbox"><span class="info"><b>Manajemen Risiko</b><span class="file">manajemen-risiko.html</span></span></label>
+      <label class="row" data-k="k2"><input type="checkbox"><span class="info"><b>Pasar Modal</b><span class="file">pasar-modal.html</span></span></label>
+      <label class="row" data-k="k3"><input type="checkbox"><span class="info"><b>Finance &amp; Accounting</b><span class="file">finance-accounting.html</span></span></label>
+      <label class="row" data-k="k4"><input type="checkbox"><span class="info"><b>Audit, Governance &amp; Compliance</b><span class="file">audit-compliance.html</span></span></label>
+      <label class="row" data-k="k5"><input type="checkbox"><span class="info"><b>HR &amp; People Development</b><span class="file">hr-people.html</span></span></label>
+      <label class="row" data-k="k6"><input type="checkbox"><span class="info"><b>Digital &amp; Office Productivity</b><span class="file">digital-office.html</span></span></label>
+      <label class="row" data-k="k7"><input type="checkbox"><span class="info"><b>Soft Skill &amp; Professional Development</b><span class="file">soft-skill.html</span></span></label>
+    </div>
+  </div>
+
+  <button class="reset" onclick="resetAll()">↺ Reset Semua</button>
+</div>
+
+<script>
+function update() {
+  let total=0, done=0;
+  [['m','p0'],['k','p1']].forEach(([prefix,pctId]) => {
+    const rows = document.querySelectorAll(`.row[data-k^="${prefix}"]`);
+    let d=0;
+    rows.forEach(it => {
+      const cb = it.querySelector('input');
+      const k = it.dataset.k;
+      if (localStorage.getItem('tp_'+k)==='1') { cb.checked=true; it.classList.add('checked'); d++; }
+      else { cb.checked=false; it.classList.remove('checked'); }
+    });
+    document.getElementById(pctId).textContent = rows.length ? Math.round(d/rows.length*100)+'%' : '0%';
+    total += rows.length; done += d;
+  });
+  document.getElementById('fill').style.width = total? Math.round(done/total*100)+'%':'0%';
+  document.getElementById('progTxt').textContent = done+' / '+total+' halaman dicentang';
+}
+document.querySelectorAll('.row').forEach(it => {
+  it.addEventListener('click', e => {
+    if (e.target.tagName==='INPUT') return;
+    const cb = it.querySelector('input'); cb.checked = !cb.checked; save(it, cb.checked);
+  });
+  it.querySelector('input').addEventListener('change', e => save(it, e.target.checked));
+});
+function save(it, checked) { localStorage.setItem('tp_'+it.dataset.k, checked?'1':'0'); update(); }
+function resetAll() {
+  if (!confirm('Yakin reset semua?')) return;
+  ['m','k'].forEach(p => document.querySelectorAll(`.row[data-k^="${p}"]`).forEach(it => localStorage.removeItem('tp_'+it.dataset.k)));
+  update();
+}
+update();
+</script>
+</body>
+</html>

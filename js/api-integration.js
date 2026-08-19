@@ -153,15 +153,26 @@ function renderProgCard(p, i) {
 
 // ─── RENDER ───
 function renderAll(){
-    // Products — untuk .prog-slide (carousel)
+    // Products — untuk .prog-slide (carousel) & halaman Semua Program
+    // Support filter by URL ?kategori=slug (kalau ada param, tampilkan program kategori itu saja)
+    var urlKat = new URLSearchParams(w.location.search).get('kategori');
     d.querySelectorAll('[data-wp-produk]').forEach(function(el){
         var max = parseInt(el.getAttribute('data-wp-produk'))||6;
         var isGrid = el.classList.contains('prog-grid');
+        var list = WC_PRODS;
+        if (urlKat) {
+            var kws = KAT_KEYWORDS[urlKat] || [];
+            list = WC_PRODS.filter(function(p){
+                var hay = (p.n+' '+(p.tags||[]).join(' ')).toLowerCase();
+                return kws.some(function(k){ return hay.indexOf(k)>=0; });
+            });
+        }
+        var target = list.slice(0,max);
         if (isGrid) {
             // Untuk halaman Semua Program — render .prog-card
-            el.innerHTML=WC_PRODS.slice(0,max).map(function(p,i){return renderProgCard(p,i);}).join('');
+            el.innerHTML=target.map(function(p,i){return renderProgCard(p,i);}).join('');
         } else {
-            el.innerHTML=WC_PRODS.slice(0,max).map(function(p,i){return TK.prodCard(p,i);}).join('');
+            el.innerHTML=target.map(function(p,i){return TK.prodCard(p,i);}).join('');
         }
     });
     // Kategori — untuk halaman per kategori (filter WC_PRODS by keyword)
