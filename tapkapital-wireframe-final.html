@@ -492,6 +492,7 @@
                 <span class="nav-item" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">
                     Program <span class="material-symbols-outlined" style="font-size:0.80rem;">arrow_drop_down</span>
                     <span class="dropdown-menu">
+                        <a class="dropdown-item" href="tapkapital-semua-program.html">Semua Program</a>
                         <a class="dropdown-item" href="manajemen-risiko.html">Manajemen Risiko</a>
                         <a class="dropdown-item" href="pasar-modal.html">Pasar Modal</a>
                         <a class="dropdown-item" href="finance-accounting.html">Finance & Accounting</a>
@@ -501,23 +502,10 @@
                         <a class="dropdown-item" href="soft-skill.html">Soft Skill & Professional Development</a>
                     </span>
                 </span>
-                <span class="nav-item" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">
-                    Corporate Training <span class="material-symbols-outlined" style="font-size:0.80rem;">arrow_drop_down</span>
-                    <span class="dropdown-menu">
-                        <a class="dropdown-item" href="corporate-training.html">In-House Training</a>
-                        <a class="dropdown-item" href="corporate-training.html">Customized Training</a>
-                        <a class="dropdown-item" href="corporate-training.html">Corporate Learning</a>
-                    </span>
-                </span>
+                <a class="nav-item" href="corporate-training.html" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); text-decoration:none;">Corporate Training</a>
                 <a class="nav-item" href="tapkapital-jadwal.html" style="padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); text-decoration:none;">Jadwal</a>
-                <span class="nav-item" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); cursor:default;">
-                    Tentang <span class="material-symbols-outlined" style="font-size:0.80rem;">arrow_drop_down</span>
-                    <span class="dropdown-menu">
-                        <a class="dropdown-item" href="tapkapital-tentang.html">Profil Perusahaan</a>
-                        <a class="dropdown-item" href="tapkapital-tentang.html">Visi &amp; Misi</a>
-                        <a class="dropdown-item" href="tapkapital-tentang.html">Trainer Expert</a>
-                    </span>
-                </span>
+                <a class="nav-item" href="tapkapital-tentang.html" style="display:inline-flex; align-items:center; gap:4px; padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); text-decoration:none;">Tentang</a>
+                <a class="nav-item" href="tapkapital-kontak.html" style="padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); text-decoration:none;">Kontak</a>
                 <a class="nav-item" href="tapkapital-blog.html" style="padding:6px 14px; border-radius:6px; font-size:0.90rem; font-weight:500; color:var(--text-mid); text-decoration:none;">Insight</a>
             </div>
         </div>
@@ -1176,8 +1164,10 @@ function addCopyButtons() {
             // Get the section's class for styling context
             const sectionClass = section.className.replace('section', '').trim();
             const classAttr = sectionClass ? ` class="${sectionClass}"` : '';
-            
-            const wrapped = `<div${classAttr}${styleAttr}>\n${html.trim()}\n</div>`;
+            // Auto-sertakan api-integration.js agar program render di target (WordPress)
+            var needApi = section.querySelector('[data-wp-produk],[data-wp-kategori]');
+            var scriptTag = needApi ? '\n<script src="js/api-integration.js"><\/script>' : '';
+            const wrapped = `<div${classAttr}${styleAttr}>\n${html.trim()}${scriptTag}\n</div>`;
             
             // Include the page CSS so the section renders properly in WPBakery
             const styleTag = document.querySelector('style');
